@@ -1,10 +1,11 @@
 let rand = 0;
-let attempt_counter = 3;
+let attempt_counter = 5;
 
 function GENERANUMERO(){
   rand = Math.random() * (99000) + 1000;
   rand = Math.round(rand);
   rand = rand / 1000;
+  console.log(rand);
   return rand;
 }
 
@@ -26,48 +27,89 @@ function INDOVINANUMERO(){
     return;
   }
 
+  console.log(rand);
   console.log(guess);
   CONTROLLAVITTORIA(guess)
   return;
 }
 
-/*      return values:
-    -1    è minore
-     0    è uguale
-    +1    è maggiore
-*/
-function CONTROLLAVITTORIA(guess){
-  console.log(guess + 's');
-  //checks if there are any attempts left
-  if (attempt_counter == 0){
-    $("#div_attempts").addClass("hide");
-    $("#div_input").addClass("hide");
-    rand = 0;
-    attempt_counter = 3;
-    return;
-  } else {
-    attempt_counter--;
-  }
-  $("#attempts").text(attempt_counter);
 
+function CONTROLLAVITTORIA(guess){
+  let result = $("#result");
+  let attempt = $("#attempts");
+  let compare = $("#compare");
+  compare.addClass("hide");
+
+  console.log(guess + 's');
 
   if (guess < rand){
     console.log("minore");
-    return -1;
+    $("#compare").removeClass("hide");
+    compare.text(guess + " e' minore");
   }
   if (guess > rand){
     console.log("maggiore");
-    return 1;
+    $("#compare").removeClass("hide");
+    compare.text(guess + " e' maggiore");
+  }
+  if (guess == rand){
+    console.log("uguale");
+    $("#compare").removeClass("hide");
+    compare.text("congratulazioni, hai fatto l'impossibile");
+    attempt_counter = 0;
+    return;
+  }
+
+  //checks if there are any attempts left
+  if (attempt_counter == 1){
+    $("#div_attempts").addClass("hide");
+    $("#div_input").addClass("hide");
+    attempt.text("hai finito i tentativi");
+    compare.addClass("hide");
+
+    // shows score
+    result.removeClass("hide");
+    result.text("hai fatto " + CALCOLAPUNTEGGIO(guess) + " punti");
+
+    //displays the number
+    $("#number").removeClass("hide");
+    $("#number").text("il numero da indovinare era " + rand);
+
+    rand = 0;
+    attempt_counter = 5;
+    return;
+  } else {
+    attempt_counter--;
+    attempt.text("tentativi: " + attempt_counter);
   }
 
 
-  console.log("uguale");
-  return 0;
+
+  return;
 }
+
+function CALCOLAPUNTEGGIO(guess){
+  let delta = Math.abs(rand - guess);
+  console.log("r = " + rand);
+  console.log("g = " + guess);
+  console.log("d = " + delta);
+  if (delta != 0){
+    score = 100 / delta - 1;
+    score.toFixed(2);
+  } else {
+    score = 100000;
+  }
+  var str = score.toFixed(2);
+  score = parseFloat(str);
+  return score;
+}
+
 
 function INIZIAGIOCO(){
   $("#div_attempts").removeClass("hide");
   $("#div_input").removeClass("hide");
+  $("#result").addClass("hide");
+  $("#number").addClass("hide");
 
   if (rand == 0){
     let rand = GENERANUMERO();
@@ -75,5 +117,5 @@ function INIZIAGIOCO(){
   }
 
   let attempt = $("#attempts");
-  attempt.text(attempt_counter);
+  attempt.text("tentativi: " + attempt_counter);
 }
