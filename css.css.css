@@ -1,3 +1,51 @@
 .hide {
   display: none;
 }
+
+.align {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  background-color: grey;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+  font-size: 120px;
+  color: gainsboro;
+  font-family: ubuntu;
+  animation: AN_title 1.5s;
+}
+
+.subtitle {
+  opacity: 0;
+  position: relative;
+  text-align: center;
+  font-size: 69px;
+  color: gainsboro;
+  font-family: ubuntu;
+  animation: AN_subtitle 1s;
+  animation-delay: 0.5s;
+}
+
+.exception {
+  position: absolute;
+  left: 2%;
+  font-size: 19px;
+  font-family: ubuntu;
+  position: relative;
+  color: gainsboro;
+}
+
+@keyframes AN_title {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
+@keyframes AN_subtitle {
+  0% {top: -150px; opacity: 0}
+  100% {top: 0px; opacity: 1}
+}

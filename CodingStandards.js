@@ -1,6 +1,20 @@
 let rand = 0;
 let attempt_counter = 5;
 
+let exceptions = [
+  "",
+  "devi inserire un numero",
+  "frq inserisci un numero",
+  "non mi pare sia un numero ma ok",
+  "NaN",
+  "sei troppo figo, ma ora inserisci un numero",
+  "mettiti la mascherina e inserisci un numero",
+  "ma una rosa senza spine va a batteria?",
+  "[object Object]",
+  "INSERISCINUMERO()",
+  "potresti inserirmi un numero per favore?"
+]
+
 function GENERANUMERO(){
   rand = Math.random() * (99000) + 1000;
   rand = Math.round(rand);
@@ -17,8 +31,11 @@ function INDOVINANUMERO(){
   //checks if input is acceptable
   let guess = $("#guess").val()
   if (isNaN(guess) || guess == ''){
+    let randE = Math.random() * 10;
+    randE = Math.round(randE);
     exception.removeClass("hide");
-    exception.text("devi inserire un numero");
+    console.log(randE);
+    exception.text(exceptions[randE]);
     return;
   }
   if (guess < 0 || guess > 100){
@@ -108,6 +125,8 @@ function CALCOLAPUNTEGGIO(guess){
 function INIZIAGIOCO(){
   $("#div_attempts").removeClass("hide");
   $("#div_input").removeClass("hide");
+  $("#div_guess").removeClass("hide");
+  $("#guess").removeClass("hide");
   $("#result").addClass("hide");
   $("#number").addClass("hide");
 
@@ -118,4 +137,12 @@ function INIZIAGIOCO(){
 
   let attempt = $("#attempts");
   attempt.text("tentativi: " + attempt_counter);
+}
+
+function ANIMAZIONI(){
+  $(".subtitle").css("opacity", 0);
+  setTimeout(function(){
+    $(".subtitle").css("opacity", 1);
+  }, 1000);
+
 }
