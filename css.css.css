@@ -2,6 +2,10 @@
   display: none;
 }
 
+.hideR {
+  display: none;
+}
+
 .align {
   display: flex;
   align-items: center;
@@ -40,6 +44,32 @@ body {
   color: gainsboro;
 }
 
+.rules{
+  font-size: 20px;
+  color: gainsboro;
+  font-family: ubuntu;
+}
+
+.outR {
+  position: relative;
+  animation: AN_outR 1s;
+}
+
+.inR {
+  position: relative;
+  animation: AN_inR 1s;
+}
+
+.out {
+  position: relative;
+  animation: AN_out 0.8s;
+}
+
+.in {
+  position: relative;
+  animation: AN_in 0.8s;
+}
+
 @keyframes AN_title {
   0% {opacity: 0}
   100% {opacity: 1}
@@ -48,4 +78,26 @@ body {
 @keyframes AN_subtitle {
   0% {top: -150px; opacity: 0}
   100% {top: 0px; opacity: 1}
+}
+
+@keyframes AN_inR {
+  0% {left: -10%}
+  70% {left: 0.5%}
+  100% {left: 0%}
+}
+
+@keyframes AN_outR {
+  0% {left: 0%}
+  60% {left: 0.5%}
+  100% {left: -10%}
+}
+
+@keyframes AN_in {
+  0% {left: -25%}
+  100% {left: 0%}
+}
+
+@keyframes AN_out {
+  0% {left: 0%}
+  100% {left: -25%}
 }

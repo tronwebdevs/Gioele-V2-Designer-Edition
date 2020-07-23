@@ -1,5 +1,6 @@
 let rand = 0;
 let attempt_counter = 5;
+let rules = false;
 
 let exceptions = [
   "",
@@ -140,9 +141,49 @@ function INIZIAGIOCO(){
 }
 
 function ANIMAZIONI(){
+  //animation subtitle
   $(".subtitle").css("opacity", 0);
   setTimeout(function(){
     $(".subtitle").css("opacity", 1);
   }, 1000);
+  return;
+}
+
+function REGOLE(){
+  if (rules == false){
+    $('#btn_rules').prop("disabled", true);
+    setTimeout(function(){
+      $('#btn_rules').prop("disabled", false);
+    }, 1300);
+    setTimeout(function(){
+      $("#rules").removeClass("hide");
+      $("#rules").removeClass("outR");
+      $("#rules").addClass("inR");
+      $("#div_game").addClass("hide");
+    }, 800);
+    setTimeout(function(){
+      $("#div_game").addClass("hide");
+    }, 700);
+    $("#div_game").removeClass("in");
+    $("#div_game").addClass("out");
+    rules = true;
+  } else {
+    $('#btn_rules').prop("disabled", true);
+    setTimeout(function(){
+      $('#btn_rules').prop("disabled", false);
+    }, 1300);
+    setTimeout(function(){
+      $("#div_game").removeClass("hide");
+      $("#div_game").removeClass("out");
+      $("#div_game").addClass("in");
+    }, 1000);
+    setTimeout(function(){
+      $("#rules").addClass("hide");
+    }, 800);
+    $("#rules").removeClass("inR");
+    $("#rules").addClass("outR");
+
+    rules = false;
+  }
 
 }
