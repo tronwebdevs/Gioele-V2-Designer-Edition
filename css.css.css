@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: grey;
+  background-color: #404040;
 }
 
 .hide {
@@ -27,7 +27,7 @@ body {
   background-color: black;
   margin-left: -0.55%;
   margin-right: -0.55%;
-  animation: AN_FadeIn 0.5s;
+  animation: AN_fillBlack 0.5s;
   animation-delay: 1s;
 }
 
@@ -37,9 +37,9 @@ body {
   text-align: center;
   font-size: 120px;
   color: gainsboro;
-  margin-left: 35%;
-  margin-right: 35%;
-  animation: AN_title 1.5s;
+  margin-left: 22%;
+  margin-right: 22%;
+  animation: AN_fadeIn 1.5s;
   animation-delay: 1.5s;
 }
 
@@ -65,8 +65,32 @@ body {
   animation: AN_line 1s;
 }
 
+.buttonBorder {
+  width: 14ch;
+  height: 8ch;
+  background: transparent;
+  border: 5px solid gainsboro;
+  font-size: 19px;
+  font-weight: bold;
+  color: #404040;
+  animation: AN_buttonBorder 1s;
+}
+
+.buttonFill {
+  background: black;
+  color: transparent;
+  animation: AN_buttonFill 0.5s;
+}
+
+.buttonText {
+  color: gainsboro;
+  font-weight: bold;
+  font-size: 19px;
+  animation: AN_buttonText 1s;
+}
+
 .exception {
-  position: absolute;
+  position: relative;
   left: 2%;
   font-size: 19px;
   position: relative;
@@ -107,17 +131,26 @@ body {
   transform: scale(1.2);
 }
 
+.effect2 {
+  transition: border 0.6s, color 0.6s;
+}
+
+.effect2:hover{
+  border: 5px solid white;
+  color: white;
+}
+
 @keyframes AN_line {
   0% {transform: scaleX(0)}
   100% {transform: scaleX(1)}
 }
 
-@keyframes AN_FadeIn {
-  0% {opacity: 0}
-  100% {opacity: 1}
+@keyframes AN_fillBlack {
+  0% {background-color: transparent}
+  100% {background-color: black}
 }
 
-@keyframes AN_title {
+@keyframes AN_fadeIn {
   0% {opacity: 0}
   100% {opacity: 1}
 }
@@ -125,6 +158,30 @@ body {
 @keyframes AN_subtitle {
   0% {bottom: 2em; opacity: 0}
   100% {bottom: 0.5em; opacity: 1}
+}
+
+@keyframes AN_buttonBorder {
+  0% {
+    transform: scaleX(0);
+    transform: scaleY(0);
+  }
+  50% {
+    transform: scaleX(1);
+    transform: scaleY(0);
+  }
+  100%{
+    transform: scaleY(1);
+  }
+}
+
+@keyframes AN_buttonFill {
+  0% {background: transparent}
+  100% {background: black}
+}
+
+@keyframes AN_buttonText {
+  0% {color: transparent}
+  100% {color: gainsboro}
 }
 
 @keyframes AN_inR {

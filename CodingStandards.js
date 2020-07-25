@@ -5,10 +5,10 @@ let rules = false;
 let exceptions = [
   "inserisci un numero",
   "devi inserire un numero",
-  "frq inserisci un numero",
-  "non mi pare sia un numero ma ok",
+  "inserisci un numero pls",
+  "devi indovinare un numero",
   "NaN",
-  "sei troppo figo, ma ora inserisci un numero",
+  "sei figo ma ora inserisci un numero",
   "mettiti la mascherina e inserisci un numero",
   "ma una rosa senza spine va a batteria?",
   "scusa ma GIOELE V2™ non funziona senza un numero",
@@ -141,6 +141,7 @@ function INIZIAGIOCO(){
 }
 
 function ANIMAZIONI(){
+  //Gioele
   setTimeout(function(){
     $(".subtitle").css("opacity", 1);
   }, 2050);
@@ -153,7 +154,24 @@ function ANIMAZIONI(){
   setTimeout(function(){
     $(".title").addClass("effect");
     $(".subtitle").addClass("effect");
+    $(".line").addClass("effect2");
   }, 2500);
+
+  //buttons
+  setTimeout(function(){
+    $("#btn_rules").removeClass("hide");
+    $("#btn_rules").addClass("buttonBorder");
+  }, 2200);
+  setTimeout(function(){
+    $("#btn_rules").addClass("buttonFill");
+  }, 3200);
+  setTimeout(function(){
+    $("#btn_rules").addClass("buttonText");
+  }, 3500);
+  setTimeout(function(){
+    $("#btn_rules").addClass("effect2");
+  }, 4300);
+
   return;
 }
 

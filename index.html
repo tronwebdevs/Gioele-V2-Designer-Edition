@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title> Gioele V2 </title>
   <link rel="stylesheet" type="text/css" href="css.css.css">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
@@ -17,14 +18,19 @@
 <hr class="line">
 
 <div id="div_rules">
-  <button id="btn_rules" onclick="REGOLE()"> regole() </button>
+  <div style="text-align:center">
+    <button id="btn_rules" onclick="REGOLE()" class="hide"> REGOLE </button>
+  </div>
   <div id="rules" class="hide">
     <ul class="rules">
       <li> buffalo </li>
+      <li> Buffalo </li>
+      <li> buffalo </li>
+      <li> Buffalo </li>
       <li> buffalo </li>
       <li> buffalo </li>
       <li> buffalo </li>
-      <li> buffalo </li>
+      <li> Buffalo </li>
     </ul>
   </div>
 </div>
@@ -32,7 +38,7 @@
 <div id="div_game">
 
   <div id="div_start">
-    <button onclick="INIZIAGIOCO()"> iniziagioco() </button>
+    <button onclick="INIZIAGIOCO()" class="buttonP"> iniziagioco() </button>
   </div>
 
   <div id="div_attempts" class="hide">
