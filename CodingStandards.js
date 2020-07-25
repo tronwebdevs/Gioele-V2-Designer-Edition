@@ -3,7 +3,7 @@ let attempt_counter = 5;
 let rules = false;
 
 let exceptions = [
-  "",
+  "inserisci un numero",
   "devi inserire un numero",
   "frq inserisci un numero",
   "non mi pare sia un numero ma ok",
@@ -11,7 +11,7 @@ let exceptions = [
   "sei troppo figo, ma ora inserisci un numero",
   "mettiti la mascherina e inserisci un numero",
   "ma una rosa senza spine va a batteria?",
-  "[object Object]",
+  "scusa ma GIOELE V2™ non funziona senza un numero",
   "INSERISCINUMERO()",
   "potresti inserirmi un numero per favore?"
 ]
@@ -141,11 +141,19 @@ function INIZIAGIOCO(){
 }
 
 function ANIMAZIONI(){
-  //animation subtitle
-  $(".subtitle").css("opacity", 0);
   setTimeout(function(){
     $(".subtitle").css("opacity", 1);
-  }, 1000);
+  }, 2050);
+  setTimeout(function(){
+    $(".title").css("opacity", 1);
+  }, 1550);
+  setTimeout(function(){
+    $(".divTitle").css("opacity", 1);
+  }, 1050);
+  setTimeout(function(){
+    $(".title").addClass("effect");
+    $(".subtitle").addClass("effect");
+  }, 2500);
   return;
 }
 
@@ -154,7 +162,7 @@ function REGOLE(){
     $('#btn_rules').prop("disabled", true);
     setTimeout(function(){
       $('#btn_rules').prop("disabled", false);
-    }, 1300);
+    }, 1800);
     setTimeout(function(){
       $("#rules").removeClass("hide");
       $("#rules").removeClass("outR");
@@ -171,7 +179,7 @@ function REGOLE(){
     $('#btn_rules').prop("disabled", true);
     setTimeout(function(){
       $('#btn_rules').prop("disabled", false);
-    }, 1300);
+    }, 1800);
     setTimeout(function(){
       $("#div_game").removeClass("hide");
       $("#div_game").removeClass("out");

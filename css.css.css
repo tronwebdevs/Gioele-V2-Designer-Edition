@@ -1,3 +1,11 @@
+* {
+  font-family: Ubuntu;
+}
+
+body {
+  background-color: grey;
+}
+
 .hide {
   display: none;
 }
@@ -11,35 +19,56 @@
   align-items: center;
 }
 
-body {
-  background-color: grey;
+.divTitle {
+  opacity: 0;
+  position: relative;
+  bottom: 5em;
+  height: 200%;
+  background-color: black;
+  margin-left: -0.55%;
+  margin-right: -0.55%;
+  animation: AN_FadeIn 0.5s;
+  animation-delay: 1s;
 }
 
 .title {
+  opacity: 0;
   position: relative;
   text-align: center;
   font-size: 120px;
   color: gainsboro;
-  font-family: ubuntu;
+  margin-left: 35%;
+  margin-right: 35%;
   animation: AN_title 1.5s;
+  animation-delay: 1.5s;
 }
 
 .subtitle {
   opacity: 0;
   position: relative;
+  bottom: 0.5em;
   text-align: center;
   font-size: 69px;
   color: gainsboro;
-  font-family: ubuntu;
+  margin-left: 45%;
+  margin-right: 45%;
   animation: AN_subtitle 1s;
-  animation-delay: 0.5s;
+  animation-delay: 2s;
+}
+
+.line {
+  position: relative;
+  top: -8em;
+  margin-left: -0.55%;
+  margin-right: -0.55%;
+  border: 5px solid gainsboro;
+  animation: AN_line 1s;
 }
 
 .exception {
   position: absolute;
   left: 2%;
   font-size: 19px;
-  font-family: ubuntu;
   position: relative;
   color: gainsboro;
 }
@@ -47,7 +76,6 @@ body {
 .rules{
   font-size: 20px;
   color: gainsboro;
-  font-family: ubuntu;
 }
 
 .outR {
@@ -70,14 +98,33 @@ body {
   animation: AN_in 0.8s;
 }
 
+.effect {
+  transition: color 1s, transform 1s;
+}
+
+.effect:hover{
+  color: white;
+  transform: scale(1.2);
+}
+
+@keyframes AN_line {
+  0% {transform: scaleX(0)}
+  100% {transform: scaleX(1)}
+}
+
+@keyframes AN_FadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
 @keyframes AN_title {
   0% {opacity: 0}
   100% {opacity: 1}
 }
 
 @keyframes AN_subtitle {
-  0% {top: -150px; opacity: 0}
-  100% {top: 0px; opacity: 1}
+  0% {bottom: 2em; opacity: 0}
+  100% {bottom: 0.5em; opacity: 1}
 }
 
 @keyframes AN_inR {
