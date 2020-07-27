@@ -3,6 +3,8 @@
 }
 
 body {
+  margin: 0px;
+  margin-top: -22px;
   background-color: #404040;
 }
 
@@ -14,6 +16,10 @@ body {
   display: none;
 }
 
+.transparent {
+  color: transparent;
+}
+
 .align {
   display: flex;
   align-items: center;
@@ -22,12 +28,9 @@ body {
 .divTitle {
   opacity: 0;
   position: relative;
-  bottom: 5em;
-  height: 200%;
   background-color: black;
-  margin-left: -0.55%;
-  margin-right: -0.55%;
-  animation: AN_fillBlack 0.5s;
+  padding-top: 0.5em;
+  animation: AN_fillBlack 1s;
   animation-delay: 1s;
 }
 
@@ -35,10 +38,12 @@ body {
   opacity: 0;
   position: relative;
   text-align: center;
-  font-size: 120px;
+  font-size: 11ex;
   color: gainsboro;
-  margin-left: 22%;
-  margin-right: 22%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   animation: AN_fadeIn 1.5s;
   animation-delay: 1.5s;
 }
@@ -46,34 +51,34 @@ body {
 .subtitle {
   opacity: 0;
   position: relative;
-  bottom: 0.5em;
   text-align: center;
-  font-size: 69px;
+  font-size: 7ex;
   color: gainsboro;
-  margin-left: 45%;
-  margin-right: 45%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   animation: AN_subtitle 1s;
   animation-delay: 2s;
 }
 
 .line {
   position: relative;
-  top: -8em;
-  margin-left: -0.55%;
-  margin-right: -0.55%;
+  margin-top: 0px;
   border: 5px solid gainsboro;
   animation: AN_line 1s;
 }
 
 .buttonBorder {
-  width: 14ch;
-  height: 8ch;
+  height: 5ch;
   background: transparent;
-  border: 5px solid gainsboro;
+  border: 4px solid gainsboro;
+  border-radius: 4px;
   font-size: 19px;
   font-weight: bold;
-  color: #404040;
-  animation: AN_buttonBorder 1s;
+  color: transparent;
+  margin-left: 1em;
+  animation: AN_foldIn 1s;
 }
 
 .buttonFill {
@@ -89,16 +94,33 @@ body {
   animation: AN_buttonText 1s;
 }
 
+.game {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 50%;
+  padding: 1em 1em 1em 1em;
+  border: 5px solid gainsboro;
+  border-radius: 4px;
+}
+
+.gameStart {
+  animation: AN_foldIn 1s;
+}
+
+.gameEnd {
+  animation: AN_foldOut 0.5s;
+}
+
 .exception {
   position: relative;
   left: 2%;
   font-size: 19px;
   position: relative;
-  color: gainsboro;
+  color: transparent;
 }
 
 .rules{
-  font-size: 20px;
+  font-size: 18px;
   color: gainsboro;
 }
 
@@ -136,13 +158,14 @@ body {
 }
 
 .effect2:hover{
-  border: 5px solid white;
+  border-color: white;
   color: white;
 }
 
 @keyframes AN_line {
-  0% {transform: scaleX(0)}
-  100% {transform: scaleX(1)}
+  0% {transform: scaleX(0); opacity: 0}
+  30% {opacity: 0}
+  100% {transform: scaleX(1); opacity: 1}
 }
 
 @keyframes AN_fillBlack {
@@ -156,21 +179,25 @@ body {
 }
 
 @keyframes AN_subtitle {
-  0% {bottom: 2em; opacity: 0}
-  100% {bottom: 0.5em; opacity: 1}
+  0% {top: -1em; opacity: 0}
+  100% {top: 0em; opacity: 1}
 }
 
-@keyframes AN_buttonBorder {
+@keyframes AN_foldIn {
   0% {
-    transform: scaleX(0);
     transform: scaleY(0);
   }
-  50% {
-    transform: scaleX(1);
-    transform: scaleY(0);
-  }
-  100%{
+  100% {
     transform: scaleY(1);
+  }
+}
+
+@keyframes AN_foldOut {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0);
   }
 }
 
@@ -183,6 +210,20 @@ body {
   0% {color: transparent}
   100% {color: gainsboro}
 }
+
+ @keyframes AN_gameStart {
+   0% {
+     transform: scaleX(0);
+     transform: scaleY(0);
+   }
+   50% {
+     transform: scaleX(1);
+     transform: scaleY(0);
+   }
+   100%{
+     transform: scaleY(1);
+   }
+ }
 
 @keyframes AN_inR {
   0% {left: -10%}

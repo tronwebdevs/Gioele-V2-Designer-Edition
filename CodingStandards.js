@@ -1,6 +1,7 @@
 let rand = 0;
 let attempt_counter = 5;
 let rules = false;
+let game_started = false;
 
 let exceptions = [
   "inserisci un numero",
@@ -27,20 +28,21 @@ function GENERANUMERO(){
 
 function INDOVINANUMERO(){
   let exception = $("#exception");
-  exception.addClass("hide");
+  exception.text(".");
+  exception.css("color", "transparent");
 
   //checks if input is acceptable
   let guess = $("#guess").val()
   if (isNaN(guess) || guess == ''){
     let randE = Math.random() * 10;
     randE = Math.round(randE);
-    exception.removeClass("hide");
     console.log(randE);
+    exception.css("color", "gainsboro");
     exception.text(exceptions[randE]);
     return;
   }
   if (guess < 0 || guess > 100){
-    exception.removeClass("hide");
+    exception.css("color", "gainsboro");
     exception.text("il numero deve essere compreso tra 0 e 100");
     return;
   }
@@ -56,23 +58,21 @@ function CONTROLLAVITTORIA(guess){
   let result = $("#result");
   let attempt = $("#attempts");
   let compare = $("#compare");
-  compare.addClass("hide");
+  compare.text(".");
+  compare.addClass("transparent");
 
   console.log(guess + 's');
 
   if (guess < rand){
-    console.log("minore");
-    $("#compare").removeClass("hide");
+    compare.removeClass("transparent");
     compare.text(guess + " e' minore");
   }
   if (guess > rand){
-    console.log("maggiore");
-    $("#compare").removeClass("hide");
+    compare.removeClass("transparent");
     compare.text(guess + " e' maggiore");
   }
   if (guess == rand){
-    console.log("uguale");
-    $("#compare").removeClass("hide");
+    compare.removeClass("transparent");
     compare.text("congratulazioni, hai fatto l'impossibile");
     attempt_counter = 0;
     return;
@@ -80,24 +80,26 @@ function CONTROLLAVITTORIA(guess){
 
   //checks if there are any attempts left
   if (attempt_counter == 1){
-    $("#div_attempts").addClass("hide");
-    $("#div_input").addClass("hide");
     attempt.text("hai finito i tentativi");
-    compare.addClass("hide");
+    compare.text(".");
+    compare.addClass("transparent");
 
     // shows score
-    result.removeClass("hide");
+    result.removeClass("transparent");
     result.text("hai fatto " + CALCOLAPUNTEGGIO(guess) + " punti");
 
     //displays the number
-    $("#number").removeClass("hide");
+    $("#number").removeClass("transparent");
     $("#number").text("il numero da indovinare era " + rand);
+
+    $("#btn_play").text("RICOMINCIAGIOCO()");
 
     rand = 0;
     attempt_counter = 5;
     return;
   } else {
     attempt_counter--;
+    attempt.removeClass("transparent");
     attempt.text("tentativi: " + attempt_counter);
   }
 
@@ -124,20 +126,37 @@ function CALCOLAPUNTEGGIO(guess){
 
 
 function INIZIAGIOCO(){
-  $("#div_attempts").removeClass("hide");
-  $("#div_input").removeClass("hide");
-  $("#div_guess").removeClass("hide");
-  $("#guess").removeClass("hide");
-  $("#result").addClass("hide");
-  $("#number").addClass("hide");
+  if (game_started == false) {
+    $("#div_game_2").removeClass("hide");
+    $("#div_game_2").removeClass("gameEnd");
+    $("#div_game_2").addClass("gameStart");
 
-  if (rand == 0){
-    let rand = GENERANUMERO();
-    console.log(rand);
+    if (rand == 0){
+      let rand = GENERANUMERO();
+      console.log(rand);
+    }
+
+    let attempt = $("#attempts");
+    attempt.text("tentativi: " + attempt_counter);
+
+    $("#btn_play").text("FERMAGIOCO()");
+    game_started = true;
+  } else {
+    setTimeout(function(){
+      $("#div_game_2").addClass("hide");
+    }, 450);
+    $("#div_game_2").addClass("gameEnd");
+    $("#div_game_2").removeClass("gameStart");
+    $("#guess").val("");
+    $("#exception").text("");
+    $("#compare").text("");
+
+    rand = 0;
+    attempt_counter = 5;
+
+    $("#btn_play").text("INIZIAGIOCO()");
+    game_started = false;
   }
-
-  let attempt = $("#attempts");
-  attempt.text("tentativi: " + attempt_counter);
 }
 
 function ANIMAZIONI(){
@@ -157,7 +176,7 @@ function ANIMAZIONI(){
     $(".line").addClass("effect2");
   }, 2500);
 
-  //buttons
+  //button rules
   setTimeout(function(){
     $("#btn_rules").removeClass("hide");
     $("#btn_rules").addClass("buttonBorder");
@@ -172,6 +191,21 @@ function ANIMAZIONI(){
     $("#btn_rules").addClass("effect2");
   }, 4300);
 
+  //button play
+  setTimeout(function(){
+    $("#btn_play").removeClass("hide");
+    $("#btn_play").addClass("buttonBorder");
+  }, 2500);
+  setTimeout(function(){
+    $("#btn_play").addClass("buttonFill");
+  }, 3500);
+  setTimeout(function(){
+    $("#btn_play").addClass("buttonText");
+  }, 3800);
+  setTimeout(function(){
+    $("#btn_play").addClass("effect2");
+  }, 4600);
+
   return;
 }
 
@@ -180,24 +214,29 @@ function REGOLE(){
     $('#btn_rules').prop("disabled", true);
     setTimeout(function(){
       $('#btn_rules').prop("disabled", false);
-    }, 1800);
+    }, 2250);
     setTimeout(function(){
       $("#rules").removeClass("hide");
       $("#rules").removeClass("outR");
       $("#rules").addClass("inR");
       $("#div_game").addClass("hide");
-    }, 800);
+    }, 1250);
     setTimeout(function(){
       $("#div_game").addClass("hide");
-    }, 700);
+    }, 1150);
+    setTimeout(function(){
     $("#div_game").removeClass("in");
     $("#div_game").addClass("out");
+    $("#div_game_2").addClass("hide");
+    }, 450);
+    $("#div_game_2").addClass("gameEnd");
+    $("#div_game_2").removeClass("gameStart");
     rules = true;
   } else {
     $('#btn_rules').prop("disabled", true);
     setTimeout(function(){
       $('#btn_rules').prop("disabled", false);
-    }, 1800);
+    }, 2300);
     setTimeout(function(){
       $("#div_game").removeClass("hide");
       $("#div_game").removeClass("out");
@@ -206,6 +245,14 @@ function REGOLE(){
     setTimeout(function(){
       $("#rules").addClass("hide");
     }, 800);
+    setTimeout(function(){
+      if(game_started) {
+        $("#div_game_2").removeClass("hide");
+        $("#div_game_2").addClass("gameStart");
+      }
+    }, 1500);
+    $("#div_game_2").addClass("hide");
+    $("#div_game_2").removeClass("gameEnd");
     $("#rules").removeClass("inR");
     $("#rules").addClass("outR");
 

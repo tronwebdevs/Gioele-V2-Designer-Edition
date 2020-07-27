@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
   <title> Gioele V2 </title>
   <link rel="stylesheet" type="text/css" href="css.css.css">
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
@@ -14,13 +15,11 @@
   <h1 class="title"> GIOELE </h1>
   <h1 class="subtitle"> V2 </h1>
 </div>
-
-<hr class="line">
+  <hr class="line">
+  <br>
 
 <div id="div_rules">
-  <div style="text-align:center">
-    <button id="btn_rules" onclick="REGOLE()" class="hide"> REGOLE </button>
-  </div>
+  <button id="btn_rules" onclick="REGOLE()" class="hide"> MOSTRAREGOLE() </button>
   <div id="rules" class="hide">
     <ul class="rules">
       <li> buffalo </li>
@@ -35,32 +34,33 @@
   </div>
 </div>
 
+<br>
+
 <div id="div_game">
-
   <div id="div_start">
-    <button onclick="INIZIAGIOCO()" class="buttonP"> iniziagioco() </button>
+    <button id="btn_play" onclick="INIZIAGIOCO()" class="hide"> INIZIAGIOCO() </button>
   </div>
 
-  <div id="div_attempts" class="hide">
-    <h1 id="attempts"></h1>
-  </div>
+  <div id="div_game_2" class="game hide effect2">
 
-  <div id="div_input" class="hide align">
-    <input type="text" id="guess" class="hide">
-    <span id="exception" class="hide exception"> </span>
-  </div>
+    <div id="div_attempts">
+      <h1 id="attempts"></h1>
+    </div>
+    <div id="div_input" class="align">
+      <input type="text" id="guess">
+      <span id="exception" class="exception"> . </span>
+    </div>
+    <div id="div_guess">
+      <button onclick="INDOVINANUMERO()"> indovinanumero() </button>
+    </div>
+    <div id="div_compare">
+      <h3 id="compare"> </h3>
+    </div>
+    <div id="div_result">
+      <h3 id="result" class="transparent"> . </h3>
+      <h3 id="number" class="transparent"> . </h3>
+    </div>
 
-  <div id="div_guess" class="hide">
-    <button onclick="INDOVINANUMERO()"> indovinanumero() </button>
-  </div>
-
-  <div id="div_compare">
-    <h3 id="compare"> </h3>
-  </div>
-
-  <div id="div_result">
-    <h3 id="result" class="hide"> </h3>
-    <h3 id="number" class="hide"> </h3>
   </div>
 
 </div>
