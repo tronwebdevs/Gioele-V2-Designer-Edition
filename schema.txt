@@ -1,0 +1,31 @@
+
+
+	GIOELE_V2
+
+  -users-
++----------+----------+------+---------+
+| username | password | mail | h_score |
++----------+----------+------+---------+
+    /|\		 /|\	 /|\	/|\	
+     |            |       |	 |
+     |            |       |	 |
+     |            |       |	punteggio più alto   ------------------------------------>     il punteggio si misura così:
+     |            |       |								       score = 100 / delta - 1, dove delta è la differenza in valore assoluto
+     |            |	per vedere se qualche mona			   +------------------ tra l'ultimo numero provato ad indovinare e il numero da indovinare.
+     |            |   	fa più account.					   |		       se delta = 0 allora score = 100'000.
+     |            |  	si accettano solo quelle			   |		       il punteggio minimo sarà 0 e quello massimo 100'000.
+     |            |	con dominio tronzanella.edu.it		     (meglio l'ultimo	       il punteggio sarà un numero intero, oppure con 1 decimale e
+     |            |						      o quello con delta       verrà calcolato client-side
+     |            |						      minore ?)
+     |		boh una password
+     |		5 < caratteri < 16
+     |		restrizioni (?)
+     |
+fino a 16 caratteri.
+restrizioni (?)
+
+
+
+
+
+alla fine basta solo una tabella e penso di gestire il lato server in php
