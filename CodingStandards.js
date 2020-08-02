@@ -1,8 +1,12 @@
 let rand = 0;
 let attempt_counter = 5;
 let rules = false;
+let start = true;
+let stop = false;
+let god = false;
 let game_started = false;
 
+/*
 let exceptions = [
   "inserisci un numero",
   "devi inserire un numero",
@@ -15,7 +19,7 @@ let exceptions = [
   "scusa ma GIOELE V2™ non funziona senza un numero",
   "INSERISCINUMERO()",
   "potresti inserirmi un numero per favore?"
-]
+*/
 
 function GENERANUMERO(){
   rand = Math.random() * (99000) + 1000;
@@ -25,30 +29,168 @@ function GENERANUMERO(){
   return rand;
 }
 
+function CALCOLAPUNTEGGIO(guess){
+  let delta = Math.abs(rand - guess);
+  if (delta >= 10) {
+    score = 0;
+  } else {
+    let a = 40;
+    let b = 512 * delta;
+    let c = -4000 + (40 * delta * delta);
+    score = (-b + Math.sqrt(b*b - 4*a*c)) / (2*a);
+  }
+  console.log("score:" + score);
+  var str = score.toFixed(3);
+  console.log("str:" + str);
+  score = parseFloat(str);
+  score = score * 1000;
+  console.log("score score " + score)
+  score = Math.round(score);
+  console.log("final score:" + score);
+  return score;
+}
 
-function INDOVINANUMERO(){
+function GIOCO(){
+  if (stop == true && start == true) {
+    $('#btn_play').prop("disabled", true);
+    setTimeout(function(){
+      $('#btn_play').prop("disabled", false);
+    }, 1550);
+
+    $("#div_game_2").removeClass("gameStart");
+    $("#div_game_2").addClass("gameEnd");
+    setTimeout(function(){
+      $("#div_game_2").removeClass("gameEnd");
+      $("#div_game_2").addClass("gameStart");
+    }, 450);
+
+    attempt_counter = 5;
+    rand = GENERANUMERO();
+
+    $("#attempts").text("tentativi: " + attempt_counter);
+    $("#guess").val("");
+    $("#exception").text(' ');
+    $("#compare").text(' ');
+    $("#result").text(' ');
+    $("#number").text(' ');
+
+    start = false;
+    stop = true;
+    $("#btn_play").text("FERMAGIOCO()");
+    game_started = true;
+    return;
+  }
+  if (start){
+    $('#btn_play').prop("disabled", true);
+    setTimeout(function(){
+      $('#btn_play').prop("disabled", false);
+    }, 550);
+
+    //starts game animation
+    $("#div_game_2").removeClass("hide");
+    $("#div_game_2").addClass("gameStart");
+    $("#div_game_2").removeClass("gameEnd");
+
+    //randomize number
+    if(rand == 0){
+      rand = GENERANUMERO();
+    }
+
+    $("#attempts").text("tentativi: " + attempt_counter);
+
+    start = false;
+    stop = true;
+    $("#btn_play").text("FERMAGIOCO()");
+    game_started = true;
+    return;
+  }
+  if (stop) {
+    $('#btn_play').prop("disabled", true);
+    setTimeout(function(){
+      $('#btn_play').prop("disabled", false);
+    }, 1050);
+
+    setTimeout(function(){
+      $("#div_game_2").addClass("hide");
+    }, 450);
+    $("#div_game_2").removeClass("gameStart");
+    $("#div_game_2").addClass("gameEnd");
+
+    attempt_counter = 5;
+    rand = 0;
+
+    $("#attempts").text(' ');
+    $("#guess").val("");
+    $("#exception").text(' ');
+    $("#compare").text(' ');
+    $("#result").text(' ');
+    $("#number").text(' ');
+
+    start = true;
+    stop = false;
+    $("#btn_play").text("INIZIAGIOCO()");
+    game_started = false;
+    return;
+  }
+}
+
+function DECIMALI(guess){
+  let decimals = false;
+  let counter = 0;
+  for (let i = 0; i < guess.length; i++){
+    if (decimals) {
+      counter++;
+    }
+    if (guess[i] == '.'){
+      decimals = true;
+    }
+  }
+  console.log(counter)
+  return counter;
+}
+
+$("#guess").keypress(function(e) {
+  if (e.key === "Enter") {
+    console.log("dd");
+    CONTROLLANUMERO();
+  }
+  console.log("d");
+});
+
+function CONTROLLANUMERO(){
   let exception = $("#exception");
-  exception.text(".");
-  exception.css("color", "transparent");
+  let compare = $("#compare");
+  exception.text(" ");
+  exception.addClass("transparent");
 
   //checks if input is acceptable
   let guess = $("#guess").val()
   if (isNaN(guess) || guess == ''){
+    /*
     let randE = Math.random() * 10;
     randE = Math.round(randE);
     console.log(randE);
-    exception.css("color", "gainsboro");
     exception.text(exceptions[randE]);
+    exception.css("color", "gainsboro");
+    */
+    compare.addClass("transparent");
+    exception.removeClass("transparent");
+    exception.text("devi inserire un numero");
     return;
   }
   if (guess < 0 || guess > 100){
-    exception.css("color", "gainsboro");
+    compare.addClass("transparent");
+    exception.removeClass("transparent");
     exception.text("il numero deve essere compreso tra 0 e 100");
     return;
   }
+  if (DECIMALI(guess) > 3){
+    compare.addClass("transparent");
+    exception.removeClass("transparent");
+    exception.text("il numero non può avere più di 3 cifre decimali");
+    return;
+  }
 
-  console.log(rand);
-  console.log(guess);
   CONTROLLAVITTORIA(guess)
   return;
 }
@@ -58,106 +200,61 @@ function CONTROLLAVITTORIA(guess){
   let result = $("#result");
   let attempt = $("#attempts");
   let compare = $("#compare");
-  compare.text(".");
+  compare.text(' ');
   compare.addClass("transparent");
-
-  console.log(guess + 's');
 
   if (guess < rand){
     compare.removeClass("transparent");
-    compare.text(guess + " e' minore");
+    compare.text(guess + " è minore");
   }
   if (guess > rand){
     compare.removeClass("transparent");
-    compare.text(guess + " e' maggiore");
+    compare.text(guess + " è maggiore");
   }
   if (guess == rand){
-    compare.removeClass("transparent");
-    compare.text("congratulazioni, hai fatto l'impossibile");
-    attempt_counter = 0;
-    return;
+    god = true;
   }
 
-  //checks if there are any attempts left
-  if (attempt_counter == 1){
-    attempt.text("hai finito i tentativi");
-    compare.text(".");
-    compare.addClass("transparent");
+  if (!god){
+    //checks if there are any attempts left
+    if (attempt_counter <= 1){
+      attempt.text("hai finito i tentativi");
+      compare.text(' ');
+      compare.addClass("transparent");
 
-    // shows score
-    result.removeClass("transparent");
-    result.text("hai fatto " + CALCOLAPUNTEGGIO(guess) + " punti");
+      // shows score
+      result.removeClass("transparent");
+      result.text("hai fatto " + CALCOLAPUNTEGGIO(guess) + " punti");
 
-    //displays the number
-    $("#number").removeClass("transparent");
-    $("#number").text("il numero da indovinare era " + rand);
+      //displays the number
+      $("#number").removeClass("transparent");
+      $("#number").text("il numero da indovinare era " + rand);
 
-    $("#btn_play").text("RICOMINCIAGIOCO()");
-
-    rand = 0;
-    attempt_counter = 5;
-    return;
-  } else {
-    attempt_counter--;
-    attempt.removeClass("transparent");
-    attempt.text("tentativi: " + attempt_counter);
-  }
-
-
-
-  return;
-}
-
-function CALCOLAPUNTEGGIO(guess){
-  let delta = Math.abs(rand - guess);
-  console.log("r = " + rand);
-  console.log("g = " + guess);
-  console.log("d = " + delta);
-  if (delta != 0){
-    score = 100 / delta - 1;
-    score.toFixed(2);
-  } else {
-    score = 100000;
-  }
-  var str = score.toFixed(2);
-  score = parseFloat(str);
-  return score;
-}
-
-
-function INIZIAGIOCO(){
-  if (game_started == false) {
-    $("#div_game_2").removeClass("hide");
-    $("#div_game_2").removeClass("gameEnd");
-    $("#div_game_2").addClass("gameStart");
-
-    if (rand == 0){
-      let rand = GENERANUMERO();
-      console.log(rand);
+      start = true;
+      stop = true;
+      $("#btn_play").text("RICOMINCIAGIOCO()");
+      return;
+    } else {
+      attempt_counter--;
+      attempt.removeClass("transparent");
+      attempt.text("tentativi rimasti: " + attempt_counter);
     }
-
-    let attempt = $("#attempts");
-    attempt.text("tentativi: " + attempt_counter);
-
-    $("#btn_play").text("FERMAGIOCO()");
-    game_started = true;
   } else {
-    setTimeout(function(){
-      $("#div_game_2").addClass("hide");
-    }, 450);
-    $("#div_game_2").addClass("gameEnd");
-    $("#div_game_2").removeClass("gameStart");
-    $("#guess").val("");
-    $("#exception").text("");
-    $("#compare").text("");
-
-    rand = 0;
     attempt_counter = 5;
+    attempt.text("congratulazioni, hai fatto l'impossibile");
+    compare.removeClass("transparent");
+    compare.text("hai indovinato il numero.");
+    result.text("Gioele è compiaciuto della tua impresa e ti permetterà di continuare a vivere");
+    result.removeClass("transparent");
 
-    $("#btn_play").text("INIZIAGIOCO()");
-    game_started = false;
+    start = true;
+    stop = true;
+    $("#btn_play").text("RICOMINCIAGIOCO()");
+    god = false;
+    return;
   }
 }
+
 
 function ANIMAZIONI(){
   //Gioele
@@ -223,11 +320,12 @@ function REGOLE(){
     }, 1250);
     setTimeout(function(){
       $("#div_game").addClass("hide");
+      $("#div_start").addClass("hide");
     }, 1150);
     setTimeout(function(){
-    $("#div_game").removeClass("in");
-    $("#div_game").addClass("out");
-    $("#div_game_2").addClass("hide");
+      $("#div_start").removeClass("in");
+      $("#div_start").addClass("out");
+      $("#div_game_2").addClass("hide");
     }, 450);
     $("#div_game_2").addClass("gameEnd");
     $("#div_game_2").removeClass("gameStart");
@@ -238,15 +336,16 @@ function REGOLE(){
       $('#btn_rules').prop("disabled", false);
     }, 2300);
     setTimeout(function(){
+      $("#div_start").removeClass("hide");
       $("#div_game").removeClass("hide");
-      $("#div_game").removeClass("out");
-      $("#div_game").addClass("in");
+      $("#div_start").removeClass("out");
+      $("#div_start").addClass("in");
     }, 1000);
     setTimeout(function(){
       $("#rules").addClass("hide");
     }, 800);
     setTimeout(function(){
-      if(game_started) {
+    if(game_started) {
         $("#div_game_2").removeClass("hide");
         $("#div_game_2").addClass("gameStart");
       }

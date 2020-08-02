@@ -16,6 +16,10 @@ body {
   display: none;
 }
 
+.gainsboro {
+  color: gainsboro;
+}
+
 .transparent {
   color: transparent;
 }
@@ -42,7 +46,9 @@ body {
   color: gainsboro;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-top: 10px;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  padding-top: 0.3em;
   padding-bottom: 10px;
   animation: AN_fadeIn 1.5s;
   animation-delay: 1.5s;
@@ -56,8 +62,10 @@ body {
   color: gainsboro;
   margin-top: 0px;
   margin-bottom: 0px;
+  margin-right: 10vw;
+  margin-left: 10vw;
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 0.3em;
   animation: AN_subtitle 1s;
   animation-delay: 2s;
 }
@@ -95,9 +103,7 @@ body {
 }
 
 .game {
-  margin-top: 1em;
-  margin-left: 1em;
-  margin-right: 50%;
+  margin: 1em 1em 1em 1em;
   padding: 1em 1em 1em 1em;
   border: 5px solid gainsboro;
   border-radius: 4px;
@@ -111,12 +117,23 @@ body {
   animation: AN_foldOut 0.5s;
 }
 
+.input {
+  background-color: gainsboro;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.input:hover {
+  background-color: white;
+}
+
 .exception {
   position: relative;
   left: 2%;
+  margin-top: 0px;
+  margin-bottom: 0px;
   font-size: 19px;
   position: relative;
-  color: transparent;
 }
 
 .rules{
@@ -162,10 +179,39 @@ body {
   color: white;
 }
 
+
+@media screen and (max-width: 380px){
+  .title {
+    font-size: 8ex;
+  }
+  .subtitle {
+    font-size: 6ex;
+  }
+  .input {
+    margin-top: 2.8em;
+    margin-bottom: 2.8em;
+  }
+  .buttonBorder {
+    height: 4ch;
+    font-size: 15px;
+    margin-left: 1em;
+  }
+  .game {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (max-width: 500px){
+  .exception {
+    font-size: 14px
+  }
+}
+
+
 @keyframes AN_line {
-  0% {transform: scaleX(0); opacity: 0}
-  30% {opacity: 0}
-  100% {transform: scaleX(1); opacity: 1}
+  0% {transform: scaleX(0)}
+  100% {transform: scaleX(1)}
 }
 
 @keyframes AN_fillBlack {
@@ -226,7 +272,7 @@ body {
  }
 
 @keyframes AN_inR {
-  0% {left: -10%}
+  0% {left: -50%}
   70% {left: 0.5%}
   100% {left: 0%}
 }
@@ -234,15 +280,15 @@ body {
 @keyframes AN_outR {
   0% {left: 0%}
   60% {left: 0.5%}
-  100% {left: -10%}
+  100% {left: -50%}
 }
 
 @keyframes AN_in {
-  0% {left: -25%}
+  0% {left: -50%}
   100% {left: 0%}
 }
 
 @keyframes AN_out {
   0% {left: 0%}
-  100% {left: -25%}
+  100% {left: -50%}
 }

@@ -38,27 +38,27 @@
 
 <div id="div_game">
   <div id="div_start">
-    <button id="btn_play" onclick="INIZIAGIOCO()" class="hide"> INIZIAGIOCO() </button>
+    <button id="btn_play" onclick="GIOCO()" class="hide"> INIZIAGIOCO() </button>
   </div>
 
   <div id="div_game_2" class="game hide effect2">
 
     <div id="div_attempts">
-      <h1 id="attempts"></h1>
+      <h1 id="attempts" class="gainsboro effect2"></h1>
     </div>
     <div id="div_input" class="align">
-      <input type="text" id="guess">
-      <span id="exception" class="exception"> . </span>
+      <input type="text" id="guess" class="input">
+      <h1 id="exception" class="gainsboro effect2 exception transparent">   </h1>
     </div>
     <div id="div_guess">
-      <button onclick="INDOVINANUMERO()"> indovinanumero() </button>
+      <button onclick="CONTROLLANUMERO()"> indovinanumero() </button>
     </div>
     <div id="div_compare">
-      <h3 id="compare"> </h3>
+      <h3 id="compare" class="gainsboro effect2 transparent"> ‌‌  </h3>
     </div>
     <div id="div_result">
-      <h3 id="result" class="transparent"> . </h3>
-      <h3 id="number" class="transparent"> . </h3>
+      <h3 id="result" class="gainsboro effect2 transparent"> ‌‌  </h3>
+      <h3 id="number" class="gainsboro effect2 transparent"> ‌‌  </h3>
     </div>
 
   </div>
