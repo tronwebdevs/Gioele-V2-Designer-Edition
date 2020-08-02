@@ -1,0 +1,24 @@
+
+	GIOELE_V2
+
+il punteggio si misura così:
+
+    | ^
+     || 
+   10 \                   (è una iperbole. scusa ma sono
+      ||		               un builder, non un ascii artist)
+      | |
+      |  \
+      |   --__
+   ---+--------==__-------->
+      |         10  --__
+      |
+      
+      
+eq: 40x² + 512 xy + 40 y² = 4000
+di conseguenza il punteggio sarà il valore positivo di x
+della formula risolutiva di un'equazione quadratica dove:
+▪ a = 40
+▪ b = 512 * delta
+▪ c = 4000 - 40 * delta²
+con delta = differenza tra n° da indovinare e numero scelto.
