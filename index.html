@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Gioele V2 Designer Edition </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="classes.css" />
+  <link rel="stylesheet" type="text/css" href="animations.css" />
+  <link rel="stylesheet" type="text/css" href="medias.css" />
+</head>
+<body>
+  <script src="animations.js"> </script>
+  <script src="requests.js"> </script>
+  <script src="algorithm.js"> </script>
+
+
+  <div id="divTitle" class="divTitle">
+    <h1 id="title" class="title effect"> GIOELE </h1>
+      <h1 id="designer" class="edition effectDesigner"> Designer Edition </h1>
+    <h1 id="subtitle" class="subtitle effect"> V2 </h1>
+    <hr>
+  </div>
+
+  <br> <br>
+
+  <div id="divAccess" class="divAccess effectBorder">
+    <div id="divHide">
+    <h1 id="textLogin" class="textAccess effect"> LOG IN </h1>
+    <div id="divLogin">
+      <form>
+        <h4 id="uname_text" class="text effect"> username </h4>
+        <input id="username" type="text" name="name" class="textbox">
+        <h4 id="pass_text" class="text effect"> password </h4>
+        <input id="password" type="password" name="name" class="textbox">
+        <input id="login" type="button" class="but" value="Accedi">
+      </form>
+    </div>
+    <div>
+      <h4 id="forgotPassword"> password dimenticata? </h4>
+      <h4 id="register"> non sei registrato? </h4>
+    </div>
+    </div>
+  </div>
+
+
+  <div id="divAccessReg" class="divAccess hideDisplay effectBorder" >
+    <div id="divHideReg" class="hide">
+    <h1 id="textregister" class="textAccess effect"> SIGN IN </h1>
+    <div id="divRegister">
+      <form>
+        <h4 id="mail_text_reg" class="text effect"> inserisci l'username </h4>
+        <input id="username_reg" type="text" name="name" class="textbox">
+        <h4 id="pass_text_reg" class="text effect"> inserisci la password </h4>
+        <input id="password_reg" type="password" name="name" class="textbox">
+        <h4 id="mail_text_reg" class="text effect"> inserisci l'email </h4>
+        <input id="email_reg" type="text" name="name" class="textbox">
+        <input id="signin" type="button" class="but" value="Registrati">
+      </form>
+    </div>
+    <div>
+      <h4 id="alreadySigned"> sei già registrato? </h4>
+    </div>
+    </div>
+  </div>
+
+
+  <div>
+    <footer>
+      Copyright @ 2020 | proudly built by
+      <div id="sml" style="display: inline-block;"> SmL-Boi </div>
+      | designed by Illotto |
+      <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
+    </footer>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+html {
+  margin: 0;
+  height: 100%;
+}
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Ubuntu;
+  color: darkgrey;
+  background-color: #121212;
+}
+footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #090909;
+  color: darkgrey;
+  text-align: center;
+}
+
+input#text, input#login {
+   display: block;
+   text-align: center;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.hideDisplay {
+  display: none;
+}
+
+.divTitle {
+  background-color: #090909;
+  color: darkgrey;
+  text-align: center;
+}
+
+.gioele {
+  color: transparent;
+  background-image: url("gioele.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.title {
+  position: relative;
+  font-size: 100px;
+  letter-spacing: 0.1em;
+  margin: 0 10vw 0 10vw;
+  padding-top: 0px;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 70px;
+  letter-spacing: 0.1em;
+  margin: 0 10vw 0 10vw;
+  padding-bottom: 10px;
+}
+
+.edition {
+  position: relative;
+  font-size: 25px;
+  color: #696969;
+  margin: 0 10vw 0 10vw;
+  animation: edition 2s;
+}
+
+.divAccess {
+  border: 2px solid darkgrey;
+  background-color: #090909;
+  text-align: center;
+  width: min-content;
+  margin: 0 auto;
+  color: 100%;
+}
+
+.textAccess {
+  font-size: 30px;
+  margin: 7.6px 0 0 0;
+}
+
+.text {
+  padding: 7.6px 0 2.3px 0;
+  margin: 0 0 0 0;
+}
+
+/*
+
+    VIETNAM FLASHBACKS AHEAD
+
+.text::before{
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  padding:3.8px 0 1.5px 0;
+  border-bottom: 1px solid gainsboro;
+}
+*/
+
+.textbox {
+  width: 155px;
+  margin: 0 50px 0 50px;
+}
+
+.but {
+  margin: 7.6px auto 7.6px auto;
+}
+
+.tronweb {
+  text-decoration: none;
+  color: darkgrey;
+}
