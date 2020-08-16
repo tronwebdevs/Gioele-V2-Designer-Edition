@@ -13,26 +13,49 @@ $("body").on("click", "#sml", function() {
 //switch login to signin
 $("body").on("click", "#register", function() {
   $("#divHide").addClass("makeTr");
-  $("#divAccess").addClass("rotateRight");
+  $("#divAccess").addClass("foldIn");
   setTimeout(function() {
-    $("#divHide").addClass("hide");
     $("#divHide").removeClass("makeTr");
-    $("#divAccess").removeClass("rotateRight");
+    $("#divAccess").removeClass("foldIn");
     $("#divAccess").addClass("hideDisplay");
-    $("#divHide").removeClass("hide");
 
     $("#divAccessReg").removeClass("hideDisplay");
-    $("#divAccessReg").addClass("rotateLeft");
+    $("#divAccessReg").addClass("foldOut");
     $("#divHideReg").addClass("makeVs");
   }, 450);
   setTimeout(function() {
     $("#divHideReg").removeClass("hide");
     $("#divHideReg").removeClass("makeVs");
-    $("#divAccessReg").removeClass("rotateLeft");
+    $("#divAccessReg").removeClass("foldOut");
   }, 950);
 });
 
+
 //switch signin to login
 $("body").on("click", "#alreadySigned", function() {
-  alert('funzione inattiva');
+  $("#divHideReg").addClass("makeTr");
+  $("#divAccessReg").addClass("foldIn");
+  setTimeout(function() {
+    $("#divHideReg").removeClass("makeTr");
+    $("#divAccessReg").removeClass("foldIn");
+    $("#divAccessReg").addClass("hideDisplay");
+
+    $("#divAccess").removeClass("hideDisplay");
+    $("#divAccess").addClass("foldOut");
+    $("#divHide").addClass("makeVs");
+  }, 450);
+  setTimeout(function() {
+    $("#divHide").removeClass("hide");
+    $("#divHide").removeClass("makeVs");
+    $("#divAccess").removeClass("foldOut");
+  }, 950);
 });
+
+
+//shows actual game
+function sessionAnimation() {
+  $("#divAccess").addClass("hideDisplay");
+  $("#divAccessReg").addClass("hideDisplay");
+
+  $("#divSession").removeClass("hideDisplay");
+}

@@ -1,6 +1,5 @@
 
 //REGISTER USER
-
 $("body").on("click", "#signin", function() {
   alert('niga');
   $.ajax({
@@ -11,6 +10,20 @@ $("body").on("click", "#signin", function() {
           "\"email\":\"" + $("#email_reg").val() + "\" }",
     success: function(data) {
       alert(data.message);
+    },
+  });
+});
+
+//LOGIN USER
+$("body").on("click", "#login", function() {
+  alert('niggatoni');
+  $.ajax({
+    type: "POST",
+    url: "login.php",
+    data: "{ \"email\":\"" + $("#email").val() + "\", " +
+          "\"password\":\"" + $("#password").val() +  "\"}",
+    success: function(data) {
+      sessionStart(data);
     },
   });
 });

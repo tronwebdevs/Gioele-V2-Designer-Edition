@@ -3,8 +3,8 @@
 }
 
 .effect:hover{
-  border-color: gainsboro;
-  color: gainsboro;
+  border-color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .effectBorder {
@@ -12,17 +12,9 @@
 }
 
 .effectBorder:hover{
-  border-color: gainsboro;
+  border-color: #FFFFFF;
 }
 
-
-.effectDesigner {
-  transition: color 0.6s;
-}
-
-.effectDesigner:hover{
-  color: darkgrey;
-}
 
 @keyframes edition {
   0% {transform: scale(0)}
@@ -47,20 +39,20 @@
   100% {opacity: 1}
 }
 
-.rotateRight {
-  animation: rotateRight 0.5s;
+.foldIn {
+  animation: foldIn 0.5s;
 }
 
-@keyframes rotateRight {
+@keyframes foldIn {
   0% {transform: rotateY(0deg)}
   100% {transform: rotateY(90deg)}
 }
 
-.rotateLeft {
-  animation: rotateLeft 0.5s;
+.foldOut {
+  animation: foldOut 0.5s;
 }
 
-@keyframes rotateLeft {
+@keyframes foldOut {
   0% {transform: rotateY(90deg)}
   100% {transform: rotateY(0deg)}
 }

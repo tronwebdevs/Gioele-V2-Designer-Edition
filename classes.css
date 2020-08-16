@@ -7,19 +7,8 @@ body {
   height: 100%;
   font-family: Ubuntu;
   color: darkgrey;
-  background-color: #121212;
+  background-color: #212121;
 }
-footer {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #090909;
-  color: darkgrey;
-  text-align: center;
-}
-
 input#text, input#login {
    display: block;
    text-align: center;
@@ -34,9 +23,10 @@ input#text, input#login {
 }
 
 .divTitle {
-  background-color: #090909;
-  color: darkgrey;
+  background-color: transparent;
+  color: gainsboro;
   text-align: center;
+  margin-bottom: 15px;
 }
 
 .gioele {
@@ -49,24 +39,23 @@ input#text, input#login {
 
 .title {
   position: relative;
-  font-size: 100px;
-  letter-spacing: 0.1em;
+  font-size: 70px;
+  letter-spacing: 3px;
   margin: 0 10vw 0 10vw;
   padding-top: 0px;
 }
 
 .subtitle {
   position: relative;
-  font-size: 70px;
-  letter-spacing: 0.1em;
+  font-size: 60px;
+  letter-spacing: 3px;
   margin: 0 10vw 0 10vw;
-  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .edition {
   position: relative;
-  font-size: 25px;
-  color: #696969;
+  font-size: 20px;
   margin: 0 10vw 0 10vw;
   animation: edition 2s;
 }
@@ -91,7 +80,7 @@ input#text, input#login {
 }
 
 /*
-
+            WARNING
     VIETNAM FLASHBACKS AHEAD
 
 .text::before{
@@ -111,6 +100,97 @@ input#text, input#login {
 
 .but {
   margin: 7.6px auto 7.6px auto;
+}
+
+.divSession{
+  width: 100%;
+  display: inline-flex;
+}
+
+.leftSession {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 26%;
+}
+
+.centralSession {
+  width: 40%;
+}
+
+.rightSession {
+  margin-left: 2%;
+  margin-right: 2%;
+  width: 26%;
+}
+
+.sessionTitle {
+  text-align: center;
+  font-size: 28px;
+  color: #FFFFFF;
+  background-color: #303030;
+  margin: 0 0 0 0;
+  padding-top: 1vw;
+  padding-bottom: 1vw
+}
+
+.sessionSub {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0 1vw 1vw 1vw;
+}
+
+.divInfo {
+  width: 100%;
+  background-color: #303030;
+  margin-bottom: 2vw;
+}
+
+.divRules {
+  width: 100%;
+  background-color: #303030;
+  margin-top: 2vw;
+}
+
+.divGame {
+  width: 100%;
+  background-color: #303030;
+  text-align: center;
+}
+
+.attempt {
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 23px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.divLeaderboard {
+  width: 100%;
+  height: calc(100% - 1vw);
+  background-color: #303030;
+}
+
+.leaderboard {
+  width: 100%;
+  text-align: left;
+  overflow: auto;
+}
+
+.divGame {
+  display: inline-block;
+}
+
+.divFooter {
+  position: absolute;
+  right: 0;
+  top: calc(100% - 3rem - 2px);
+  left: 0;
+  padding: 1rem;
+  background-color: #090909;
+  color: darkgrey;
+  text-align: center;
 }
 
 .tronweb {

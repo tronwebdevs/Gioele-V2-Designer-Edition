@@ -16,26 +16,24 @@
   <script src="animations.js"> </script>
   <script src="requests.js"> </script>
   <script src="algorithm.js"> </script>
-
+  <script src="session.js"> </script>
 
   <div id="divTitle" class="divTitle">
     <h1 id="title" class="title effect"> GIOELE </h1>
-      <h1 id="designer" class="edition effectDesigner"> Designer Edition </h1>
+      <h1 id="designer" class="edition"> Designer Edition </h1>
     <h1 id="subtitle" class="subtitle effect"> V2 </h1>
-    <hr>
   </div>
 
-  <br> <br>
-
+<!--
   <div id="divAccess" class="divAccess effectBorder">
     <div id="divHide">
     <h1 id="textLogin" class="textAccess effect"> LOG IN </h1>
     <div id="divLogin">
       <form>
-        <h4 id="uname_text" class="text effect"> username </h4>
-        <input id="username" type="text" name="name" class="textbox">
+        <h4 id="email_text" class="text effect"> email </h4>
+        <input id="email" type="text" class="textbox">
         <h4 id="pass_text" class="text effect"> password </h4>
-        <input id="password" type="password" name="name" class="textbox">
+        <input id="password" type="password" class="textbox">
         <input id="login" type="button" class="but" value="Accedi">
       </form>
     </div>
@@ -53,9 +51,9 @@
     <div id="divRegister">
       <form>
         <h4 id="mail_text_reg" class="text effect"> inserisci l'username </h4>
-        <input id="username_reg" type="text" name="name" class="textbox">
+        <input id="username_reg" type="text" class="textbox">
         <h4 id="pass_text_reg" class="text effect"> inserisci la password </h4>
-        <input id="password_reg" type="password" name="name" class="textbox">
+        <input id="password_reg" type="password" class="textbox">
         <h4 id="mail_text_reg" class="text effect"> inserisci l'email </h4>
         <input id="email_reg" type="text" name="name" class="textbox">
         <input id="signin" type="button" class="but" value="Registrati">
@@ -67,14 +65,111 @@
     </div>
   </div>
 
+-->
+  <div id="divSession" class="divSession">
 
-  <div>
-    <footer>
-      Copyright @ 2020 | proudly built by
-      <div id="sml" style="display: inline-block;"> SmL-Boi </div>
-      | designed by Illotto |
-      <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
-    </footer>
+    <div id="leftSession" class="leftSession">
+      <div id="divInfo" class="divInfo">
+        <h1 id="profile" class="sessionTitle"> Profilo </h1>
+        <h1 id="usernameInfo" class="sessionSub"> utentenome </h1>
+        <h1 id="emailInfo" class="sessionSub"> elettronicalettera </h1>
+        <h1 id="scoreInfo" class="sessionSub"> punteggio </h1>
+      </div>
+
+      <div id="divRules" class="divRules">
+        <h1 id="profile" class="sessionTitle"> Regole </h1>
+        <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
+        <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
+        <h1 class="sessionSub"> Dopo 5 tentativi verrà calcolato il punteggio in base alla differenza </h1>
+      </div>
+    </div>
+
+    <div id="centralSession" class="centralSession">
+      <div id="divGame" class="divGame">
+        <h1 id="gameTitle" class="sessionTitle"> Indovina il numero </h1>
+        <h1 id="gameAttempt" class="attempt"> tentativi </h1>
+        <input type="text">
+        <p>
+        <input type="button" value="Gioca">
+        <h1 id="gameResult" class="sessionSub"> maggiore/minore/uguale/punteggio </h1>
+      </div>
+    </div>
+
+    <div id="rightSession" class="rightSession">
+      <div id="divLeaderboard" class="divLeaderboard">
+        <h1 id="leaderboardTitle" class="sessionTitle"> Classifica </h1>
+        <div id="leaderboard" class="leaderboard">
+          <table>
+            <tr>
+              <th> Posizione </th>
+              <th> Punteggio </th>
+              <th> Username </th>
+            </tr>
+            <tr>
+              <th> #1 </th>
+              <th> 10001 </th>
+              <th> Xx_MVP-Minecraft-Master_xX </th>
+            </tr>
+            <tr>
+              <th> #2 </th>
+              <th> 9531 </th>
+              <th> QuietKid </th>
+            </tr>
+            <tr>
+              <th> #3 </th>
+              <th> 9212 </th>
+              <th> Zongoli.php.exe </th>
+            </tr>
+            <tr>
+              <th> #4 </th>
+              <th> 8993 </th>
+              <th> Autismo3 </th>
+            </tr>
+            <tr>
+              <th> #5 </th>
+              <th> 8502 </th>
+              <th> AND I SAY  <b>HE</b>YYH<sup>EEY<sup>HEEyy<sup>yeyey</sup></sup></sup> </th>
+            </tr>
+            <tr>
+              <th> #6 </th>
+              <th> 8210 </th>
+              <th> ' OR '1'='1 </th>
+            </tr>
+            <tr>
+              <th> #7 </th>
+              <th> 8006 </th>
+              <th> Letizia Mendo </th>
+            </tr>
+            <tr>
+              <th> #8 </th>
+              <th> 7921 </th>
+              <th> PussyDestroyer420 </th>
+            </tr>
+            <tr>
+              <th> #9 </th>
+              <th> 7690 </th>
+              <th> [object Object]</th>
+            </tr>
+            <tr>
+              <th> #10 </th>
+              <th> 7511 </th>
+              <th> giacomo.ballarin@tronzanella.edu.it </th>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+
+
+  <div id="divFooter" class="divFooter">
+    Copyright @ 2020 | proudly built by
+    <div id="sml" style="display: inline-block;"> SmL-Boi </div>
+    | designed by SadTesto |
+    <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
   </div>
 
 </body>
