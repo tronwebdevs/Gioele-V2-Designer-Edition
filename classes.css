@@ -13,6 +13,18 @@ input#text, input#login {
    display: block;
    text-align: center;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
 
 .hide {
   opacity: 0;
@@ -39,17 +51,17 @@ input#text, input#login {
 
 .title {
   position: relative;
-  font-size: 70px;
+  font-size: 80px;
   letter-spacing: 3px;
-  margin: 0 10vw 0 10vw;
+  margin: 0 0 0 0;
   padding-top: 0px;
 }
 
 .subtitle {
   position: relative;
-  font-size: 60px;
+  font-size: 70px;
   letter-spacing: 3px;
-  margin: 0 10vw 0 10vw;
+  margin: 0 0 0 0;
   margin-bottom: 15px;
 }
 
@@ -126,7 +138,7 @@ input#text, input#login {
 .sessionTitle {
   text-align: center;
   font-size: 28px;
-  color: #FFFFFF;
+  color: gainsboro;
   background-color: #303030;
   margin: 0 0 0 0;
   padding-top: 1vw;
@@ -167,20 +179,35 @@ input#text, input#login {
 }
 
 .divLeaderboard {
-  width: 100%;
-  height: calc(100% - 1vw);
   background-color: #303030;
 }
 
-.leaderboard {
-  width: 100%;
-  text-align: left;
+.tableHeader {
+  width: 24vw;
   overflow: auto;
+  margin: 0 1vw 0 1vw;
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
-.divGame {
-  display: inline-block;
+.leaderboardTable {
+  border-collapse: collapse;
 }
+
+th, tr {
+  border-left: 2px solid rgba(255, 255, 255, 0.2);
+  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+}
+
+tr:nth-child(even) {
+  background-color: #424242;
+}
+
 
 .divFooter {
   position: absolute;
@@ -191,6 +218,7 @@ input#text, input#login {
   background-color: #090909;
   color: darkgrey;
   text-align: center;
+  margin-top: 200px;
 }
 
 .tronweb {
