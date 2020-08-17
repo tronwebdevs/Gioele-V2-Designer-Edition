@@ -1,7 +1,7 @@
 
 //REGISTER USER
-$("body").on("click", "#signin", function() {
-  alert('niga');
+$("body").on("click", "#signin", function(e) {
+  e.preventDefault();
   $.ajax({
     type: "POST",
     url: "AddUser.php",
@@ -9,23 +9,21 @@ $("body").on("click", "#signin", function() {
             username: $("#username_reg").val(),
             password: $("#password_reg").val(),
             email: $("#email_reg").val()
-          });,
-    success: function(data) {
-      alert(data.message);
-    },
+          }),
+    success: (data) => alert(data.message)
   });
 });
 
 //LOGIN USER
-$("body").on("click", "#login", function() {
-  alert('niggatoni');
+$("body").on("click", "#login", function(e) {
+  e.preventDefault();
   $.ajax({
     type: "POST",
     url: "login.php",
-    data: "{ \"email\":\"" + $("#email").val() + "\", " +
-          "\"password\":\"" + $("#password").val() +  "\"}",
-    success: function(data) {
-      sessionStart(data);
-    },
+    data:  JSON.stringify({
+            email: $("#email").val(),
+            password: $("#password").val()
+          }),
+    success: (data) => sessionStart(data)
   });
 });
