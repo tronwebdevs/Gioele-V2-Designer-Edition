@@ -17,6 +17,8 @@
   <script src="requests.js"> </script>
   <script src="algorithm.js"> </script>
   <script src="session.js"> </script>
+  <script src="j3\js\jquery.clickBubble.min.js"></script>
+
 
   <div id="divTitle" class="divTitle">
     <h1 id="title" class="title effect"> GIOELE </h1>
@@ -82,17 +84,17 @@
         <h1 id="profile" class="sessionTitle"> Regole </h1>
         <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
         <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
-        <h1 class="sessionSub"> Dopo 5 tentativi verrà calcolato il punteggio in base alla differenza </h1>
+        <h1 class="sessionSub"> Dopo 5 tentativi verrà calcolato il punteggio in base alla differenza tra i due numeri </h1>
       </div>
     </div>
 
     <div id="centralSession" class="centralSession">
       <div id="divGame" class="divGame">
         <h1 id="gameTitle" class="sessionTitle"> Indovina il numero </h1>
-        <h1 id="gameAttempt" class="attempt"> tentativi </h1>
-        <input type="text">
+        <h1 id="gameAttemptsLeft" class="attempt"> tentativi </h1>
+        <input id="gameAttempt" class="gameAttempt" type="text">
         <p>
-        <input type="button" value="Gioca">
+        <input id="gameButton" class="gameButton" type="button" value="Prova">
         <h1 id="gameResult" class="sessionSub"> maggiore/minore/uguale/punteggio </h1>
       </div>
     </div>
@@ -159,7 +161,8 @@
             </tr>
           </table>
         </div>
-        <h1 id="fullLeaderboard" class="fullLeaderboard"> Classifica Completa </h1>
+        <h1 id="leaderboardLink" class="leaderboardLink"> Classifica Completa </h1>
+        <img src="refresharrow.png" id="refreshLeaderboard" class="refreshLeaderboard">
       </div>
     </div>
 

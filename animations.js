@@ -59,3 +59,13 @@ function sessionAnimation() {
 
   $("#divSession").removeClass("hideDisplay");
 }
+
+// hoes mad
+$(document).ready(function() {
+  $('html').clickBubble({
+		color: 'rgba(255, 255, 255, 0.2)',
+		size: 40,
+		time: 500,
+		borderWidth: 3
+	});
+});
