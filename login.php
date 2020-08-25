@@ -8,12 +8,12 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
   exit();
 }
 
-$email = get_input_data("email");
+$username = get_input_data("username");
 $password = get_input_data("password");
 
 // Cheks if values are inserted
-if (!isset($email) || empty($email)) {
-  error_response("email non inserita", 400, $conn);
+if (!isset($username) || empty($username)) {
+  error_response("username non inserito", 400, $conn);
   exit();
 }
 if (!isset($password) || empty($password)) {
@@ -31,19 +31,10 @@ if (mb_detect_encoding($password, 'ASCII') == false) {
   exit();
 }
 
-//Checks if email is acceptable
-if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-  error_response("Email non valida", 400, $conn);
-  exit();
-}
-if (strpos($email, "@tronzanella.edu.it") != (strlen($email) - 19)) {
-  error_response("Devi usare la mail scolastica", 400, $conn);
-  exit();
-}
 
 //checks if user exists
-$stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-$stmt->bind_param("s", $email);
+$stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 $stmt->close();
@@ -53,8 +44,8 @@ if ($result->num_rows == 0) {
 }
 
 //checks if password matches
-$stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
-$stmt->bind_param("s", $email);
+$stmt = $conn->prepare("SELECT password FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 $result = $result->fetch_assoc();

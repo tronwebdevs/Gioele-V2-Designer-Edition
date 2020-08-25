@@ -5,6 +5,9 @@ function get_input_data($field_name) {
     if (!isset($data[$field_name]) || empty($data[$field_name])) {
         $data = $_REQUEST;
     }
+    if (array_key_exists($field_name, $data) == false) {
+      $data[$field_name] = null;
+    }
     return $data[$field_name];
 }
 

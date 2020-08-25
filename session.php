@@ -7,8 +7,8 @@ if (!isset($_SESSION['session_id'])) {
 }
 
 
-$stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
-$stmt->bind_param("s", $email);
+$stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
 $stmt->execute();
 $result = $stmt->get_result();
 $result = $result->fetch_assoc();

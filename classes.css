@@ -1,3 +1,6 @@
+/*
+      GENERAL CLASSES
+*/
 *{
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -15,7 +18,7 @@ body {
   margin: 0;
   height: 100%;
   font-family: Ubuntu;
-  color: darkgrey;
+  color: #FFFFFF;
   background-color: #212121;
 }
 input#text, input#login {
@@ -43,8 +46,12 @@ input#text, input#login {
 }
 
 .hideDisplay {
-  display: none;
+  display: none !important;
 }
+
+/*
+      TITLE CLASSES
+*/
 
 .divTitle {
   background-color: transparent;
@@ -63,7 +70,7 @@ input#text, input#login {
 
 .title {
   position: relative;
-  font-size: 80px;
+  font-size: 6vw;
   letter-spacing: 3px;
   margin: 0 0 0 0;
   padding-top: 0px;
@@ -71,7 +78,7 @@ input#text, input#login {
 
 .subtitle {
   position: relative;
-  font-size: 70px;
+  font-size: 6vw;
   letter-spacing: 3px;
   margin: 0 0 0 0;
   margin-bottom: 15px;
@@ -79,28 +86,28 @@ input#text, input#login {
 
 .edition {
   position: relative;
-  font-size: 20px;
+  font-size: 1.39vw;
   margin: 0 10vw 0 10vw;
   animation: edition 2s;
 }
 
+/*
+      LOGIN CLASSES
+*/
+
 .divAccess {
-  border: 2px solid darkgrey;
-  background-color: #090909;
-  text-align: center;
-  width: min-content;
+  width: 27.77vw;
+  height: auto;
+  background-color: #303030;
   margin: 0 auto;
-  color: 100%;
+  padding-left: 2.43vw;
+  padding-right: 2.43vw;
 }
 
 .textAccess {
-  font-size: 30px;
-  margin: 7.6px 0 0 0;
-}
-
-.text {
-  padding: 7.6px 0 2.3px 0;
-  margin: 0 0 0 0;
+  font-size: 2.5vw;
+  margin: 0 10.41vw 1.18vw 10.41vw;
+  padding-top: 1.18vw;
 }
 
 /*
@@ -118,13 +125,149 @@ input#text, input#login {
 */
 
 .textbox {
-  width: 155px;
-  margin: 0 50px 0 50px;
+  width: 26.77vw;
+  height: 2.91vw;
+  background-color: #424242;
+  outline: none;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.38vw;
+  padding-left: 1vw;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.but {
-  margin: 7.6px auto 7.6px auto;
+.exception {
+  margin: 0.37vw 0 0.37vw 0;
+  font-size: 1.25vw;
+  color: #F53939;
 }
+
+.wrapper {
+  display: inline-block;
+  float: right;
+}
+
+.remember {
+  width: 1.11vw;
+  height: 1.11vw;
+}
+
+.rememberText {
+  position: relative;
+  display: inline-block;
+  font-size: 1.11vw;
+  font-style: normal;
+  font-weight: normal;
+  padding-left: 0.6vw;
+  top: -0.15vw;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.forgotPassword{
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.9vw;
+  margin-top: 1vw;
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loginButton {
+  float: right;
+  width: 9.44vw;
+  height: 2.91vw;
+  background-color: #4471E6;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.38vw;
+  color: gainsboro;
+  margin-bottom: 0;
+}
+.loginButton:hover {
+  background-color: #4268C9;
+}
+.loginButton:focus {
+  outline: none;
+}
+.loginButton:active {
+  background-color: #3F6ED4;
+}
+
+.register {
+  text-align: center;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1vw;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2vw;
+  padding-bottom: 1.18vw;
+}
+
+/*
+      SIGN IN CLASSES
+*/
+.textReg {
+  text-align: center;
+  font-size: 2.5vw;
+  margin-bottom: 1.18vw;
+  padding-top: 1.18vw;
+}
+
+.textboxReg {
+  width: 26.77vw;
+  height: 2.91vw;
+  background-color: #424242;
+  outline: none;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.38vw;
+  padding-left: 1vw;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wrapperReg{
+  text-align: center;
+  margin-top: 2vw;
+}
+
+.signinButton{
+  text-align: center;
+  width: 11.94vw;
+  height: 2.5vw;
+  background-color: #4471E6;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.38vw;
+  color: gainsboro;
+  margin-bottom: 0;
+}
+.signinButton:hover {
+  background-color: #4268C9;
+}
+.signinButton:focus {
+  outline: none;
+}
+.signinButton:active {
+  background-color: #3F6ED4;
+}
+
+.alreadySigned {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.1vw;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 2vw 10.42vw 0 10.42vw;
+  padding-bottom: 1.18vw;
+}
+
+/*
+      GAME CLASSES
+*/
 
 .divSession{
   width: 100%;
@@ -132,19 +275,19 @@ input#text, input#login {
 }
 
 .leftSession {
-  margin-left: 2%;
-  margin-right: 2%;
-  width: 26%;
+  margin-left: 2.56vw;
+  margin-right: 4.16vw;
+  width: 24.3vw;
 }
 
 .centralSession {
-  width: 40%;
+  width: 38.19vw;
 }
 
 .rightSession {
-  margin-left: 2%;
-  margin-right: 2%;
-  width: 26%;
+  margin-left: 4.16vw;
+  margin-right: 2.56vw;
+  width: 24.3vw;
 }
 
 .sessionTitle {
@@ -168,13 +311,13 @@ input#text, input#login {
 .divInfo {
   width: 100%;
   background-color: #303030;
-  margin-bottom: 2vw;
+  margin-bottom: 4.16vw;
 }
 
 .divRules {
   width: 100%;
   background-color: #303030;
-  margin-top: 2vw;
+  margin-top: 4.16vw;
 }
 
 .divGame {
@@ -231,7 +374,7 @@ input#text, input#login {
 }
 
 .tableHeader {
-  width: 24vw;
+  width: 22vw;
   overflow: auto;
   margin: 0 1vw 0 1vw;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -283,12 +426,12 @@ tr:nth-child(even) {
   left: 0;
   padding: 1rem;
   background-color: #090909;
-  color: darkgrey;
+  color: #FFFFFF;
   text-align: center;
   margin-top: 200px;
 }
 
 .tronweb {
   text-decoration: none;
-  color: darkgrey;
+  color: #FFFFFF;
 }

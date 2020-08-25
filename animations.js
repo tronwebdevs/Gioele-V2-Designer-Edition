@@ -52,20 +52,42 @@ $("body").on("click", "#alreadySigned", function() {
 });
 
 
-//shows actual game
-function sessionAnimation() {
+$("body").on("click", "#profile", function() {
+  $("#leftSession").addClass("fallDown");
+  $("#leftSession").removeClass("hide");
+  setTimeout(function() {
+    $("#leftSession").removeClass("fallDown");
+  }, 2000);
+});
+
+//checkbox
+$("body").on("click", "#remember", function() {
+  let x = $("#remember");
+  if (x.attr("src") == "checkbox.png"){
+    x.attr("src","checkbox2.png");
+  } else {
+    x.attr("src","checkbox.png");
+  }
+});
+
+
+//shows actual game when logging in
+function sessionAN() {
   $("#divAccess").addClass("hideDisplay");
   $("#divAccessReg").addClass("hideDisplay");
-
   $("#divSession").removeClass("hideDisplay");
 }
 
+
+
 // hoes mad
+/*
 $(document).ready(function() {
-  $('html').clickBubble({
+  $('body').clickBubble({
 		color: 'rgba(255, 255, 255, 0.2)',
 		size: 40,
 		time: 500,
 		borderWidth: 3
 	});
 });
+*/

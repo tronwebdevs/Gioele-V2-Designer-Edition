@@ -2,28 +2,69 @@
 //REGISTER USER
 $("body").on("click", "#signin", function(e) {
   e.preventDefault();
+
+  $("#SigninException").addClass("hide");
+  $("#SigninPassException").addClass("hide");
+
   $.ajax({
     type: "POST",
     url: "AddUser.php",
     data: JSON.stringify({
-            username: $("#username_reg").val(),
-            password: $("#password_reg").val(),
-            email: $("#email_reg").val()
+            username: $("#usernameReg").val(),
+            email: $("#emailReg").val(),
+            password: $("#passwordReg").val(),
+            passwordC: $("#passwordConfirmReg").val()
           }),
-    success: (data) => alert(data.message)
+    success: function(data) {
+      console.log(data.message);
+      if (data.code == 1) {
+        $("#SigninException").text("inattivo");
+        $("#SigninException").addClass("hide");
+        console.log(data.message);
+      }
+      if (data.code == -1) {
+        $("#SigninException").removeClass("hide");
+        $("#SigninException").text(data.message);
+      }
+      if (data.code == -2) {
+        $("#SigninException").text("inattivo");
+        $("#SigninPassException").removeClass("hide");
+        $("#SigninPassException").text(data.message);
+      }
+    }
   });
 });
+
 
 //LOGIN USER
 $("body").on("click", "#login", function(e) {
   e.preventDefault();
+
+  console.log($("#username").val() + " "+  $("#password").val());
   $.ajax({
     type: "POST",
-    url: "login.php",
+    url: "Login.php",
     data:  JSON.stringify({
-            email: $("#email").val(),
+            username: $("#username").val(),
             password: $("#password").val()
           }),
-    success: (data) => sessionStart(data)
+    success: function(data) {
+      if (data.code == 1) {
+        console.log(data.message);
+        sessionAN();  //animation
+        sessionStart(data);
+      } else {
+        $("#LoginException").removeClass("hide");
+        $("#LoginException").text(data.message);
+      }
+    }
   });
 });
+
+
+//get top 10 players
+function getTop10() {
+  $.get( "TopTen.php", function(data) {
+    showLeaderboard(data);
+  });
+}

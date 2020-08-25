@@ -11,6 +11,8 @@
   <link rel="stylesheet" type="text/css" href="classes.css" />
   <link rel="stylesheet" type="text/css" href="animations.css" />
   <link rel="stylesheet" type="text/css" href="medias.css" />
+
+  <link rel="icon" href="favicontrue.png">
 </head>
 <body>
   <script src="animations.js"> </script>
@@ -26,51 +28,46 @@
     <h1 id="subtitle" class="subtitle effect"> V2 </h1>
   </div>
 
-<!--
 
-  <div id="divAccess" class="divAccess effectBorder">
+  <div id="divAccess" class="divAccess">
     <div id="divHide">
-    <h1 id="textLogin" class="textAccess effect"> LOG IN </h1>
-    <div id="divLogin">
-      <form>
-        <h4 id="email_text" class="text effect"> email </h4>
-        <input id="email" type="text" class="textbox">
-        <h4 id="pass_text" class="text effect"> password </h4>
-        <input id="password" type="password" class="textbox">
-        <input id="login" type="button" class="but" value="Accedi">
-      </form>
+    <h1 id="textLogin" class="textAccess effect"> Login </h1>
+
+    <input id="username" type="text" class="textbox" placeholder="Username" autocomplete="off">
+    <h1 id="LoginException" class="exception hide"> no </h1>
+    <input id="password" type="password" class="textbox" placeholder="Password">
+    <div style="margin-top: 2.13vw">
+      <img id="remember" src="checkbox.png" class="remember">
+      <label class="rememberText"> Ricordami </label>
     </div>
     <div>
-      <h4 id="forgotPassword"> password dimenticata? </h4>
-      <h4 id="register"> non sei registrato? </h4>
+      <h1 id="forgotPassword" class="forgotPassword"> password dimenticata? </h4>
+      <div class="wrapper">
+        <input id="login" type="button" class="loginButton" value="Accedi">
+      </div>
     </div>
+    <h4 id="register" class="register"> registrati </h4>
     </div>
   </div>
 
 
-  <div id="divAccessReg" class="divAccess hideDisplay effectBorder" >
+  <div id="divAccessReg" class="divAccess hideDisplay" >
     <div id="divHideReg" class="hide">
-    <h1 id="textregister" class="textAccess effect"> SIGN IN </h1>
-    <div id="divRegister">
-      <form>
-        <h4 id="mail_text_reg" class="text effect"> inserisci l'username </h4>
-        <input id="username_reg" type="text" class="textbox">
-        <h4 id="pass_text_reg" class="text effect"> inserisci la password </h4>
-        <input id="password_reg" type="password" class="textbox">
-        <h4 id="mail_text_reg" class="text effect"> inserisci l'email </h4>
-        <input id="email_reg" type="text" name="name" class="textbox">
-        <input id="signin" type="button" class="but" value="Registrati">
-      </form>
-    </div>
-    <div>
-      <h4 id="alreadySigned"> sei già registrato? </h4>
-    </div>
+      <h1 id="textregister" class="textReg effect"> Signin </h1>
+      <input id="usernameReg" type="text" class="textboxReg" placeholder="Username" autocomplete="off">
+      <h1 id="SigninException" class="exception hide"> no </h1>
+      <input id="emailReg" type="text" class="textboxReg" placeholder="Email Scolastica" autocomplete="off" style="margin-bottom: 2vw;">
+      <input id="passwordReg" type="password" name="name" class="textboxReg" placeholder="Password">
+      <h1 id="SigninPassException" class="exception hide"> no </h1>
+      <input id="passwordConfirmReg" type="password" name="name" class="textboxReg" placeholder="Conferma Password">
+      <div class="wrapperReg">
+        <input id="signin" type="button" class="signinButton" value="Registrati">
+      </div>
+      <h4 id="alreadySigned" class="alreadySigned"> torna al Login </h4>
     </div>
   </div>
 
--->
-
-  <div id="divSession" class="divSession">
+  <div id="divSession" class="divSession hideDisplay">
 
     <div id="leftSession" class="leftSession">
       <div id="divInfo" class="divInfo">
@@ -109,6 +106,7 @@
               <th style="font-weight: bold;"> Punteggio </th>
               <th style="font-weight: bold;"> Username </th>
             </tr>
+            <!--
             <tr>
               <th> #1 </th>
               <th> 10001 </th>
@@ -159,23 +157,22 @@
               <th> 7511 </th>
               <th> giacomo.ballarin@tronzanella.edu.it </th>
             </tr>
+          -->
           </table>
         </div>
         <h1 id="leaderboardLink" class="leaderboardLink"> Classifica Completa </h1>
         <img src="refresharrow.png" id="refreshLeaderboard" class="refreshLeaderboard">
       </div>
     </div>
-
-
-
   </div>
 
+<!--
   <div id="divFooter" class="divFooter">
     Copyright @ 2020 | proudly built by
     <div id="sml" style="display: inline-block;"> SmL-Boi </div>
     | designed by SadTesto |
     <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
   </div>
-
+-->
 </body>
 </html>
