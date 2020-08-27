@@ -1,11 +1,17 @@
 <?php
 
-session_start();
+session_name("GioeleSession");
+if ($remember == "false"){
+  session_start([
+    'cookie_lifetime' => 2,
+  ]);
+} else {
+  session_start();
+}
 
 if (!isset($_SESSION['session_id'])) {
   $_SESSION['session_id'] = session_id();
 }
-
 
 $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
@@ -16,7 +22,6 @@ $stmt->close();
 
 $_SESSION['user_id'] = $result['id'];
 $_SESSION['user_name'] = $result['username'];
-$_SESSION['user_password'] = $result['password'];
 $_SESSION['user_email'] = $result['email'];
 $_SESSION['user_score'] = $result['score'];
 
@@ -28,7 +33,6 @@ echo json_encode(
     "message" => "Login avvenuto con successo",
     "id" => $_SESSION['user_id'],
     "username" => $_SESSION['user_name'],
-    "password" => $_SESSION['user_password'],
     "email" => $_SESSION['user_email'],
     "score" => $_SESSION['user_score'],
   )

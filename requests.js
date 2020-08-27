@@ -16,11 +16,12 @@ $("body").on("click", "#signin", function(e) {
             passwordC: $("#passwordConfirmReg").val()
           }),
     success: function(data) {
-      console.log(data.message);
       if (data.code == 1) {
         $("#SigninException").text("inattivo");
         $("#SigninException").addClass("hide");
         console.log(data.message);
+        //redirect to Login form
+        SR();
       }
       if (data.code == -1) {
         $("#SigninException").removeClass("hide");
@@ -40,13 +41,13 @@ $("body").on("click", "#signin", function(e) {
 $("body").on("click", "#login", function(e) {
   e.preventDefault();
 
-  console.log($("#username").val() + " "+  $("#password").val());
   $.ajax({
     type: "POST",
     url: "Login.php",
     data:  JSON.stringify({
             username: $("#username").val(),
-            password: $("#password").val()
+            password: $("#password").val(),
+            remember: checkRemember()
           }),
     success: function(data) {
       if (data.code == 1) {
@@ -61,6 +62,20 @@ $("body").on("click", "#login", function(e) {
   });
 });
 
+
+//AUTOLOGIN USER
+function autoLogin() {
+  $.get( "autoLogin.php", function(data) {
+    if (data.code == 1) {
+      console.log(data.message);
+      sessionAN();  //animation
+      sessionStart(data);
+    } else {
+      $("#LoginException").removeClass("hide");
+      $("#LoginException").text(data.message);
+    }
+  });
+}
 
 //get top 10 players
 function getTop10() {

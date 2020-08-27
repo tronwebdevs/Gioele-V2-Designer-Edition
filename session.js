@@ -12,10 +12,10 @@ function showLeaderboard(data) {
     $("#leaderboardTable").append("<tr id=\"tr" + counter + "\">");
     $("#tr"+counter).append("<th> #" + (counter+1) +"</th");
     $("#tr"+counter).append("<th>" + data[i].score +"</th");
-    $("#tr"+counter).append("<th>" + data[i].username +"</th");
+    $("#tr"+counter).append("<th style=\"width: 100%\">" + data[i].username +"</th");
     $("#tr"+counter).append("</tr>");
     if (data[i].score == data[counter].score){
-      counter++;
+      counter++; 
     }
   }
 }

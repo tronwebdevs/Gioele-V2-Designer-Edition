@@ -95,19 +95,18 @@ input#text, input#login {
       LOGIN CLASSES
 */
 
-.divAccess {
-  width: 27.77vw;
-  height: auto;
+.divLogin {
+  width: 400px;
+  height: 360px;
   background-color: #303030;
   margin: 0 auto;
-  padding-left: 2.43vw;
-  padding-right: 2.43vw;
 }
 
 .textAccess {
-  font-size: 2.5vw;
-  margin: 0 10.41vw 1.18vw 10.41vw;
-  padding-top: 1.18vw;
+  font-size: 36px;
+  line-height: 41px;
+  margin: 0 149px 30px 149px;
+  padding-top: 17px;
 }
 
 /*
@@ -125,21 +124,23 @@ input#text, input#login {
 */
 
 .textbox {
-  width: 26.77vw;
-  height: 2.91vw;
+  width: 317px;
+  height: 42px;
   background-color: #424242;
   outline: none;
   border: 0;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.38vw;
-  padding-left: 1vw;
+  font-size: 20px;
+  padding-left: 13px;
   color: rgba(255, 255, 255, 0.5);
+  margin-left: 35px;
+  cursor: auto;
 }
 
 .exception {
-  margin: 0.37vw 0 0.37vw 0;
-  font-size: 1.25vw;
+  margin: 7px 0 7px 35px;
+  font-size: 16px;
   color: #F53939;
 }
 
@@ -148,43 +149,52 @@ input#text, input#login {
   float: right;
 }
 
+.divRemember {
+  margin: 20px 260px 0 35px;
+  cursor: pointer;
+}
+
 .remember {
-  width: 1.11vw;
-  height: 1.11vw;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .rememberText {
   position: relative;
   display: inline-block;
-  font-size: 1.11vw;
+  font-size: 16px;
   font-style: normal;
   font-weight: normal;
-  padding-left: 0.6vw;
-  top: -0.15vw;
+  padding-left: 10px;
+  top: -2px;
   color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 }
 
 .forgotPassword{
   display: inline-block;
   font-style: normal;
   font-weight: normal;
-  font-size: 0.9vw;
-  margin-top: 1vw;
-  margin-bottom: 0;
+  font-size: 12px;
+  margin: 20px 0 0 35px;
   color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
 }
 
 .loginButton {
   float: right;
-  width: 9.44vw;
-  height: 2.91vw;
+  width: 136px;
+  height: 36px;
   background-color: #4471E6;
   border: none;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.38vw;
+  font-size: 20px;
   color: gainsboro;
   margin-bottom: 0;
+  margin-right: 35px;
+  cursor: pointer;
 }
 .loginButton:hover {
   background-color: #4268C9;
@@ -200,51 +210,63 @@ input#text, input#login {
   text-align: center;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.1vw;
+  font-size: 22px;
   color: rgba(255, 255, 255, 0.7);
-  margin-top: 2vw;
-  padding-bottom: 1.18vw;
+  margin: 30px 149px 0 149px;
+  padding-bottom: 24px;
+  cursor: pointer;
 }
 
 /*
       SIGN IN CLASSES
 */
+
+.divSignin {
+  width: 400px;
+  height: 470px;
+  background-color: #303030;
+  margin: 0 auto;
+}
+
 .textReg {
   text-align: center;
-  font-size: 2.5vw;
-  margin-bottom: 1.18vw;
-  padding-top: 1.18vw;
+  font-size: 36px;
+  margin-bottom: 16px;
+  padding-top: 16px;
 }
 
 .textboxReg {
-  width: 26.77vw;
-  height: 2.91vw;
+  width: 317px;
+  height: 42px;
   background-color: #424242;
   outline: none;
   border: 0;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.38vw;
-  padding-left: 1vw;
+  font-size: 20px;
+  padding-left: 13px;
   color: rgba(255, 255, 255, 0.5);
+  margin-left: 35px;
+  cursor: auto;
 }
 
 .wrapperReg{
   text-align: center;
-  margin-top: 2vw;
+  margin-top: 30px;
 }
 
 .signinButton{
   text-align: center;
-  width: 11.94vw;
-  height: 2.5vw;
+  width: 172px;
+  height: 36px;
   background-color: #4471E6;
   border: none;
   font-style: normal;
   font-weight: normal;
-  font-size: 1.38vw;
+  font-size: 20px;
   color: gainsboro;
   margin-bottom: 0;
+  cursor: pointer;
 }
 .signinButton:hover {
   background-color: #4268C9;
@@ -259,10 +281,10 @@ input#text, input#login {
 .alreadySigned {
   font-style: normal;
   font-weight: normal;
-  font-size: 1.1vw;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
-  margin: 2vw 10.42vw 0 10.42vw;
-  padding-bottom: 1.18vw;
+  margin: 20px 150px 0 150px;
+  cursor: pointer;
 }
 
 /*
@@ -275,19 +297,19 @@ input#text, input#login {
 }
 
 .leftSession {
-  margin-left: 2.56vw;
-  margin-right: 4.16vw;
-  width: 24.3vw;
+  margin-left: auto;
+  margin-right: 60px;
+  width: 350px;
 }
 
 .centralSession {
-  width: 38.19vw;
+  width: 550px;
 }
 
 .rightSession {
-  margin-left: 4.16vw;
-  margin-right: 2.56vw;
-  width: 24.3vw;
+  margin-left: 60px;
+  margin-right: auto;
+  width: 350px;
 }
 
 .sessionTitle {
@@ -296,8 +318,8 @@ input#text, input#login {
   color: gainsboro;
   background-color: #303030;
   margin: 0 0 0 0;
-  padding-top: 1vw;
-  padding-bottom: 1vw
+  padding-top: 21px;
+  padding-bottom: 21px
 }
 
 .sessionSub {
@@ -305,43 +327,72 @@ input#text, input#login {
   font-style: normal;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.9);
-  padding: 0 1vw 1vw 1vw;
+  margin: 0 0 0 0;
+  padding: 0 18px 18px 20px;
 }
 
 .divInfo {
   width: 100%;
+  height: 230px;
   background-color: #303030;
-  margin-bottom: 4.16vw;
+  margin-bottom: 60px;
+}
+
+.editProfile {
+  display: inline-block;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0 0;
+  margin-bottom: 20px;
+  margin-left: 40px;
+  cursor: pointer;
+}
+
+.logout {
+  display: inline-block;
+  float: right;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 0 0;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  cursor: pointer;
 }
 
 .divRules {
-  width: 100%;
+  width: 350px;
+  height: 310px;
   background-color: #303030;
-  margin-top: 4.16vw;
 }
 
 .divGame {
-  width: 100%;
+  width: 550px;
+  height: 335px;
   background-color: #303030;
   text-align: center;
 }
 
 .attempt {
+  margin: 0 0 0 0;
   font-weight: normal;
   font-size: 20px;
-  line-height: 23px;
   color: rgba(255, 255, 255, 0.7);
 }
 
 .gameAttempt {
   width: 298px;
-  height: 81px;
+  height: 80px;
   font-size: 45px;
   text-align: center;
   color: rgba(255, 255, 255, 0.5);
   background-color: #424242;
   border: none;
-  margin: 1vw 0 1vw 0;
+  margin: 22px 0 22px 0;
+  cursor: auto;
 }
 
 .gameAttempt:focus {
@@ -357,7 +408,8 @@ input#text, input#login {
   font-weight: normal;
   font-size: 28px;
   color: gainsboro;
-  margin-bottom: 1vw;
+  margin-bottom: 22px;
+  cursor: pointer;
 }
 .gameButton:hover {
   background-color: #4268C9;
@@ -369,15 +421,25 @@ input#text, input#login {
   background-color: #3F6ED4;
 }
 
+.gameResult {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 0 0;
+}
+
 .divLeaderboard {
+  height: 600px;
   background-color: #303030;
 }
 
 .tableHeader {
-  width: 22vw;
+  width: 300px;
   overflow: auto;
-  margin: 0 1vw 0 1vw;
+  margin: 0 20px 0 20px;
   border: 2px solid rgba(255, 255, 255, 0.2);
+  border-bottom: none;
 }
 
 .leaderboardTable {
@@ -392,7 +454,7 @@ th, tr {
   font-weight: normal;
   text-align: left;
   color: rgba(255, 255, 255, 0.9);
-  padding: 0.5vw 0.5vw 0.5vw 0.5vw;
+  padding: 10px 11px 10px 11px;
 }
 
 tr:nth-child(even) {
@@ -405,10 +467,9 @@ tr:nth-child(even) {
   font-style: normal;
   font-weight: normal;
   color: rgba(255, 255, 255, 0.9);
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 1vw 1vw 1vw 2vw;
+  margin: 20px 0 20px 20px;
   text-decoration: underline;
+  cursor: pointer;
 }
 
 .refreshLeaderboard {
@@ -416,7 +477,8 @@ tr:nth-child(even) {
   height: 24px;
   width: 24px;
   float: right;
-  padding: 1vw 2vw 0 0;
+  margin: 20px 20px 0 0;
+  cursor: pointer;
 }
 
 .divFooter {

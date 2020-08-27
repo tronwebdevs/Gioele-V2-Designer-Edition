@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 
 $username = get_input_data("username");
 $password = get_input_data("password");
+$remember = get_input_data("remember");
 
 // Cheks if values are inserted
 if (!isset($username) || empty($username)) {

@@ -32,43 +32,26 @@ $("body").on("click", "#register", function() {
 
 
 //switch signin to login
-$("body").on("click", "#alreadySigned", function() {
+function SR() {
   $("#divHideReg").addClass("makeTr");
-  $("#divAccessReg").addClass("foldIn");
-  setTimeout(function() {
-    $("#divHideReg").removeClass("makeTr");
-    $("#divAccessReg").removeClass("foldIn");
-    $("#divAccessReg").addClass("hideDisplay");
+    $("#divAccessReg").addClass("foldIn");
+    setTimeout(function() {
+      $("#divHideReg").removeClass("makeTr");
+      $("#divAccessReg").removeClass("foldIn");
+      $("#divAccessReg").addClass("hideDisplay");
 
-    $("#divAccess").removeClass("hideDisplay");
-    $("#divAccess").addClass("foldOut");
-    $("#divHide").addClass("makeVs");
-  }, 450);
-  setTimeout(function() {
-    $("#divHide").removeClass("hide");
-    $("#divHide").removeClass("makeVs");
-    $("#divAccess").removeClass("foldOut");
-  }, 950);
-});
-
-
-$("body").on("click", "#profile", function() {
-  $("#leftSession").addClass("fallDown");
-  $("#leftSession").removeClass("hide");
-  setTimeout(function() {
-    $("#leftSession").removeClass("fallDown");
-  }, 2000);
-});
-
-//checkbox
-$("body").on("click", "#remember", function() {
-  let x = $("#remember");
-  if (x.attr("src") == "checkbox.png"){
-    x.attr("src","checkbox2.png");
-  } else {
-    x.attr("src","checkbox.png");
+      $("#divAccess").removeClass("hideDisplay");
+      $("#divAccess").addClass("foldOut");
+      $("#divHide").addClass("makeVs");
+    }, 450);
+    setTimeout(function() {
+      $("#divHide").removeClass("hide");
+      $("#divHide").removeClass("makeVs");
+      $("#divAccess").removeClass("foldOut");
+    }, 950);
   }
-});
+
+$("body").on("click", "#alreadySigned", SR);
 
 
 //shows actual game when logging in
@@ -78,6 +61,10 @@ function sessionAN() {
   $("#divSession").removeClass("hideDisplay");
 }
 
+function logoutAN() {
+  $("#divSession").addClass("hideDisplay");
+  $("#divAccess").removeClass("hideDisplay");
+}
 
 
 // hoes mad
