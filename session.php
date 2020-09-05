@@ -3,7 +3,7 @@
 session_name("GioeleSession");
 if ($remember == "false"){
   session_start([
-    'cookie_lifetime' => 2,
+    'cookie_lifetime' => 1,
   ]);
 } else {
   session_start();
@@ -31,6 +31,7 @@ echo json_encode(
     "code" => 1,
     "response" => 200,
     "message" => "Login avvenuto con successo",
+    "sessId" => session_id(),
     "id" => $_SESSION['user_id'],
     "username" => $_SESSION['user_name'],
     "email" => $_SESSION['user_email'],

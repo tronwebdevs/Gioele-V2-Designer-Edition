@@ -139,7 +139,7 @@ input#text, input#login {
 }
 
 .exception {
-  margin: 7px 0 7px 35px;
+  margin: 3px 0 3px 35px;
   font-size: 16px;
   color: #F53939;
 }
@@ -331,7 +331,8 @@ input#text, input#login {
   padding: 0 18px 18px 20px;
 }
 
-.divInfo {
+.divProfile {
+  display: inline-block;
   width: 100%;
   height: 230px;
   background-color: #303030;
@@ -361,6 +362,118 @@ input#text, input#login {
   margin-bottom: 20px;
   margin-right: 40px;
   cursor: pointer;
+}
+
+.editUsername {
+  width: 265px;
+  height: 36px;
+  background-color: #424242;
+  outline: none;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  padding-left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 5px 35px 5px 35px;
+  cursor: auto;
+}
+
+.confirmEdit {
+  display: inline-block;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px 0 0 35px;
+  cursor: pointer;
+}
+
+.exceptionEdit {
+  display: inline-block;
+  float: right;
+  margin: 20px 35px 0 0;
+  font-size: 16px;
+  font-weight: normal;
+  color: #F53939;
+}
+
+.discardEdit {
+  display: inline-block;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 20px 0 0 35px;
+  cursor: pointer;
+}
+
+.deleteProfile {
+  display: inline-block;
+  float: right;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: #F53939;
+  margin: 20px 35px 0 0;
+  cursor: pointer;
+}
+
+.deleteSub {
+  position: relative;
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 10px;
+}
+
+.deleteConfirm {
+  text-align: center;
+  width: 100px;
+  height: 36px;
+  background-color: #4471E6;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: gainsboro;
+  margin-left: 35px;
+  cursor: pointer;
+}
+.deleteConfirm:hover {
+  background-color: #4268C9;
+}
+.deleteConfirm:focus {
+  outline: none;
+}
+.deleteConfirm:active {
+  background-color: #3F6ED4;
+}
+
+.deleteUndo {
+  float: right;
+  text-align: center;
+  width: 100px;
+  height: 36px;
+  background-color: #D23535;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  color: gainsboro;
+  margin-right: 35px;
+  cursor: pointer;
+}
+.deleteUndo:hover {
+  background-color: #BE3333;
+}
+.deleteUndo:focus {
+  outline: none;
+}
+.deleteUndo:active {
+  background-color: #C93333;
 }
 
 .divRules {
@@ -438,7 +551,7 @@ input#text, input#login {
   width: 300px;
   overflow: auto;
   margin: 0 20px 0 20px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgb(89, 89, 89);
   border-bottom: none;
 }
 
@@ -447,8 +560,8 @@ input#text, input#login {
 }
 
 th, tr {
-  border-left: 2px solid rgba(255, 255, 255, 0.2);
-  border-right: 2px solid rgba(255, 255, 255, 0.2);
+  border-left: 2px solid rgb(89, 89, 89);
+  border-right: 2px solid rgb(89, 89, 89);
   font-size: 18px;
   font-style: normal;
   font-weight: normal;

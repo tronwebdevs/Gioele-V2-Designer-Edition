@@ -3,34 +3,37 @@
 $("body").on("click", "#signin", function(e) {
   e.preventDefault();
 
-  $("#SigninException").addClass("hide");
-  $("#SigninPassException").addClass("hide");
+  $("#exceptionReg1").addClass("hide");
+  $("#exceptionReg2").addClass("hide");
+  $("#exceptionReg3").addClass("hide");
 
   $.ajax({
     type: "POST",
     url: "AddUser.php",
     data: JSON.stringify({
-            username: $("#usernameReg").val(),
-            email: $("#emailReg").val(),
-            password: $("#passwordReg").val(),
-            passwordC: $("#passwordConfirmReg").val()
+            username: $("#usernameReg").val().trim(),
+            email: $("#emailReg").val().trim(),
+            password: $("#passwordReg").val().trim(),
+            passwordC: $("#passwordConfirmReg").val().trim()
           }),
     success: function(data) {
       if (data.code == 1) {
-        $("#SigninException").text("inattivo");
-        $("#SigninException").addClass("hide");
         console.log(data.message);
         //redirect to Login form
         SR();
+        clearTB();
       }
       if (data.code == -1) {
-        $("#SigninException").removeClass("hide");
-        $("#SigninException").text(data.message);
+        $("#exceptionReg1").removeClass("hide");
+        $("#exceptionReg1").text(data.message);
       }
       if (data.code == -2) {
-        $("#SigninException").text("inattivo");
-        $("#SigninPassException").removeClass("hide");
-        $("#SigninPassException").text(data.message);
+        $("#exceptionReg2").removeClass("hide");
+        $("#exceptionReg2").text(data.message);
+      }
+      if (data.code == -3) {
+        $("#exceptionReg3").removeClass("hide");
+        $("#exceptionReg3").text(data.message);
       }
     }
   });
@@ -45,15 +48,17 @@ $("body").on("click", "#login", function(e) {
     type: "POST",
     url: "Login.php",
     data:  JSON.stringify({
-            username: $("#username").val(),
-            password: $("#password").val(),
+            username: $("#username").val().trim(),
+            password: $("#password").val().trim(),
             remember: checkRemember()
           }),
     success: function(data) {
       if (data.code == 1) {
         console.log(data.message);
+        clearTB();
         sessionAN();  //animation
         sessionStart(data);
+        sessionid = data.sessId;
       } else {
         $("#LoginException").removeClass("hide");
         $("#LoginException").text(data.message);
@@ -65,17 +70,49 @@ $("body").on("click", "#login", function(e) {
 
 //AUTOLOGIN USER
 function autoLogin() {
-  $.get( "autoLogin.php", function(data) {
+  $.get("autoLogin.php", function(data) {
     if (data.code == 1) {
       console.log(data.message);
       sessionAN();  //animation
       sessionStart(data);
+      sessionid = data.sessId;
     } else {
       $("#LoginException").removeClass("hide");
       $("#LoginException").text(data.message);
     }
   });
 }
+
+//Edit Username
+$("body").on("click", "#confirmEdit", function(e) {
+  e.preventDefault();
+  $("#exceptionEdit").addClass("hide");
+
+  $.ajax({
+    type: "POST",
+    url: "EditUser.php",
+    data:  JSON.stringify({
+            sessionid: sessionid,
+            newusername: $("#editUsername").val().trim()
+          }),
+    success: function(data) {
+      if (data.code == 1) {
+        $("#usernameInfo").text(data.username);
+        $("#editUsername").attr("placeholder", data.username);
+      }
+      if (data.code == -1) {
+        $("#exceptionEdit").removeClass("hide");
+        $("#exceptionEdit").text(data.message);
+      }
+    }
+  });
+});
+
+//Delete Profile
+$("body").on("click", "#deleteConfirm", function(e) {
+  e.preventDefault();
+  alert('inattivo')
+});
 
 //get top 10 players
 function getTop10() {

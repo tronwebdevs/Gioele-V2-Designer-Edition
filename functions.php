@@ -21,3 +21,14 @@ function error_response($message, $status, $conn) {
     );
     $conn->close();
 }
+
+function code_response($code, $message, $status, $conn) {
+    echo json_encode(
+        array(
+            "code" => $code,
+            "response" => $status,
+            "message" => $message
+        )
+    );
+    $conn->close();
+}

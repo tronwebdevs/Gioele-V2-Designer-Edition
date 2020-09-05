@@ -16,6 +16,7 @@ echo json_encode(
     "code" => 1,
     "response" => 200,
     "message" => "Login avvenuto con successo",
+    "sessId" => session_id(),
     "id" => $_SESSION['user_id'],
     "username" => $_SESSION['user_name'],
     "email" => $_SESSION['user_email'],

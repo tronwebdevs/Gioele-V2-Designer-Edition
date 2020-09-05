@@ -2,6 +2,7 @@ function showInfo(data) {
   $("#usernameInfo").text(data.username);
   $("#emailInfo").text(data.email);
   $("#scoreInfo").text("punteggio: " + data.score);
+  $("#editUsername").attr("placeholder", data.username);
 }
 
 function showLeaderboard(data) {
@@ -15,7 +16,7 @@ function showLeaderboard(data) {
     $("#tr"+counter).append("<th style=\"width: 100%\">" + data[i].username +"</th");
     $("#tr"+counter).append("</tr>");
     if (data[i].score == data[counter].score){
-      counter++; 
+      counter++;
     }
   }
 }

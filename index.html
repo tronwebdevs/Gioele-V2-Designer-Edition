@@ -15,11 +15,11 @@
   <link rel="icon" href="favicontrue.png">
 </head>
 <body onload="checkLogin()">
+  <script src="functions.js"> </script>
   <script src="animations.js"> </script>
   <script src="requests.js"> </script>
   <script src="algorithm.js"> </script>
   <script src="session.js"> </script>
-  <script src="functions.js"> </script>
 
   <div id="divTitle" class="divTitle">
     <h1 id="title" class="title effect"> GIOELE </h1>
@@ -54,10 +54,11 @@
     <div id="divHideReg" class="hide">
       <h1 id="textregister" class="textReg effect"> Signin </h1>
       <input id="usernameReg" type="text" class="textboxReg" placeholder="Username" autocomplete="off">
-      <h1 id="SigninException" class="exception hide"> no </h1>
-      <input id="emailReg" type="text" class="textboxReg" placeholder="Email Scolastica" autocomplete="off" style="margin-bottom: 30px;">
+        <h1 id="exceptionReg1" class="exception hide"> no </h1>
+      <input id="emailReg" type="text" class="textboxReg" placeholder="Email Scolastica" autocomplete="off">
+        <h1 id="exceptionReg2" class="exception hide"> no </h1>
       <input id="passwordReg" type="password" name="name" class="textboxReg" placeholder="Password">
-      <h1 id="SigninPassException" class="exception hide"> no </h1>
+        <h1 id="exceptionReg3" class="exception hide"> no </h1>
       <input id="passwordConfirmReg" type="password" name="name" class="textboxReg" placeholder="Conferma Password">
       <div class="wrapperReg">
         <input id="signin" type="button" class="signinButton" value="Registrati">
@@ -69,14 +70,37 @@
   <div id="divSession" class="divSession hideDisplay">
 
     <div id="leftSession" class="leftSession">
-      <div id="divInfo" class="divInfo">
-        <h1 id="profile" class="sessionTitle"> Profilo </h1>
-        <h1 id="usernameInfo" class="sessionSub"> utentenome </h1>
-        <h1 id="emailInfo" class="sessionSub"> elettronicalettera </h1>
-        <h1 id="scoreInfo" class="sessionSub"> punteggio </h1>
-        <div>
-          <h1 id="editProfile" class="editProfile"> Modifica </h1>
-          <h1 id="logout" class="logout"> Esci </h1>
+      <div id="divProfile" class="divProfile">
+
+        <div id="divInfo">
+          <h1 class="sessionTitle"> Profilo </h1>
+          <h1 id="usernameInfo" class="sessionSub"> . </h1>
+          <h1 id="emailInfo" class="sessionSub"> . </h1>
+          <h1 id="scoreInfo" class="sessionSub"> . </h1>
+          <div>
+            <h1 id="editProfile" class="editProfile"> Modifica </h1>
+            <h1 id="logout" class="logout"> Esci </h1>
+          </div>
+        </div>
+
+        <div id="divEdit" class="hideDisplay">
+          <h1 class="sessionTitle"> Modifica Profilo </h1>
+          <div id="editOptions">
+            <input id="editUsername" type="textbox" class="editUsername" autocomplete="off">
+            <div>
+              <h1 id="confirmEdit" class="confirmEdit"> Conferma </h1>
+              <h1 id="exceptionEdit" class="exceptionEdit hide"> . </h1>
+            </div>
+            <div>
+              <h1 id="discardEdit" class="discardEdit"> Annulla </h1>
+              <h1 id="deleteProfile" class="deleteProfile"> Elimina Profilo </h1>
+            </div>
+          </div>
+          <div id="confirmDelete" style="margin-top: 60px;" class="hideDisplay">
+            <h1 class="deleteSub"> vuoi eliminare il tuo profilo? </h1>
+            <input id="deleteConfirm" type="button" class="deleteConfirm" value="Elimina">
+            <input id="deleteUndo" type="button" class="deleteUndo" value="Annulla">
+          </div>
         </div>
       </div>
 

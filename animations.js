@@ -24,6 +24,7 @@ $("body").on("click", "#register", function() {
     $("#divHideReg").addClass("makeVs");
   }, 450);
   setTimeout(function() {
+    clearEX();
     $("#divHideReg").removeClass("hide");
     $("#divHideReg").removeClass("makeVs");
     $("#divAccessReg").removeClass("foldOut");
@@ -45,6 +46,7 @@ function SR() {
       $("#divHide").addClass("makeVs");
     }, 450);
     setTimeout(function() {
+      clearEX();
       $("#divHide").removeClass("hide");
       $("#divHide").removeClass("makeVs");
       $("#divAccess").removeClass("foldOut");
@@ -66,6 +68,43 @@ function logoutAN() {
   $("#divAccess").removeClass("hideDisplay");
 }
 
+//switch to edit profile
+$("body").on("click", "#editProfile", function() {
+  $("#divInfo").addClass("hideDisplay");
+  $("#divEdit").removeClass("hideDisplay");
+  $("#editUsername").val("");
+});
+
+//switch back to profile info
+$("body").on("click", "#discardEdit", function() {
+  $("#divEdit").addClass("hideDisplay");
+  $("#divInfo").removeClass("hideDisplay");
+});
+
+//switch edit to confirm delete
+$("body").on("click", "#deleteProfile", function() {
+  $("#editOptions").addClass("hideDisplay");
+  $("#confirmDelete").removeClass("hideDisplay");
+});
+
+//cancel delete this
+$("body").on("click", "#deleteUndo", function() {
+  $("#editOptions").removeClass("hideDisplay");
+  $("#confirmDelete").addClass("hideDisplay");
+});
+
+function refreshAN(){
+  $("#tableHeader").addClass("makeTr");
+  setTimeout(function(){
+    $("#tableHeader").removeClass("makeTr");
+    $("#tableHeader").addClass("makeVs");
+    $("#refreshLeaderboard").addClass("spin");
+  }, 450);
+  setTimeout(function(){
+    $("#tableHeader").removeClass("makeVs");
+    $("#refreshLeaderboard").removeClass("spin");
+  }, 1000);
+}
 
 // hoes mad
 /*
