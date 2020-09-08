@@ -55,6 +55,18 @@ if (!password_verify($password, $result["password"])) {
   exit();
 }
 
+//checks if user is authenticated
+$stmt = $conn->prepare("SELECT auth FROM users WHERE username = ?");
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
+$result = $result->fetch_assoc();
+$stmt->close();
+if ($result["auth"] == 0) {
+  error_response("Utente non autenticato", 401, $conn);
+  exit();
+}
+
 //starts Session
 require 'session.php';
 

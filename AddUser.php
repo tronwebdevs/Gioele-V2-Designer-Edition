@@ -77,10 +77,15 @@ if ($password != $passwordC || !isset($passwordC)) {
 }
 
 // Insert user into database
+$userid = uniqid("", true);
 $password = password_hash($password, PASSWORD_DEFAULT);
-$stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?,?,?)");
-$stmt->bind_param("sss", $username, $password, $email);
+$stmt = $conn->prepare("INSERT INTO users (id, username, password, email) VALUES (?,?,?,?)");
+$stmt->bind_param("ssss", $userid, $username, $password, $email);
 $stmt->execute();
+$stmt->close();
+
+// send mail
+require 'SendMail.php';
 
 // Response
 code_response(1, "Utente registrato con successo", 200, $conn);

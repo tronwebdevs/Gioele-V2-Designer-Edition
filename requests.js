@@ -120,3 +120,11 @@ function getTop10() {
     showLeaderboard(data);
   });
 }
+
+//send mail
+$("body").on("click", "#mail", function(e) {
+  e.preventDefault();
+  $.get("SendMail.php", function(data){
+    alert("d");
+  });
+});
