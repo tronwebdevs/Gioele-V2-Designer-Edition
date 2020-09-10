@@ -7,6 +7,9 @@ $("body").on("click", "#signin", function(e) {
   $("#exceptionReg2").addClass("hide");
   $("#exceptionReg3").addClass("hide");
 
+  //$("#signin").prop("disabled",true);
+  loadingIn();
+
   $.ajax({
     type: "POST",
     url: "AddUser.php",
@@ -17,11 +20,14 @@ $("body").on("click", "#signin", function(e) {
             passwordC: $("#passwordConfirmReg").val().trim()
           }),
     success: function(data) {
+      $("#signin").prop("disabled",false);
+      loadingOut();
       if (data.code == 1) {
         console.log(data.message);
         //redirect to Login form
         SR();
         clearTB();
+        reminder();
       }
       if (data.code == -1) {
         $("#exceptionReg1").removeClass("hide");
@@ -121,10 +127,7 @@ function getTop10() {
   });
 }
 
-//send mail
-$("body").on("click", "#mail", function(e) {
+$("body").on("click", "#test", function(e) {
   e.preventDefault();
-  $.get("SendMail.php", function(data){
-    alert("d");
-  });
+  reminder();
 });

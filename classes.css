@@ -217,6 +217,15 @@ input#text, input#login {
   cursor: pointer;
 }
 
+.reminder {
+  text-align: center;
+  font-size: 20px;
+  font-weight: normal;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 /*
       SIGN IN CLASSES
 */
@@ -251,8 +260,17 @@ input#text, input#login {
 }
 
 .wrapperReg{
+  width: auto;
   text-align: center;
+  display: inline-block;
   margin-top: 30px;
+  margin-left: 114px;
+}
+
+.loadingDiv {
+  left: 10px;
+  margin: 0 0 0 16px;
+  display: inline-block;
 }
 
 .signinButton{
@@ -484,7 +502,7 @@ input#text, input#login {
 
 .divGame {
   width: 550px;
-  height: 335px;
+  height: 350px;
   background-color: #303030;
   text-align: center;
 }
@@ -521,7 +539,7 @@ input#text, input#login {
   font-weight: normal;
   font-size: 28px;
   color: gainsboro;
-  margin-bottom: 22px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 .gameButton:hover {
@@ -532,6 +550,12 @@ input#text, input#login {
 }
 .gameButton:active {
   background-color: #3F6ED4;
+}
+
+.gameException {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  color: #F53939;
 }
 
 .gameResult {

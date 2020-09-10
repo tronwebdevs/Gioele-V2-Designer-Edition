@@ -76,6 +76,36 @@ if ($password != $passwordC || !isset($passwordC)) {
   exit();
 }
 
+//clear non-authenticated users more than 2hr ago
+$cday = date("d");
+$chour = date("H");
+$stmt = $conn->prepare("SELECT * FROM users");
+$stmt->execute();
+$result = $stmt->get_result();
+$stmt->close();
+while($row = $result->fetch_assoc()) {
+  $date = date_parse($row["date"]);
+  $day = $date["day"];
+  $hour = $date["hour"];
+  if(($cday > $day && $hour > 2) || ($cday <= $day && $chour - $hour >= 2)){
+    $stmt = $conn->prepare("SELECT * FROM users WHERE id = ? AND auth = 0");
+    $stmt->bind_param("s", $row["id"]);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+    if ($result->num_rows != 0) {
+      $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+      $stmt->bind_param("s", $row["id"]);
+      $stmt->execute();
+      $stmt->close();
+      $stmt = $conn->prepare("DELETE FROM auth_users WHERE id = ?");
+      $stmt->bind_param("s", $row["id"]);
+      $stmt->execute();
+      $stmt->close();
+    }
+  }
+}
+
 // Insert user into database
 $userid = uniqid("", true);
 $password = password_hash($password, PASSWORD_DEFAULT);

@@ -106,6 +106,33 @@ function refreshAN(){
   }, 1000);
 }
 
+// shows loading spinning wheel
+function loadingIn(){
+  $("#loadingDiv").addClass("makeVs");
+  $("#loadingDiv").removeClass("hide");
+  $("#loadingDiv").removeClass("makeTr");
+}
+function loadingOut(){
+  $("#loadingDiv").addClass("makeTr");
+  $("#loadingDiv").addClass("hide");
+  $("#loadingDiv").removeClass("makeVs");
+}
+//shows reminder after signing in
+function reminder(){
+  setTimeout(function(){
+    $("#reminder").removeClass("hideDisplay");
+    $("#reminder").addClass("showReminder");
+    $("#reminder").removeClass("hideReminder");
+    setTimeout(function(){
+      $("#reminder").addClass("hideReminder");
+      $("#reminder").removeClass("showReminder");
+      setTimeout(function(){
+        $("#reminder").addClass("hideDisplay");
+      }, 650);
+    }, 5000);
+  }, 1000);
+}
+
 // hoes mad
 /*
 $(document).ready(function() {

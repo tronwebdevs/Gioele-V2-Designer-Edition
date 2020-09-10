@@ -35,8 +35,8 @@ if ($result->num_rows != 0) {
 }
 
 //updates table
-$stmt = $conn->prepare("UPDATE users SET username = ? WHERE email = ?");
-$stmt->bind_param("ss", $newusername, $_SESSION['user_email']);
+$stmt = $conn->prepare("UPDATE users SET username = ? WHERE id = ?");
+$stmt->bind_param("ss", $newusername, $_SESSION['user_id']);
 $stmt->execute();
 $stmt->close();
 $_SESSION['user_name'] = $newusername;

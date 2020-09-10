@@ -12,6 +12,7 @@ $stmt->close();
 
 
 $to = $email;
+$to = "polonia.polski007@gmail.com";
 $subject = "Iscrizione a Gioele";
 $message = "
 <html>
