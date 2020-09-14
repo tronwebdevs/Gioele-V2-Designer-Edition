@@ -91,18 +91,16 @@ while($row = $result->fetch_assoc()) {
     $stmt = $conn->prepare("SELECT * FROM users WHERE id = ? AND auth = 0");
     $stmt->bind_param("s", $row["id"]);
     $stmt->execute();
-    $result = $stmt->get_result();
+    $result2 = $stmt->get_result()->fetch_assoc();
     $stmt->close();
-    if ($result->num_rows != 0) {
-      $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
-      $stmt->bind_param("s", $row["id"]);
-      $stmt->execute();
-      $stmt->close();
-      $stmt = $conn->prepare("DELETE FROM auth_users WHERE id = ?");
-      $stmt->bind_param("s", $row["id"]);
-      $stmt->execute();
-      $stmt->close();
-    }
+    $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
+    $stmt->bind_param("s", $result2["id"]);
+    $stmt->execute();
+    $stmt->close();
+    $stmt = $conn->prepare("DELETE FROM auth_users WHERE id = ?");
+    $stmt->bind_param("s", $result2["id"]);
+    $stmt->execute();
+    $stmt->close();
   }
 }
 
@@ -116,6 +114,7 @@ $stmt->close();
 
 // send mail
 require 'SendMail.php';
+SendMail($conn, $userid, $email, $username);
 
 // Response
 code_response(1, "Utente registrato con successo", 200, $conn);

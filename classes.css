@@ -40,6 +40,12 @@ input#text, input#login {
 ::-webkit-scrollbar-thumb:active {
   background-color: rgba(255, 255, 255, 0.5);
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
 
 .hide {
   opacity: 0;
@@ -524,6 +530,7 @@ input#text, input#login {
   border: none;
   margin: 22px 0 22px 0;
   cursor: auto;
+  -moz-appearance: textfield;
 }
 
 .gameAttempt:focus {
@@ -611,8 +618,7 @@ tr:nth-child(even) {
 
 .refreshLeaderboard {
   display: inline-block;
-  height: 24px;
-  width: 24px;
+  font-size: 20px;
   float: right;
   margin: 20px 20px 0 0;
   cursor: pointer;

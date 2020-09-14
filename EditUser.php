@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] != "POST") {
 }
 
 require 'checkSession.php';
+checkSession($conn);
 $newusername = get_input_data("newusername");
 
 //checks username

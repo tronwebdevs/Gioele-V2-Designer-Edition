@@ -44,6 +44,8 @@ function getCookie(name) {
 function checkLogin() {
   if (getCookie("GioeleSession").exist) {
     autoLogin();
+  } else {
+
   }
 }
 
@@ -67,14 +69,6 @@ function checkRemember (){
     return "true";
   }
 }
-
-//logout from session
-$("body").on("click", "#logout", function () {
-  logoutAN();
-  document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-  console.log("logout");
-  sessionid = "asd";
-});
 
 //refresh leaderboard
 $("body").on("click", "#refreshLeaderboard", function(e) {

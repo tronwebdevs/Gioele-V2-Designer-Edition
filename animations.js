@@ -95,14 +95,14 @@ $("body").on("click", "#deleteUndo", function() {
 
 function refreshAN(){
   $("#tableHeader").addClass("makeTr");
+  $("#refreshLeaderboard").addClass("fa-spin");
   setTimeout(function(){
     $("#tableHeader").removeClass("makeTr");
     $("#tableHeader").addClass("makeVs");
-    $("#refreshLeaderboard").addClass("spin");
   }, 450);
   setTimeout(function(){
     $("#tableHeader").removeClass("makeVs");
-    $("#refreshLeaderboard").removeClass("spin");
+    $("#refreshLeaderboard").removeClass("fa-spin");
   }, 1000);
 }
 
