@@ -3,6 +3,7 @@ function showInfo(data) {
   $("#emailInfo").text(data.email);
   $("#scoreInfo").text("punteggio: " + data.score);
   $("#editUsername").attr("placeholder", data.username);
+  $("#gameAttemptsLeft").text("tentativi: " + data.attempt);
 }
 
 function showLeaderboard(data) {

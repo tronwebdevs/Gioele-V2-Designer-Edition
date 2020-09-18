@@ -76,18 +76,47 @@ $("body").on("click", "#login", function(e) {
 
 //AUTOLOGIN USER
 function autoLogin() {
-  $.get("autoLogin.php", function(data) {
-    if (data.code == 1) {
-      console.log(data.message);
-      sessionAN();  //animation
-      sessionStart(data);
-      sessionid = data.sessId;
-    } else {
-      $("#LoginException").removeClass("hide");
-      $("#LoginException").text(data.message);
+  $.ajax({
+    type: "POST",
+    url: "autoLogin.php",
+    data:  JSON.stringify({
+            sessionid: getCookie("GioeleSession").value
+          }),
+    success: function(data) {
+      if (data.code == 1) {
+        console.log(data.message);
+        sessionAN();  //animation
+        sessionStart(data);
+        sessionid = data.sessId;
+      } else {
+        $("#LoginException").removeClass("hide");
+        $("#LoginException").text(data.message);
+        document.cookie = ("GioeleSession=" + getCookie("GioeleSession").value + "; expires=Thu, 01 Jan 1970 00:00:00 UTC");
+        document.cookie = ("GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/");
+      }
     }
   });
 }
+
+//logout from session
+$("body").on("click", "#logout", function (){
+
+  $.ajax({
+    type: "POST",
+    url: "deleteSession.php",
+    data:  JSON.stringify({
+            sessionid: sessionid
+          }),
+    success: function(data) {
+      logoutAN();
+      document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+      document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+      console.log(data.message);
+      sessionid = "";
+    }
+  });
+
+});
 
 //Edit Username
 $("body").on("click", "#confirmEdit", function(e) {
@@ -130,4 +159,54 @@ function getTop10() {
 $("body").on("click", "#test", function(e) {
   e.preventDefault();
   reminder();
+});
+
+//game
+$("body").on("click", "#gameButton", function(e) {
+
+  e.preventDefault();
+  $("#gameException").addClass("hide");
+  $("#gameButton").prop('value', 'Prova');
+
+  console.log($("#gameAttempt").val().trim())
+  $.ajax({
+    type: "POST",
+    url: "Game.php",
+    data:  JSON.stringify({
+            sessionid: sessionid,
+            number: $("#gameAttempt").val().trim()
+          }),
+    success: function(data) {
+      if (data.code == 1) {
+        $("#gameResult").removeClass("hide");
+        $("#gameAttemptsLeft").text("tentativi: " + data.attempt);
+        $("#gameResult").text(data.result);
+      }
+      if (data.code == 2) {
+        $("#gameResult").removeClass("hide");
+        $("#gameAttemptsLeft").text("tentativi esauriti");
+        $("#gameResult").text("Il numero era " + data.result + " - Hai fatto " + data.score + " punti");
+        $("#gameButton").prop("value", "Ricomincia");
+        if (data.record == true) {
+          $("#scoreInfo").text("punteggio: " + data.score);
+        }
+      }
+      if (data.code == 3) {
+        $("#gameResult").removeClass("hide");
+        $("#gameAttemptsLeft").text("I tentativi non ti servono più");
+        $("#gameResult").text(data.message);
+        $("#scoreInfo").text("punteggio: 100000");
+      }
+      if (data.code == 4) {
+        $("#gameAttemptsLeft").text("tentativi: 3");
+        $("#gameResult").addClass("hide");
+        $("#gameResult").text(".");
+        $("#gameAttempt").val("");
+      }
+      if (data.code == -1) {
+        $("#gameException").removeClass("hide");
+        $("#gameException").text(data.message);
+      }
+    }
+  });
 });

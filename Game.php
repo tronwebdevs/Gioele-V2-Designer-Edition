@@ -14,7 +14,7 @@ checkSession($conn);
 $num = get_input_data("number");
 
 //checks if input is a number
-if (!is_numeric($num)) {
+if (!is_numeric($num) && $num != 0) {
   code_response(-1, "Devi inserire un numero", 400, $conn);
   exit();
 }
