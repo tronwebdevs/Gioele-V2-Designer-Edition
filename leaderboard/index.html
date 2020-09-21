@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Gioele V2 Designer Edition </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="leaderboard.js"> </script>
+  <link rel="stylesheet" type="text/css" href="classes.css" />
+  <link rel="icon" href="favicontrue.png">
+</head>
+<body onLoad="getTable()">
+
+  <div id="divTitle" class="divTitle">
+    <h1 id="title" class="title"> GIOELE </h1>
+      <h1 id="designer" class="subtitle"> Designer Edition </h1>
+    <h1 id="subtitle" class="title"> V2 </h1>
+  </div>
+
+  <div id="divLeaderboard" class="divLeaderboard">
+    <h1 class="leaderboardTitle"> Classifica </h1>
+    <div id="tableWrapper" class="tableWrapper">
+      <table id="leaderboardTable" class="leaderboardTable">
+        <tr>
+          <th class="cell1 topCell"> Posizione </th>
+          <th class="cell1 topCell"> Punteggio </th>
+          <th class="cell2 topCell" style="text-align: center"> Username </th>
+        </tr>
+      </table>
+    </div>
+
+    <div>
+      <div id="counterDiv" class="counterDiv">
+        <i id="left" class="fas fa-caret-left arrow" onclick="changePage(-1)"></i>
+        <input id="counter" class="counter" type="number" placeholder="1">
+        <i id="right" class="fas fa-caret-right arrow" onclick="changePage(1)"></i>
+      </div>
+      <div class="refreshDiv">
+        <i id="refreshLeaderboard" class="fas fa-sync-alt refreshLeaderboard" onclick="refreshLeaderboard()"></i>
+      </div>
+    </div>
+
+    <div class="exceptionDiv">
+      <h1 id="exception" class="exception hide"> a </h1>
+    </div>
+  </div>
+
+  <div class="footerDiv">
+    <footer class="footer">
+      Copyright @ 2020 | Proudly built by
+      <div id="sml" style="display: inline-block;"> SmL-Boi </div>
+      | Designed by SadTesto |
+      <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
+    </footer>
+  </div>
+
+</body>
+</html>
