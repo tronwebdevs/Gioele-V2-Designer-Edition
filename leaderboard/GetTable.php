@@ -1,5 +1,5 @@
 <?php
-require '..\connection.php';
+require '..\api\connection.php';
 
 // Checks if method is correct
 if ($_SERVER["REQUEST_METHOD"] != "POST") {

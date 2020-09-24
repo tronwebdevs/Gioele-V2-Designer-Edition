@@ -9,208 +9,212 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="classes.css" />
-  <link rel="stylesheet" type="text/css" href="animations.css" />
-  <link rel="stylesheet" type="text/css" href="medias.css" />
+  <link rel="stylesheet" type="text/css" href="css\classes.css" />
+  <link rel="stylesheet" type="text/css" href="css\animations.css" />
+  <link rel="stylesheet" type="text/css" href="css\medias.css" />
 
-  <link rel="icon" href="favicontrue.png">
+  <link rel="icon" href="img\favicontrue.png">
 </head>
 <body onload="checkLogin()">
-  <div class="mainDiv">
-    <script src="functions.js"> </script>
-    <script src="animations.js"> </script>
-    <script src="requests.js"> </script>
-    <script src="session.js"> </script>
+  <div class="pageDiv">
+    <div class="mainDiv">
+      <script src="js\functions.js"> </script>
+      <script src="js\animations.js"> </script>
+      <script src="js\requests.js"> </script>
+      <script src="js\session.js"> </script>
 
-    <div id="divTitle" class="divTitle">
-      <h1 id="title" class="title"> GIOELE </h1>
-        <h1 id="designer" class="subtitle"> Designer Edition </h1>
-      <h1 id="subtitle" class="title"> V2 </h1>
-    </div>
-
-    <h1 id="reminder" class="reminder hideDisplay"> Ti sei registrato! Controlla la mail che ti è stata inviata per autenticarti </h1>
-
-    <div id="divAccess" class="divLogin">
-      <div id="divHide">
-      <h1 id="textLogin" class="textAccess effect"> Login </h1>
-      <input id="username" type="text" class="textbox" placeholder="Username" autocomplete="off">
-      <h1 id="LoginException" class="exception hide"> no </h1>
-      <input id="password" type="password" class="textbox" placeholder="Password">
-      <div id="divRemember" class="divRemember" style="margin-top: 20px">
-        <img id="remember" src="checkbox.png" class="remember">
-        <label id="rememberText" class="rememberText"> Ricordami </label>
+      <div id="divTitle" class="divTitle">
+        <h1 id="title" class="title"> GIOELE </h1>
+          <h1 id="designer" class="subtitle"> Designer Edition </h1>
+        <h1 id="subtitle" class="title"> V2 </h1>
       </div>
-      <div>
-        <h1 id="forgotPassword" class="forgotPassword"> password dimenticata? </h4>
-        <div class="wrapper">
-          <input id="login" type="button" class="loginButton" value="Accedi">
+
+      <h1 id="reminder" class="reminder hideDisplay"> Ti sei registrato! Controlla la mail che ti è stata inviata per autenticarti </h1>
+
+      <div id="divAccess" class="divLogin">
+        <div id="divHide">
+        <h1 id="textLogin" class="textAccess effect"> Login </h1>
+        <input id="username" type="text" class="textbox" placeholder="Username" autocomplete="off">
+        <h1 id="LoginException" class="exception hide"> no </h1>
+        <input id="password" type="password" class="textbox" placeholder="Password">
+        <div id="divRemember" class="divRemember" style="margin-top: 20px">
+          <img id="remember" src="img\checkbox.png" class="remember">
+          <label id="rememberText" class="rememberText"> Ricordami </label>
+        </div>
+        <div>
+          <h1 id="forgotPassword" class="forgotPassword"> password dimenticata? </h4>
+          <div class="wrapper">
+            <input id="login" type="button" class="loginButton" value="Accedi">
+          </div>
+        </div>
+        <h4 id="register" class="register"> registrati </h4>
         </div>
       </div>
-      <h4 id="register" class="register"> registrati </h4>
-      </div>
-    </div>
 
-    <div id="divAccessReg" class="divSignin hideDisplay" >
-      <div id="divHideReg" class="hide">
-        <h1 id="textregister" class="textReg effect"> Signin </h1>
-        <input id="usernameReg" type="text" class="textboxReg" placeholder="Username" autocomplete="off">
-          <h1 id="exceptionReg1" class="exception hide"> no </h1>
-        <input id="emailReg" type="text" class="textboxReg" placeholder="Email Scolastica" autocomplete="off">
-          <h1 id="exceptionReg2" class="exception hide"> no </h1>
-        <input id="passwordReg" type="password" name="name" class="textboxReg" placeholder="Password">
-          <h1 id="exceptionReg3" class="exception hide"> no </h1>
-        <input id="passwordConfirmReg" type="password" name="name" class="textboxReg" placeholder="Conferma Password">
+      <div id="divAccessReg" class="divSignin hideDisplay" >
+        <div id="divHideReg" class="hide">
+          <h1 id="textregister" class="textReg effect"> Signin </h1>
+          <input id="usernameReg" type="text" class="textboxReg" placeholder="Username" autocomplete="off">
+            <h1 id="exceptionReg1" class="exception hide"> no </h1>
+          <input id="emailReg" type="text" class="textboxReg" placeholder="Email Scolastica" autocomplete="off">
+            <h1 id="exceptionReg2" class="exception hide"> no </h1>
+          <input id="passwordReg" type="password" name="name" class="textboxReg" placeholder="Password">
+            <h1 id="exceptionReg3" class="exception hide"> no </h1>
+          <input id="passwordConfirmReg" type="password" name="name" class="textboxReg" placeholder="Conferma Password">
 
-        <div class="wrapperReg">
-          <input id="signin" type="button" class="signinButton" value="Registrati">
+          <div class="wrapperReg">
+            <input id="signin" type="button" class="signinButton" value="Registrati">
+          </div>
+          <div id="loadingDiv" class="loadingDiv hide">
+            <i id="loading" class="fas fa-spinner fa-pulse"></i>
+          </div>
+
+          <h4 id="alreadySigned" class="alreadySigned"> torna al Login </h4>
         </div>
-        <div id="loadingDiv" class="loadingDiv hide">
-          <i id="loading" class="fas fa-spinner fa-pulse"></i>
+      </div>
+
+      <div id="divSession" class="divSession hideDisplay">
+
+        <div id="leftSession" class="leftSession">
+          <div id="divProfile" class="divProfile">
+
+            <div id="divInfo">
+              <h1 class="sessionTitle"> Profilo </h1>
+              <h1 id="usernameInfo" class="sessionSub"> . </h1>
+              <h1 id="emailInfo" class="sessionSub"> . </h1>
+              <h1 id="scoreInfo" class="sessionSub"> . </h1>
+              <div class="profileOptions">
+                <h1 id="editProfile" class="editProfile"> Modifica </h1>
+                <h1 id="logout" class="logout"> Esci </h1>
+              </div>
+            </div>
+
+            <div id="divEdit" class="hideDisplay">
+              <h1 class="sessionTitle"> Modifica Profilo </h1>
+              <div id="editOptions">
+                <input id="editUsername" type="textbox" class="editUsername" autocomplete="off">
+                <div>
+                  <h1 id="confirmEdit" class="confirmEdit"> Conferma </h1>
+                  <h1 id="exceptionEdit" class="exceptionEdit hide"> . </h1>
+                </div>
+                <div>
+                  <h1 id="discardEdit" class="discardEdit"> Annulla </h1>
+                  <h1 id="deleteProfile" class="deleteProfile"> Elimina Profilo </h1>
+                </div>
+              </div>
+              <div id="confirmDelete" style="margin-top: 60px;" class="hideDisplay">
+                <h1 class="deleteSub"> vuoi eliminare il tuo profilo? </h1>
+                <input id="deleteConfirm" type="button" class="deleteConfirm" value="Elimina">
+                <input id="deleteUndo" type="button" class="deleteUndo" value="Annulla">
+              </div>
+            </div>
+          </div>
+
+          <div id="divRules" class="divRules">
+            <h1 id="profile" class="sessionTitle"> Regole </h1>
+            <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
+            <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
+            <h1 class="sessionSub"> Dopo 3 tentativi verrà calcolato il punteggio in base alla differenza tra i due numeri </h1>
+            <h1 class="sessionSub"> Scala la classifica! </h1>
+          </div>
         </div>
 
-        <h4 id="alreadySigned" class="alreadySigned"> torna al Login </h4>
-      </div>
-    </div>
-
-    <div id="divSession" class="divSession hideDisplay">
-
-      <div id="leftSession" class="leftSession">
-        <div id="divProfile" class="divProfile">
-
-          <div id="divInfo">
-            <h1 class="sessionTitle"> Profilo </h1>
-            <h1 id="usernameInfo" class="sessionSub"> . </h1>
-            <h1 id="emailInfo" class="sessionSub"> . </h1>
-            <h1 id="scoreInfo" class="sessionSub"> . </h1>
+        <div id="centralSession" class="centralSession">
+          <div id="divGame" class="divGame">
+            <h1 id="gameTitle" class="sessionTitle"> Indovina il numero </h1>
+            <h1 id="gameAttemptsLeft" class="attempt"> tentativi </h1>
+            <input id="gameAttempt" class="gameAttempt" type="number" min="0" max = "100">
             <div>
-              <h1 id="editProfile" class="editProfile"> Modifica </h1>
-              <h1 id="logout" class="logout"> Esci </h1>
+              <input id="gameButton" class="gameButton" type="button" value="Prova">
             </div>
-          </div>
-
-          <div id="divEdit" class="hideDisplay">
-            <h1 class="sessionTitle"> Modifica Profilo </h1>
-            <div id="editOptions">
-              <input id="editUsername" type="textbox" class="editUsername" autocomplete="off">
-              <div>
-                <h1 id="confirmEdit" class="confirmEdit"> Conferma </h1>
-                <h1 id="exceptionEdit" class="exceptionEdit hide"> . </h1>
-              </div>
-              <div>
-                <h1 id="discardEdit" class="discardEdit"> Annulla </h1>
-                <h1 id="deleteProfile" class="deleteProfile"> Elimina Profilo </h1>
-              </div>
-            </div>
-            <div id="confirmDelete" style="margin-top: 60px;" class="hideDisplay">
-              <h1 class="deleteSub"> vuoi eliminare il tuo profilo? </h1>
-              <input id="deleteConfirm" type="button" class="deleteConfirm" value="Elimina">
-              <input id="deleteUndo" type="button" class="deleteUndo" value="Annulla">
-            </div>
+            <h1 id="gameException" class="gameException hide"> 16px </h1>
+            <h1 id="gameResult" class="gameResult hide"> maggiore/minore/uguale/punteggio </h1>
           </div>
         </div>
 
-        <div id="divRules" class="divRules">
-          <h1 id="profile" class="sessionTitle"> Regole </h1>
-          <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
-          <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
-          <h1 class="sessionSub"> Dopo 3 tentativi verrà calcolato il punteggio in base alla differenza tra i due numeri </h1>
-          <h1 class="sessionSub"> Scala la classifica! </h1>
-        </div>
-      </div>
+        <div id="rightSession" class="rightSession">
+          <div id="divLeaderboard" class="divLeaderboard">
+            <h1 id="leaderboardTitle" class="sessionTitle"> Classifica </h1>
+            <div id="tableHeader" class="tableHeader">
+              <table id="leaderboardTable" class="leaderboardTable">
+                <tr>
+                  <th style="font-weight: bold;"> Posizione </th>
+                  <th style="font-weight: bold;"> Punteggio </th>
+                  <th style="font-weight: bold;"> Username </th>
+                </tr>
+                <!--
+                <tr>
+                  <th> #1 </th>
+                  <th> 10001 </th>
+                  <th> Xx_MVP-Minecraft-Master_xX </th>
+                </tr>
+                <tr>
+                  <th> #2 </th>
+                  <th> 9531 </th>
+                  <th> QuietKid </th>
+                </tr>
+                <tr>
+                  <th> #3 </th>
+                  <th> 9212 </th>
+                  <th> Zongoli.php.exe </th>
+                </tr>
+                <tr>
+                  <th> #4 </th>
+                  <th> 8993 </th>
+                  <th> Autismo3 </th>
+                </tr>
+                <tr>
+                  <th> #5 </th>
+                  <th> 8502 </th>
+                  <th> rotto </th>
+                </tr>
+                <tr>
+                  <th> #6 </th>
+                  <th> 8210 </th>
+                  <th> ' OR '1'='1 </th>
+                </tr>
+                <tr>
+                  <th> #7 </th>
+                  <th> 8006 </th>
+                  <th> L. Mendo </th>
+                </tr>
+                <tr>
+                  <th> #8 </th>
+                  <th> 7921 </th>
+                  <th> PussyDestroyer420 </th>
+                </tr>
+                <tr>
+                  <th> #9 </th>
+                  <th> 7690 </th>
+                  <th> [object Object]</th>
+                </tr>
+                <tr>
+                  <th> #10 </th>
+                  <th> 7511 </th>
+                  <th> giacomo.ballarin@tronzanella.edu.it </th>
+                </tr>
+              -->
+              </table>
+            </div>
+            <h1 id="leaderboardLink" class="leaderboardLink"> Classifica Completa </h1>
 
-      <div id="centralSession" class="centralSession">
-        <div id="divGame" class="divGame">
-          <h1 id="gameTitle" class="sessionTitle"> Indovina il numero </h1>
-          <h1 id="gameAttemptsLeft" class="attempt"> tentativi </h1>
-          <input id="gameAttempt" class="gameAttempt" type="number" min="0" max = "100">
-          <div>
-            <input id="gameButton" class="gameButton" type="button" value="Prova">
+            <i id="refreshLeaderboard" class="fas fa-sync-alt refreshLeaderboard"></i>
           </div>
-          <h1 id="gameException" class="gameException hide"> 16px </h1>
-          <h1 id="gameResult" class="gameResult hide"> maggiore/minore/uguale/punteggio </h1>
-        </div>
-      </div>
-
-      <div id="rightSession" class="rightSession">
-        <div id="divLeaderboard" class="divLeaderboard">
-          <h1 id="leaderboardTitle" class="sessionTitle"> Classifica </h1>
-          <div id="tableHeader" class="tableHeader">
-            <table id="leaderboardTable" class="leaderboardTable">
-              <tr>
-                <th style="font-weight: bold;"> Posizione </th>
-                <th style="font-weight: bold;"> Punteggio </th>
-                <th style="font-weight: bold;"> Username </th>
-              </tr>
-              <!--
-              <tr>
-                <th> #1 </th>
-                <th> 10001 </th>
-                <th> Xx_MVP-Minecraft-Master_xX </th>
-              </tr>
-              <tr>
-                <th> #2 </th>
-                <th> 9531 </th>
-                <th> QuietKid </th>
-              </tr>
-              <tr>
-                <th> #3 </th>
-                <th> 9212 </th>
-                <th> Zongoli.php.exe </th>
-              </tr>
-              <tr>
-                <th> #4 </th>
-                <th> 8993 </th>
-                <th> Autismo3 </th>
-              </tr>
-              <tr>
-                <th> #5 </th>
-                <th> 8502 </th>
-                <th> rotto </th>
-              </tr>
-              <tr>
-                <th> #6 </th>
-                <th> 8210 </th>
-                <th> ' OR '1'='1 </th>
-              </tr>
-              <tr>
-                <th> #7 </th>
-                <th> 8006 </th>
-                <th> L. Mendo </th>
-              </tr>
-              <tr>
-                <th> #8 </th>
-                <th> 7921 </th>
-                <th> PussyDestroyer420 </th>
-              </tr>
-              <tr>
-                <th> #9 </th>
-                <th> 7690 </th>
-                <th> [object Object]</th>
-              </tr>
-              <tr>
-                <th> #10 </th>
-                <th> 7511 </th>
-                <th> giacomo.ballarin@tronzanella.edu.it </th>
-              </tr>
-            -->
-            </table>
+          <div class="mobileLeaderboard">
+            <h1 class="mobileLink"> Visualizza la Classifica </h1>
           </div>
-          <h1 id="leaderboardLink" class="leaderboardLink"> Classifica Completa </h1>
-
-          <i id="refreshLeaderboard" class="fas fa-sync-alt refreshLeaderboard"></i>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="footerDiv">
-    <footer class="footer">
-      Copyright @ 2020 | Proudly built by
-      <div id="sml" style="display: inline-block;"> SmL-Boi </div>
-      | Designed by SadTesto |
-      <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
-    </footer>
+    <div class="footerDiv">
+      <footer class="footer">
+        Copyright @ 2020 | Proudly built by
+        <div id="sml" style="display: inline-block;"> SmL-Boi </div>
+        | Designed by SadTesto |
+        <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
+      </footer>
+    </div>
   </div>
-
 </body>
 </html>
