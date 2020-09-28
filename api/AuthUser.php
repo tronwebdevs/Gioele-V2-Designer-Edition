@@ -34,3 +34,4 @@ $stmt->close();
 
 //response
 code_response(1, "utente autenticato", 200, $conn);
+header('Location:https://dev.tronweb.it/gioelev2/AuthPage.html');

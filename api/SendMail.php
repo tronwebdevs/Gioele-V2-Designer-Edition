@@ -53,7 +53,7 @@ function SendMail($conn, $userid, $email, $username) {
       <div>
         <h1 style=\"font-size: 16px; font-weight: normal\"> Ciao $username, clicca il pulsante per confermare la registrazione </h1>
         <div>
-          <a href=\"http://localhost/Gioele%20V2%20Designer%20Edition/AuthUser.php?token=$token\" style=\"text-decoration: none\">
+          <a href=\"https://dev.tronweb.it/gioelev2/api/AuthUser.php?token=$token\" style=\"text-decoration: none\">
             <input type=\"button\" class=\"button\" value=\"Registrati\">
           </a>
         </div>

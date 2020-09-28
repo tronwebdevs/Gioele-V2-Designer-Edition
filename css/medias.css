@@ -5,6 +5,55 @@
   .subtitle {
     font-size: 20px;
   }
+  .divLogin {
+    width: 80vw;
+    height: 100%;
+  }
+  .textbox {
+    width: 60vw;
+  }
+  .divRemember {
+    margin: 20px 0 0 8vw;
+    cursor: pointer;
+  }
+  .wrapper {
+    display: block;
+    float: left;
+    text-align: center;
+    margin-top: 15px;
+    margin-left: calc((80vw - 136px) / 2);
+    width: 100%;
+  }
+  .forgotPassword{
+    display: block;
+    font-style: normal;
+    font-weight: normal;
+    margin: 10px 0 0 8vw;
+  }
+  .loginButton {
+    float: left;
+    margin-right: 0;
+  }
+  .register {
+    font-size: 18px;
+    margin: 60px 0 0 0;
+    padding-bottom: 20px;
+  }
+  .divSignin {
+    width: 80vw;
+    height: 100%;
+  }
+  .textboxReg {
+    width: 60vw;
+  }
+  .wrapperReg{
+    margin-left: calc((80vw - 172px) / 2);
+  }
+  .alreadySigned {
+    text-align: center;
+    margin: 15px 0 0 0;
+    padding-bottom: 15px;
+  }
   .divSession{
     width: 100%;
     display: block;
@@ -14,33 +63,28 @@
     margin-right: 4vw;
     width: 92vw;
   }
-
   .centralSession {
     margin-left: 4vw;
     margin-right: 4vw;
     width: 92vw;
   }
-
   .rightSession {
     margin-left: 4vw;
     margin-right: 4vw;
     width: 92vw;
   }
-
   .divProfile {
     display: block;
     width: 100%;
     height: 100%;
     margin-bottom: 20px;
   }
-
   .divRules {
     width: 100%;
     height: 100%;
     background-color: #303030;
     margin-bottom: 20px;
   }
-
   .divGame {
     width: 100%;
     height: 100%;
@@ -49,15 +93,22 @@
     padding-bottom: 10px;
     margin-bottom: 20px;
   }
-
+  .gameAttempt {
+    width: 60vw;
+    height: 20vw;
+    font-size: 35px;
+  }
+  .gameButton {
+    width: 35vw;
+    height: 12vw;
+    font-size: 20px;
+  }
   .divLeaderboard {
     display: none;
   }
-
   .mobileLeaderboard {
     display: block;
   }
-
   .footer {
     text-align: center;
     font-size: 2.5vw;
@@ -80,33 +131,28 @@
     margin-right: 12vw;
     width: 76vw;
   }
-
   .centralSession {
     margin-left: 12vw;
     margin-right: 12vw;
     width: 76vw;
   }
-
   .rightSession {
     margin-left: 12vw;
     margin-right: 12vw;
     width: 76vw;
   }
-
   .divProfile {
     display: block;
     width: 100%;
     height: 100%;
     margin-bottom: 20px;
   }
-
   .divRules {
     width: 100%;
     height: 100%;
     background-color: #303030;
     margin-bottom: 20px;
   }
-
   .divGame {
     width: 100%;
     height: 100%;
@@ -115,7 +161,6 @@
     padding-bottom: 10px;
     margin-bottom: 20px;
   }
-
   .tableHeader {
     width: calc(100% - 40px);
     overflow: auto;
@@ -123,7 +168,6 @@
     border: 2px solid rgb(89, 89, 89);
     border-right: none;
   }
-
   th, tr {
     border: none;
     border-right: 2px solid rgb(89, 89, 89);
@@ -143,29 +187,24 @@
     display: inline-block;
     margin-bottom: 4vw;
   }
-
   .centralSession {
     width: 100%;
     text-align: center;
     margin-bottom: 4vw;
   }
-
   .rightSession {
     margin-left: 15vw;
     margin-right: 15vw;
     width: 70vw;
   }
-
   .divProfile {
     display: inline-block;
     width: 38%;
     height: 280px;
   }
-
   .profileOptions{
     margin-top: 45px;
   }
-
   .divRules {
     display: inline-block;
     float: right;
@@ -173,7 +212,6 @@
     height: 280px;
     background-color: #303030;
   }
-
   .divGame {
     margin-left: 20vw;
     margin-right: 20vw;
@@ -184,12 +222,9 @@
     padding-bottom: 10px;
     margin-bottom: 20px;
   }
-
   .divLeaderboard {
     padding: 0 40px 0 40px;
   }
-
-
   .tableHeader {
     width: calc(100% - 40px);
     overflow: auto;
@@ -197,7 +232,6 @@
     border: 2px solid rgb(89, 89, 89);
     border-right: none;
   }
-
   th, tr {
     border: none;
     border-right: 2px solid rgb(89, 89, 89);

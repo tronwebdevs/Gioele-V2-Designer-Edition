@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Gioele V2 Designer Edition </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  <link rel="icon" href="img\favicontrue.png">
+
+  <style>
+    *{
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      cursor: default;
+    }
+    html {
+      min-height: 100%;
+      margin: 0;
+    }
+    body {
+      min-height: 100%;
+      margin: 0;
+      font-family: Ubuntu;
+      color: #FFFFFF;
+      background-color: #212121;
+    }
+    .divTitle {
+      background-color: transparent;
+      text-align: center;
+      margin: 0 0 30px 0;
+      padding-top: 30px;
+      color: #FFFFFF;
+    }
+    .title {
+      font-size: 90px;
+      letter-spacing: 3px;
+      margin: 0 0 0 0;
+    }
+    .subtitle {
+      font-size: 20px;
+      margin: 0 0 0 0;
+    }
+    .authConfirm{
+      font-size: 20px;
+      text-align: center;
+      color: rgba(255, 255, 255, 0.6);
+      padding: 10vh 0 10vh 0;
+      animation: an 2s;
+    }
+    .link {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .footerDiv {
+      position: absolute;
+      text-align: center;
+      background-color: transparent;
+      bottom: 0;
+      width: 100%;
+      height: 20px;
+      padding-top: 14px;
+      padding-bottom: 14px;
+    }
+    .footer {
+      background-color: transparent;
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 18px;
+    }
+    .tronweb {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.3);
+    }
+    @media screen and (max-width: 660px){
+      .title {
+        font-size: 15vw;
+      }
+      .subtitle {
+        font-size: 4vw;
+      }
+      .authConfirm{
+        font-size: 3vw;
+      }
+      .footer {
+        font-size: 2.5vw;
+      }
+    }
+    @keyframes an {
+      0% {opacity: 0}
+      100% {opacity: 1}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="divTitle">
+    <h1 class="title"> GIOELE </h1>
+      <h1 class="subtitle"> Designer Edition </h1>
+    <h1 class="title"> V2 </h1>
+  </div>
+
+  <div class="authConfirm">
+    <h1> Sei stato autenticato!</h1>
+    <h1> Clicca <a href="https://dev.tronweb.it/gioelev2" class="link">qui</a> per tornare a Gioele</h1>
+  </div>
+
+  <div class="footerDiv">
+    <footer class="footer">
+      Copyright @ 2020 | Proudly built by
+      <div id="sml" style="display: inline-block;"> SmL-Boi </div>
+      | Designed by SadTesto |
+      <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
+    </footer>
+  </div>
+</body>
+</html>
