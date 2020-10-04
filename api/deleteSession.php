@@ -1,5 +1,5 @@
 <?php
-require 'headers.php';
+require 'connection.php';
 
 $sessionid = get_input_data("sessionid");
 

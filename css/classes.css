@@ -102,7 +102,7 @@ input::-webkit-inner-spin-button {
 
 .divLogin {
   width: 400px;
-  height: 360px;
+  height: 100%;
   background-color: #303030;
   margin: 0 auto;
 }
@@ -231,12 +231,41 @@ input::-webkit-inner-spin-button {
 }
 
 /*
+      FORGOT PASSWORD CLASSES
+*/
+
+.divForgot {
+  width: 400px;
+  height: 100%;
+  background-color: #303030;
+  margin: 0 auto;
+}
+
+.Fwrapper{
+  padding-bottom: 24px;
+}
+
+.loadingDivF {
+  display: inline-block;
+  margin: 0 0 0 45px;
+}
+
+.back{
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 19px;
+  margin: 6px 0 0 35px;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+}
+/*
       SIGN IN CLASSES
 */
 
 .divSignin {
   width: 400px;
-  height: 470px;
+  height: 100%;
   background-color: #303030;
   margin: 0 auto;
 }
@@ -305,6 +334,7 @@ input::-webkit-inner-spin-button {
   font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
   margin: 20px 150px 0 150px;
+  padding-bottom: 30px;
   cursor: pointer;
 }
 

@@ -7,8 +7,8 @@ $("body").on("click", "#signin", function(e) {
   $("#exceptionReg2").addClass("hide");
   $("#exceptionReg3").addClass("hide");
 
-  //$("#signin").prop("disabled",true);
-  loadingIn();
+  $("#signin").prop("disabled",true);
+  loadingIn("#loadingDiv");
 
   $.ajax({
     type: "POST",
@@ -21,7 +21,7 @@ $("body").on("click", "#signin", function(e) {
           }),
     success: function(data) {
       $("#signin").prop("disabled",false);
-      loadingOut();
+      loadingOut("#loadingDiv");
       if (data.code == 1) {
         console.log(data.message);
         //redirect to Login form
@@ -200,6 +200,38 @@ $("body").on("click", "#gameButton", function(e) {
       if (data.code == -1) {
         $("#gameException").removeClass("hide");
         $("#gameException").text(data.message);
+      }
+    }
+  });
+});
+
+
+//Forgot Password
+$("body").on("click", "#forgot", function(e) {
+  e.preventDefault();
+  $("#Fexception").addClass("hide");
+  $("#Fexception").css("color", "#F53939");
+
+  $("#forgot").prop("disabled",true);
+  loadingIn("#loadingDivF");
+
+  $.ajax({
+    type: "POST",
+    url: "api\\SendPassMail.php",
+    data:  JSON.stringify({
+            email: $("#Fmail").val().trim()
+          }),
+    success: function(data) {
+      $("#forgot").prop("disabled",false);
+      loadingOut("#loadingDivF");
+      if (data.code == 1) {
+        $("#Fexception").removeClass("hide");
+        $("#Fexception").css("color", "rgba(255, 255, 255, 0.7)");
+        $("#Fexception").text(data.message);
+      }
+      if (data.code == -1) {
+        $("#Fexception").removeClass("hide");
+        $("#Fexception").text(data.message);
       }
     }
   });

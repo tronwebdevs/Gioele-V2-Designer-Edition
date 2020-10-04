@@ -35,27 +35,69 @@ $("body").on("click", "#register", function() {
   }, 950);
 });
 
+//switch login to Forgot Password
+$("body").on("click", "#forgotPassword", function() {
+  $("#divHide").addClass("makeTr");
+  $("#divAccess").addClass("foldIn");
+  setTimeout(function() {
+    $("#divHide").removeClass("makeTr");
+    $("#divAccess").removeClass("foldIn");
+    $("#divAccess").addClass("hideDisplay");
+
+    $("#divForgot").removeClass("hideDisplay");
+    $("#divForgot").addClass("foldOut");
+    $("#divFHide").addClass("makeVs");
+  }, 450);
+  setTimeout(function() {
+    clearEX();
+    $("#divFHide").removeClass("hide");
+    $("#divFHide").removeClass("makeVs");
+    $("#divForgot").removeClass("foldOut");
+  }, 950);
+});
+
+//switch Forgot Password to login
+$("body").on("click", "#back", function() {
+  $("#divFHide").addClass("makeTr");
+  $("#divForgot").addClass("foldIn");
+  setTimeout(function() {
+    $("#divFHide").removeClass("makeTr");
+    $("#divForgot").removeClass("foldIn");
+    $("#divForgot").addClass("hideDisplay");
+
+    $("#divAccess").removeClass("hideDisplay");
+    $("#divAccess").addClass("foldOut");
+    $("#divHide").addClass("makeVs");
+  }, 450);
+  setTimeout(function() {
+    clearEX();
+    $("#divHide").removeClass("hide");
+    $("#divHide").removeClass("makeVs");
+    $("#divAccess").removeClass("foldOut");
+  }, 950);
+});
+
 
 //switch signin to login
 function SR() {
   $("#divHideReg").addClass("makeTr");
-    $("#divAccessReg").addClass("foldIn");
-    setTimeout(function() {
-      $("#divHideReg").removeClass("makeTr");
-      $("#divAccessReg").removeClass("foldIn");
-      $("#divAccessReg").addClass("hideDisplay");
+  $("#divAccessReg").addClass("foldIn");
+  setTimeout(function() {
+    $("#divHideReg").removeClass("makeTr");
+    $("#divAccessReg").removeClass("foldIn");
+    $("#divAccessReg").addClass("hideDisplay");
 
-      $("#divAccess").removeClass("hideDisplay");
-      $("#divAccess").addClass("foldOut");
-      $("#divHide").addClass("makeVs");
-    }, 450);
-    setTimeout(function() {
-      clearEX();
-      $("#divHide").removeClass("hide");
-      $("#divHide").removeClass("makeVs");
-      $("#divAccess").removeClass("foldOut");
-    }, 950);
-  }
+    $("#divAccess").removeClass("hideDisplay");
+    $("#divAccess").addClass("foldOut");
+    $("#divHide").addClass("makeVs");
+  }, 450);
+  setTimeout(function() {
+    clearEX();
+    $("#divHide").removeClass("hide");
+    $("#divHide").removeClass("makeVs");
+    $("#divAccess").removeClass("foldOut");
+  }, 950);
+}
 
 $("body").on("click", "#alreadySigned", SR);
 
@@ -111,15 +153,15 @@ function refreshAN(){
 }
 
 // shows loading spinning wheel
-function loadingIn(){
-  $("#loadingDiv").addClass("makeVs");
-  $("#loadingDiv").removeClass("hide");
-  $("#loadingDiv").removeClass("makeTr");
+function loadingIn(div){
+  $(div).addClass("makeVs");
+  $(div).removeClass("hide");
+  $(div).removeClass("makeTr");
 }
-function loadingOut(){
-  $("#loadingDiv").addClass("makeTr");
-  $("#loadingDiv").addClass("hide");
-  $("#loadingDiv").removeClass("makeVs");
+function loadingOut(div){
+  $(div).addClass("makeTr");
+  $(div).addClass("hide");
+  $(div).removeClass("makeVs");
 }
 //shows reminder after signing in
 function reminder(){

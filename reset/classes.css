@@ -1,0 +1,184 @@
+/*
+      GENERAL CLASSES
+*/
+*{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+html {
+  min-height: 100%;
+  margin: 0;
+}
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: Ubuntu;
+  color: #FFFFFF;
+  background-color: #212121;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+.hide {
+  opacity: 0;
+}
+
+.pageDiv {
+  position: relative;
+  min-height: 100vh;
+}
+
+.mainDiv {
+  padding-bottom: 80px;
+}
+
+/*
+      TITLE CLASSES
+*/
+
+.divTitle {
+  background-color: transparent;
+  text-align: center;
+  margin: 0 0 30px 0;
+  padding-top: 30px;
+  color: #FFFFFF;
+}
+
+.title {
+  font-size: 90px;
+  letter-spacing: 3px;
+  margin: 0 0 0 0;
+}
+
+.subtitle {
+  font-size: 20px;
+  margin: 0 0 0 0;
+}
+
+/*
+  MAIN DIV
+*/
+.reset {
+  width: 400px;
+  height: 100%;
+  background-color: #303030;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text {
+  font-size: 36px;
+  line-height: 41px;
+  padding-top: 17px;
+}
+
+.code {
+  width: 100px;
+  height: 42px;
+  font-size: 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #424242;
+  border: none;
+  margin: 0;
+  cursor: auto;
+  outline: none;
+  -moz-appearance: textfield;
+}
+
+.textbox {
+  width: 317px;
+  height: 42px;
+  background-color: #424242;
+  outline: none;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  padding-left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: auto;
+}
+
+.exception {
+  margin: 3px 0 3px 0;
+  font-weight: normal;
+  font-size: 16px;
+  color: #F53939;
+}
+
+.button {
+  width: 136px;
+  height: 36px;
+  background-color: #4471E6;
+  border: none;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  color: gainsboro;
+  margin-bottom: 22px;
+  margin-top: 22px;
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #4268C9;
+}
+.button:focus {
+  outline: none;
+}
+.button:active {
+  background-color: #3F6ED4;
+}
+
+.success {
+  font-size: 12px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 20px 0 20px 0;
+}
+.link {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.makeVs {
+  animation: makeVs 0.5s;
+}
+@keyframes makeVs {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+/*
+  FOOTER
+*/
+
+.footerDiv {
+  position: absolute;
+  text-align: center;
+  background-color: transparent;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.footer {
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+}
+
+.tronweb {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.3);
+}

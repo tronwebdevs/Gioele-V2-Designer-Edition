@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Gioele V2 Designer Edition </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="classes.css" />
+
+  <link rel="icon" href="..\img\favicontrue.png">
+</head>
+<body>
+  <script>
+    $("body").on("click", "#change", function(e) {
+      e.preventDefault();
+
+      $("#exception1").addClass("hide");
+      $("#exception2").addClass("hide");
+      $.ajax({
+        type: "POST",
+        url: "ResetPass.php",
+        data: JSON.stringify({
+                code: $("#code").val().trim(),
+                password: $("#password").val().trim(),
+                passwordC: $("#passwordConfirm").val().trim()
+              }),
+        success: function(data) {
+          if (data.code == 1) {
+            $("#success").addClass("makeVs");
+            $("#success").removeClass("hide");
+            code: $("#code").val(" ");
+            password: $("#password").val(" ");
+            passwordC: $("#passwordConfirm").val(" ");
+          }
+          if (data.code == -1) {
+            $("#exception1").removeClass("hide");
+            $("#exception1").text(data.message);
+          }
+          if (data.code == -2) {
+            $("#exception2").removeClass("hide");
+            $("#exception2").text(data.message);
+          }
+        }
+      });
+    });
+
+  </script>
+  <div class="pageDiv">
+    <div class="mainDiv">
+
+      <div id="divTitle" class="divTitle">
+        <h1 id="title" class="title"> GIOELE </h1>
+          <h1 id="designer" class="subtitle"> Designer Edition </h1>
+        <h1 id="subtitle" class="title"> V2 </h1>
+      </div>
+
+      <div class="reset">
+        <h1 class="text"> Cambio Password </h1>
+        <input id="code" class="code" type="number" min="100000" max = "999999" placeholder="Codice">
+        <h1 id="exception1" class="exception hide"> no </h1>
+        <input id="password" type="password" class="textbox" placeholder="Password" autocomplete="off">
+        <h1 id="exception2" class="exception hide"> no </h1>
+        <input id="passwordConfirm" type="password" class="textbox" placeholder="Conferma Password" autocomplete="off">
+        <input id="change" type="button" class="button" value="Cambia">
+      </div>
+
+      <div id="success" class="success hide">
+        <h1> La password è stata cambiata con successo </h1>
+        <h1> Clicca <a href="https://dev.tronweb.it/gioelev2" class="link">qui</a> per tornare a Gioele</h1>
+      </div>
+
+    </div>
+    <div class="footerDiv">
+      <footer class="footer">
+        Copyright @ 2020 | Proudly built by
+        <div id="sml" style="display: inline-block;"> SmL-Boi </div>
+        | Designed by SadTesto |
+        <a id="tronweb" href="https://www.tronweb.it" class="tronweb"> TronWeb </a>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

@@ -11,7 +11,6 @@ function SendMail($conn, $userid, $email, $username) {
   $stmt->close();
 
 
-  $to = $email;
   $subject = "Iscrizione a Gioele";
   $message = "
   <html>
@@ -66,7 +65,7 @@ function SendMail($conn, $userid, $email, $username) {
   $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
   $headers .= "From: tronweb@tronzanella.edu.it" . "\r\n";
 
-  if (!mail($to,$subject,$message,$headers)) {
+  if (!mail($email, $subject, $message, $headers)) {
     code_response(-2, "Errore nell'invio della mail", 400, $conn);
     exit();
   }

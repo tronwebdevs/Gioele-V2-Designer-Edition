@@ -9,7 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] != "GET") {
 }
 
 $token = get_input_data("token");
-//check if userid matches in both tables
+
+//check if token matches
 $stmt = $conn->prepare("SELECT id FROM auth_users WHERE token = ?");
 $stmt->bind_param("s", $token);
 $stmt->execute();
