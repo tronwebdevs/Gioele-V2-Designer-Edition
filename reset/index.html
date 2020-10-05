@@ -31,9 +31,9 @@
           if (data.code == 1) {
             $("#success").addClass("makeVs");
             $("#success").removeClass("hide");
-            code: $("#code").val(" ");
-            password: $("#password").val(" ");
-            passwordC: $("#passwordConfirm").val(" ");
+            code: $("#code").val("");
+            password: $("#password").val("");
+            passwordC: $("#passwordConfirm").val("");
           }
           if (data.code == -1) {
             $("#exception1").removeClass("hide");
@@ -73,7 +73,7 @@
       </div>
 
     </div>
-    <div class="footerDiv">
+    <div id="footerDiv"  class="footerDiv">
       <footer class="footer">
         Copyright @ 2020 | Proudly built by
         <div id="sml" style="display: inline-block;"> SmL-Boi </div>

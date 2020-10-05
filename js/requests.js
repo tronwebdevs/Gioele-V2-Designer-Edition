@@ -65,6 +65,7 @@ $("body").on("click", "#login", function(e) {
         sessionAN();  //animation
         sessionStart(data);
         sessionid = data.sessId;
+        GameAN();
       } else {
         $("#LoginException").removeClass("hide");
         $("#LoginException").text(data.message);
@@ -88,6 +89,7 @@ function autoLogin() {
         sessionAN();  //animation
         sessionStart(data);
         sessionid = data.sessId;
+        GameAN();
       } else {
         $("#LoginException").removeClass("hide");
         $("#LoginException").text(data.message);

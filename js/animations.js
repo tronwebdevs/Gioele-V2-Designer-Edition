@@ -111,6 +111,9 @@ function sessionAN() {
 
 function logoutAN() {
   $("#divSession").addClass("hideDisplay");
+  $("#divRules").addClass("hideDisplay");
+  $("#divLeaderboard").addClass("hideDisplay");
+  $("#divGame").addClass("hideDisplay");
   $("#divAccess").removeClass("hideDisplay");
 }
 
@@ -179,6 +182,81 @@ function reminder(){
   }, 1000);
 }
 
+//logging in cool animations
+function GameAN() {
+  $("#divProfile").addClass("slideInLeft");
+  setTimeout(function(){
+    $("#divRules").removeClass("hide");
+    $("#divRules").addClass("slideInLeft");
+  }, 150);
+  setTimeout(function(){
+    $("#divLeaderboard").removeClass("hide");
+    $("#divLeaderboard").addClass("slideInRigth");
+  }, 300);
+  setTimeout(function(){
+    $("#divGame").removeClass("hide");
+    $("#divGame").addClass("gameAN");
+  }, 800);
+
+  setTimeout(function(){
+    $("#divProfile").removeClass("slideInLeft");
+    setTimeout(function(){
+      $("#divRules").removeClass("slideInLeft");
+    }, 150);
+    setTimeout(function(){
+      $("#divLeaderboard").removeClass("slideInRigth");
+    }, 300);
+    setTimeout(function(){
+      $("#divGame").removeClass("gameAN");
+    }, 800);
+  }, 950);
+}
+
+//title animation
+function TitleAN() {
+  $("#title").addClass("titleAN");
+  setTimeout(function(){
+    $("#subtitle").removeClass("hide");
+    $("#subtitle").addClass("titleAN");
+  }, 300);
+  setTimeout(function(){
+    $("#designer").removeClass("hide");
+    $("#designer").addClass("makeVs");
+  }, 2000);
+  setTimeout(function(){
+    $("#title").removeClass("titleAN");
+    $("#subtitle").removeClass("titleAN");
+    $("#designer").removeClass("makeVs");
+  }, 2500);
+}
+
+//footer animation
+function LoginAN() {
+  setTimeout(function() {
+    $("#divAccess").removeClass("hide");
+    $("#divAccess").addClass("accessAN");
+    $("#divHide").addClass("accessHideAN");
+  }, 2500);
+  setTimeout(function() {
+    $("#divHide").removeClass("hide");
+    $("#divHide").removeClass("accessHideAN");
+    $("#divAccess").removeClass("accessAN");
+  }, 4050);
+}
+
+//footer animation
+function FooterAN() {
+  setTimeout(function(){
+    $("#footerDiv").removeClass("hide");
+  }, 1050);
+}
+
+//first animations to load
+function LoadAN() {
+  TitleAN();
+  LoginAN();
+  FooterAN();
+}
 // hoes mad
 /*
 $(document).ready(function() {

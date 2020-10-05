@@ -218,6 +218,8 @@ tr:nth-child(even) {
   position: relative;
   background-color: transparent;
   padding: 46px;
+  animation: makeVs 3s;
+  animation-delay: 2s;
 }
 
 .footer {

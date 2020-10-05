@@ -15,7 +15,7 @@
 
   <link rel="icon" href="img\favicontrue.png">
 </head>
-<body onload="checkLogin()">
+<body onload="checkLogin(), LoadAN()">
   <div class="pageDiv">
     <div class="mainDiv">
       <script src="js\functions.js"> </script>
@@ -25,13 +25,13 @@
 
       <div id="divTitle" class="divTitle">
         <h1 id="title" class="title"> GIOELE </h1>
-          <h1 id="designer" class="subtitle"> Designer Edition </h1>
-        <h1 id="subtitle" class="title"> V2 </h1>
+          <h1 id="designer" class="subtitle hide"> Designer Edition </h1>
+        <h1 id="subtitle" class="title hide"> V2 </h1>
       </div>
 
       <h1 id="reminder" class="reminder hideDisplay"> Ti sei registrato! Controlla la mail che ti è stata inviata per autenticarti </h1>
 
-      <div id="divAccess" class="divLogin">
+      <div id="divAccess" class="divLogin hide">
         <div id="divHide">
           <div style="text-align: center">
             <h1 id="textLogin" class="textAccess"> Login </h1>
@@ -131,7 +131,7 @@
             </div>
           </div>
 
-          <div id="divRules" class="divRules">
+          <div id="divRules" class="divRules hide">
             <h1 id="profile" class="sessionTitle"> Regole </h1>
             <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
             <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
@@ -141,7 +141,7 @@
         </div>
 
         <div id="centralSession" class="centralSession">
-          <div id="divGame" class="divGame">
+          <div id="divGame" class="divGame hide">
             <h1 id="gameTitle" class="sessionTitle"> Indovina il numero </h1>
             <h1 id="gameAttemptsLeft" class="attempt"> tentativi </h1>
             <input id="gameAttempt" class="gameAttempt" type="number" min="0" max = "100">
@@ -154,7 +154,7 @@
         </div>
 
         <div id="rightSession" class="rightSession">
-          <div id="divLeaderboard" class="divLeaderboard">
+          <div id="divLeaderboard" class="divLeaderboard hide">
             <h1 id="leaderboardTitle" class="sessionTitle"> Classifica </h1>
             <div id="tableHeader" class="tableHeader">
               <table id="leaderboardTable" class="leaderboardTable">
@@ -176,7 +176,7 @@
       </div>
     </div>
 
-    <div class="footerDiv">
+    <div id="footerDiv" class="footerDiv hide">
       <footer class="footer">
         Copyright @ 2020 | Proudly built by
         <div id="sml" style="display: inline-block;"> SmL-Boi </div>

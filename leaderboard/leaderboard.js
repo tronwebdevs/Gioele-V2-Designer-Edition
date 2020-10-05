@@ -152,3 +152,10 @@ function refreshLeaderboard() {
     getTable();
   }, 200);
 }
+
+//footer animation
+function FooterAN() {
+  setTimeout(function(){
+    $("#footerDiv").removeClass("hide");
+  }, 2050);
+}

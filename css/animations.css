@@ -60,3 +60,46 @@
   0% {transform: scaleY(1); margin-top: 30px; margin-bottom: 30px; font-size: 20px;}
   100% {transform: scaleY(0); margin-top: 0; margin-bottom: 0; font-size: 0;}
 }
+
+.slideInLeft {
+  position: relative;
+  animation: slideInLeft 1s;
+}
+@keyframes slideInLeft {
+  0% {right: 500px;}
+  100% {right: 0px;}
+}
+
+.slideInRigth {
+  position: relative;
+  animation: slideInRigth 1s;
+}
+@keyframes slideInRigth {
+  0% {left: 500px;}
+  100% {left: 0px;}
+}
+
+.gameAN {
+  animation: makeVs 1s;
+}
+
+.titleAN {
+  position: relative;
+  animation: titleAN 1.5s;
+}
+@keyframes titleAN {
+  0% {bottom: 150px; opacity: 0;}
+  80% {bottom: -10px; opacity: 0.3;}
+  100% {bottom: 0px; opacity: 1;}
+}
+
+.accessAN {
+  animation: accessAN 1.5s;
+}
+@keyframes accessAN {
+  0% {transform: rotateY(90deg)}
+  100% {transform: rotateY(0deg)}
+}
+.accessHideAN {
+  animation: makeVs 1.5s;
+}

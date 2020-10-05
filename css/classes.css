@@ -13,10 +13,14 @@
 html {
   min-height: 100%;
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 body {
   min-height: 100%;
   margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   font-family: Ubuntu;
   color: #FFFFFF;
   background-color: #212121;
@@ -679,6 +683,8 @@ tr:nth-child(even) {
   height: 20px;
   padding-top: 14px;
   padding-bottom: 14px;
+  animation: makeVs 3s;
+  animation-delay: 1s;
 }
 
 .footer {
