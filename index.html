@@ -61,13 +61,13 @@
             <h1 id="Fexception" class="exception hide"> no </h1>
           </div>
           <div class="Fwrapper">
-            <h1 id="back" class="back"> torna al Login </h4>
+            <input id="forgot" type="button" class="fButton" value="Cambia">
             <div id="loadingDivF" class="loadingDivF hide">
               <i class="fas fa-spinner fa-pulse"></i>
             </div>
-            <div class="wrapper">
-              <input id="forgot" type="button" class="loginButton" value="Cambia">
-            </div>
+            <div class="Fwrapper2">
+              <h1 id="back" class="back"> torna al Login </h4>
+              </div>
           </div>
         </div>
       </div>
@@ -100,13 +100,20 @@
           <div id="divProfile" class="divProfile">
 
             <div id="divInfo">
-              <h1 class="sessionTitle"> Profilo </h1>
-              <h1 id="usernameInfo" class="sessionSub"> . </h1>
-              <h1 id="emailInfo" class="sessionSub"> . </h1>
-              <h1 id="scoreInfo" class="sessionSub"> . </h1>
-              <div class="profileOptions">
-                <h1 id="editProfile" class="editProfile"> Modifica </h1>
-                <h1 id="logout" class="logout"> Esci </h1>
+              <div style="text-align: center">
+                <h1 class="sessionTitle"> Profilo </h1>
+                <div class="sessionArrow">
+                  <i id="infoArrow" class="fas fa-chevron-circle-down "></i>
+                </div>
+              </div>
+              <div id="infoHide">
+                <h1 id="usernameInfo" class="sessionSub"> . </h1>
+                <h1 id="emailInfo" class="sessionSub"> . </h1>
+                <h1 id="scoreInfo" class="sessionSub"> . </h1>
+                <div class="profileOptions">
+                  <h1 id="editProfile" class="editProfile"> Modifica </h1>
+                  <h1 id="logout" class="logout"> Esci </h1>
+                </div>
               </div>
             </div>
 
@@ -132,17 +139,26 @@
           </div>
 
           <div id="divRules" class="divRules hide">
-            <h1 id="profile" class="sessionTitle"> Regole </h1>
-            <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
-            <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
-            <h1 class="sessionSub"> Dopo 3 tentativi verrà calcolato il punteggio in base alla differenza tra i due numeri </h1>
-            <h1 class="sessionSub"> Scala la classifica! </h1>
+            <div id="rulesWrapper" class="rulesWrapper">
+              <div style="text-align: center">
+                <h1 class="sessionTitle"> Regole </h1>
+                <div class="sessionArrow">
+                  <i id="rulesArrow" class="fas fa-chevron-circle-down "></i>
+                </div>
+              </div>
+              <div id="rulesHide">
+                <h1 class="sessionSub"> Clicca su 'Gioca' e verrà generato un numero casuale compreso tra 0 e 100 </h1>
+                <h1 class="sessionSub"> Prova ad indovinarlo e ti verrà detto se è maggiore o minore del tentativo </h1>
+                <h1 class="sessionSub"> Dopo 3 tentativi verrà calcolato il punteggio in base alla differenza tra i due numeri </h1>
+                <h1 class="sessionSub"> Scala la classifica! </h1>
+              </div>
+            </div>
           </div>
         </div>
 
         <div id="centralSession" class="centralSession">
           <div id="divGame" class="divGame hide">
-            <h1 id="gameTitle" class="sessionTitle"> Indovina il numero </h1>
+            <h1 id="gameTitle" class="gameTitle"> Indovina il numero </h1>
             <h1 id="gameAttemptsLeft" class="attempt"> tentativi </h1>
             <input id="gameAttempt" class="gameAttempt" type="number" min="0" max = "100">
             <div>
@@ -155,22 +171,23 @@
 
         <div id="rightSession" class="rightSession">
           <div id="divLeaderboard" class="divLeaderboard hide">
-            <h1 id="leaderboardTitle" class="sessionTitle"> Classifica </h1>
-            <div id="tableHeader" class="tableHeader">
-              <table id="leaderboardTable" class="leaderboardTable">
-                <tr>
-                  <th style="font-weight: bold;"> Posizione </th>
-                  <th style="font-weight: bold;"> Punteggio </th>
-                  <th style="font-weight: bold;"> Username </th>
-                </tr>
-              </table>
+            <div style="text-align: center">
+              <h1 id="leaderboardTitle" class="sessionTitle"> Classifica </h1>
+              <div class="sessionArrow">
+                <i id="leaderboardArrow" class="fas fa-chevron-circle-down "></i>
+              </div>
             </div>
-            <h1 id="leaderboardLink" class="leaderboardLink"> Classifica Completa </h1>
-
-            <i id="refreshLeaderboard" class="fas fa-sync-alt refreshLeaderboard"></i>
+            <div id="leaderboardHide">
+              <div id="tableHeader" class="tableHeader">
+                <table id="leaderboardTable" class="leaderboardTable">
+                </table>
+              </div>
+              <a href="https://dev.tronweb.it/gioelev2/leaderboard" target="_blank" id="leaderboardLink" class="leaderboardLink"> Classifica Completa </a>
+              <i id="refreshLeaderboard" class="fas fa-sync-alt refreshLeaderboard"></i>
+            </div>
           </div>
           <div class="mobileLeaderboard">
-            <h1 class="mobileLink"> Visualizza la Classifica </h1>
+            <a href="https://dev.tronweb.it/gioelev2/leaderboard" target="_blank" class="mobileLink"> Visualizza la Classifica </a>
           </div>
         </div>
       </div>

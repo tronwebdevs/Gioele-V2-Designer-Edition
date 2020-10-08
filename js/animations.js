@@ -111,9 +111,9 @@ function sessionAN() {
 
 function logoutAN() {
   $("#divSession").addClass("hideDisplay");
-  $("#divRules").addClass("hideDisplay");
-  $("#divLeaderboard").addClass("hideDisplay");
-  $("#divGame").addClass("hideDisplay");
+  $("#divRules").addClass("hide");
+  $("#divGame").addClass("hide");
+  $("#divLeaderboard").addClass("hide");
   $("#divAccess").removeClass("hideDisplay");
 }
 
@@ -257,6 +257,93 @@ function LoadAN() {
   LoginAN();
   FooterAN();
 }
+
+//arrows animations
+function closePB() {
+  $("#infoHide").addClass("makeTr");
+  setTimeout(function(){
+    $("#divInfo").removeClass("openBox1");
+    $("#divInfo").addClass("closeBox1");
+    $("#infoArrow").removeClass("rotateOpen");
+    $("#infoArrow").addClass("rotateClose");
+    $("#infoHide").addClass("hideDisplay");
+  }, 450);
+  setTimeout(function(){
+    $("#infoHide").removeClass("makeTr");
+  }, 950);
+}
+
+function openPB() {
+  $("#infoArrow").addClass("rotateOpen");
+  $("#divInfo").removeClass("closeBox1");
+  $("#divInfo").addClass("openBox1");
+  setTimeout(function(){
+    $("#infoHide").removeClass("hideDisplay");
+    $("#infoHide").addClass("makeVs");
+    $("#infoArrow").removeClass("rotateClose");
+  }, 450);
+  setTimeout(function(){
+    $("#infoHide").removeClass("makeVs");
+  }, 950);
+}
+
+function closeRB() {
+  $("#rulesHide").addClass("makeTr");
+  setTimeout(function(){
+    $("#rulesWrapper").removeClass("openBox2");
+    $("#rulesWrapper").addClass("closeBox2");
+    $("#rulesArrow").removeClass("rotateOpen");
+    $("#rulesArrow").addClass("rotateClose");
+    $("#rulesHide").addClass("hideDisplay");
+  }, 450);
+  setTimeout(function(){
+    $("#rulesHide").removeClass("makeTr");
+  }, 950);
+}
+
+function openRB() {
+  $("#rulesArrow").addClass("rotateOpen");
+  $("#rulesWrapper").removeClass("closeBox2");
+  $("#rulesWrapper").addClass("openBox2");
+  setTimeout(function(){
+    $("#rulesHide").removeClass("hideDisplay");
+    $("#rulesHide").addClass("makeVs");
+    $("#rulesArrow").removeClass("rotateClose");
+  }, 450);
+  setTimeout(function(){
+    $("#rulesHide").removeClass("makeVs");
+  }, 950);
+}
+
+
+function closeLB() {
+  $("#leaderboardHide").addClass("makeTr");
+  setTimeout(function(){
+    $("#divLeaderboard").removeClass("openBox3");
+    $("#divLeaderboard").addClass("closeBox3");
+    $("#leaderboardArrow").removeClass("rotateOpen");
+    $("#leaderboardArrow").addClass("rotateClose");
+    $("#leaderboardHide").addClass("hideDisplay");
+  }, 450);
+  setTimeout(function(){
+    $("#leaderboardHide").removeClass("makeTr");
+  }, 950);
+}
+
+function openLB() {
+  $("#leaderboardArrow").addClass("rotateOpen");
+  $("#divLeaderboard").removeClass("closeBox3");
+  $("#divLeaderboard").addClass("openBox3");
+  setTimeout(function(){
+    $("#leaderboardHide").removeClass("hideDisplay");
+    $("#leaderboardHide").addClass("makeVs");
+    $("#leaderboardArrow").removeClass("rotateClose");
+  }, 450);
+  setTimeout(function(){
+    $("#leaderboardHide").removeClass("makeVs");
+  }, 950);
+}
+
 // hoes mad
 /*
 $(document).ready(function() {

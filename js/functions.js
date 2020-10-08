@@ -82,3 +82,41 @@ $("body").on("click", "#refreshLeaderboard", function(e) {
     getTop10()
   }, 200);
 });
+
+//variables for arrows that close things
+let BoxP = true;
+let BoxR = true;
+let BoxL = true;
+
+//switches profile box
+$("body").on("click", "#infoArrow", function(e) {
+   if (BoxP) {
+     BoxP = false;
+     closePB();
+   } else {
+     BoxP = true;
+     openPB();
+   }
+});
+
+//switches rules box
+$("body").on("click", "#rulesArrow", function(e) {
+   if (BoxR) {
+     BoxR = false;
+     closeRB();
+   } else {
+     BoxR = true;
+     openRB();
+   }
+});
+
+//switches rules box
+$("body").on("click", "#leaderboardArrow", function(e) {
+   if (BoxL) {
+     BoxL = false;
+     closeLB();
+   } else {
+     BoxL = true;
+     openLB();
+   }
+});

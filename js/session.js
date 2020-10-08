@@ -38,9 +38,4 @@ function showLeaderboard(data) {
 function sessionStart(data) {
   showInfo(data);
   getTop10();
-
-
-
-
-
 }

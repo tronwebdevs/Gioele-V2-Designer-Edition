@@ -115,6 +115,10 @@ $("body").on("click", "#logout", function (){
       document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
       console.log(data.message);
       sessionid = "";
+      //deletes leaderboard
+      for (let i = 0; i < 10; i++) {
+        $("#tr" + i).remove();
+      }
     }
   });
 

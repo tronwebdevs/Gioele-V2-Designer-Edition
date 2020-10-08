@@ -103,3 +103,86 @@
 .accessHideAN {
   animation: makeVs 1.5s;
 }
+
+/*
+  BOXES ANIMATION
+*/
+.closeBox1 {
+  height: 74px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  animation: closeBox1 0.5s;
+}
+@keyframes closeBox1 {
+  0% {padding-bottom: 158px;}
+  100% {padding-bottom: 0px;}
+}
+
+.rotateClose {
+  transform: rotate(180deg);
+  animation: rotateClose 0.5s;
+}
+@keyframes rotateClose {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(180deg);}
+}
+
+.openBox1 {
+  height: 74px;
+  padding-bottom: 158px;
+  animation: openBox1 0.5s;
+}
+@keyframes openBox1 {
+  0% {padding-bottom: 0px;}
+  100% {padding-bottom: 158px;}
+}
+
+.rotateOpen {
+  animation: rotateOpen 0.5s;
+}
+@keyframes rotateOpen {
+  0% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+
+.closeBox2 {
+  height: 74px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  animation: closeBox2 0.5s;
+}
+@keyframes closeBox2 {
+  0% {padding-bottom: 236px;}
+  100% {padding-bottom: 0px;}
+}
+
+.openBox2 {
+  height: 74px;
+  padding-bottom: 236px;
+  animation: openBox2 0.5s;
+}
+@keyframes openBox2 {
+  0% {padding-bottom: 0px;}
+  100% {padding-bottom: 236px;}
+}
+
+.closeBox3 {
+  height: 74px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  animation: closeBox3 0.5s;
+}
+@keyframes closeBox3 {
+  0% {padding-bottom: 528px;}
+  100% {padding-bottom: 0px;}
+}
+
+.openBox3 {
+  height: 74px;
+  padding-bottom: 528px;
+  animation: openBox3 0.5s;
+}
+@keyframes openBox3 {
+  0% {padding-bottom: 0px;}
+  100% {padding-bottom: 528px;}
+}

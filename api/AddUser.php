@@ -16,7 +16,18 @@ $passwordC = get_input_data("passwordC");
 
 // Checks username
 if (!isset($username) || empty($username)) {
-  code_response(-1, "Username non inserito", 400, $conn);
+  code_response(-1, "username non inserito", 400, $conn);
+  exit();
+}
+// no bad words :(
+require 'UsernameCheckout.php';
+if (badwords($username)){
+  code_response(-1, "L'username contiene parole proibite", 400, $conn);
+  exit();
+}
+//name length
+if (strlen($username) > 20) {
+  code_response(-1, "L'username non può avere più di 20 caratteri", 400, $conn);
   exit();
 }
 // is already used
