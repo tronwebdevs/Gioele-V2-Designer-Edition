@@ -152,7 +152,22 @@ $("body").on("click", "#confirmEdit", function(e) {
 //Delete Profile
 $("body").on("click", "#deleteConfirm", function(e) {
   e.preventDefault();
-  alert('inattivo')
+
+  $.ajax({
+    type: "POST",
+    url: "api\\DeleteUser.php",
+    data:  JSON.stringify({
+            sessionid: sessionid,
+          }),
+    success: function(data) {
+      if (data.code == 1) {
+
+      }
+      if (data.code == -1) {
+        
+      }
+    }
+  });
 });
 
 //get top 10 players
