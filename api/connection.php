@@ -1,5 +1,5 @@
 <?php
-  require '..\config.php';
+  require '../config.php';
   require 'headers.php';
 
   //connect to database
