@@ -8,6 +8,7 @@ function SendMail($conn, $userid, $email, $username) {
   $stmt = $conn->prepare("INSERT INTO auth_users (id, token) VALUES (?,?)");
   $stmt->bind_param("ss", $userid, $token);
   $stmt->execute();
+  check_quarry($stmt, $conn);
   $stmt->close();
 
 

@@ -14,6 +14,7 @@ checkSession($conn);
 $stmt = $conn->prepare("SELECT score FROM users WHERE id = ?");
 $stmt->bind_param("s", $_SESSION['user_id']);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $score = $stmt->get_result()->fetch_assoc()["score"];
 $stmt->close();
 

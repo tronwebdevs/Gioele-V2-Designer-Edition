@@ -37,6 +37,7 @@ if (strlen($newusername) > 20) {
 $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
 $stmt->bind_param("s", $newusername);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 if ($result->num_rows != 0) {
@@ -48,6 +49,7 @@ if ($result->num_rows != 0) {
 $stmt = $conn->prepare("UPDATE users SET username = ? WHERE id = ?");
 $stmt->bind_param("ss", $newusername, $_SESSION['user_id']);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 $_SESSION['user_name'] = $newusername;
 
@@ -60,6 +62,4 @@ echo json_encode(
     "username" => $newusername
   )
 );
-
-
 $conn->close();

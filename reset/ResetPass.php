@@ -25,6 +25,7 @@ if ($code < 100000 || $code > 999999) {
 $stmt = $conn->prepare("SELECT * FROM change_pass WHERE token = ?");
 $stmt->bind_param("s", $code);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $userid = $result->fetch_assoc()["id"];
 $stmt->close();
@@ -58,12 +59,14 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 $stmt = $conn->prepare("UPDATE users SET password = ? WHERE id = ?");
 $stmt->bind_param("ss", $password, $userid);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 
 //deletes request row
 $stmt = $conn->prepare("DELETE FROM change_pass WHERE id = ?");
 $stmt->bind_param("s", $userid);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 
 // Response

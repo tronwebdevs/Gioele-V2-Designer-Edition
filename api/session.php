@@ -17,6 +17,7 @@ function session($remember, $conn, $username) {
   $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
   $stmt->bind_param("s", $username);
   $stmt->execute();
+  check_quarry($stmt, $conn);
   $result = $stmt->get_result();
   $result = $result->fetch_assoc();
   $stmt->close();

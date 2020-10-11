@@ -512,6 +512,11 @@ input::-webkit-inner-spin-button {
   margin-top: 10px;
 }
 
+.divDeleteConfirm {
+  margin-top: 69px;
+  padding-bottom: 20px;
+}
+
 .deleteConfirm {
   text-align: center;
   width: 100px;

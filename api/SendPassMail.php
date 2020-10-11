@@ -30,6 +30,7 @@ if (strpos($email, "@tronzanella.edu.it") != (strlen($email) - 19)) {
 $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 if ($result->num_rows == 0) {
@@ -41,6 +42,7 @@ if ($result->num_rows == 0) {
 $stmt = $conn->prepare("SELECT * FROM change_pass WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 if ($result->num_rows != 0) {
@@ -53,6 +55,7 @@ $cday = date("d");
 $chour = date("H");
 $stmt = $conn->prepare("SELECT * FROM change_pass");
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 while($row = $result->fetch_assoc()) {
@@ -63,6 +66,7 @@ while($row = $result->fetch_assoc()) {
     $stmt = $conn->prepare("DELETE FROM change_pass WHERE id = ?");
     $stmt->bind_param("s", $row["id"]);
     $stmt->execute();
+    check_quarry($stmt, $conn);
     $stmt->close();
   }
 }
@@ -72,6 +76,7 @@ while($row = $result->fetch_assoc()) {
 $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result()->fetch_assoc();
 $userid = $result["id"];
 $username = $result["username"];
@@ -83,6 +88,7 @@ $token = rand(100000, 999999);
 $stmt = $conn->prepare("INSERT INTO change_pass (id, token, email) VALUES (?,?,?)");
 $stmt->bind_param("sss", $userid, $token, $email);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 
 //Send mail

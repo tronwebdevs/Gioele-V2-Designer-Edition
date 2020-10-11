@@ -22,6 +22,7 @@ if (!isset($username) || empty($username)) {
 $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 if ($result->num_rows == 0) {

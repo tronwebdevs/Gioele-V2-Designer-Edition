@@ -14,6 +14,7 @@ $token = get_input_data("token");
 $stmt = $conn->prepare("SELECT id FROM auth_users WHERE token = ?");
 $stmt->bind_param("s", $token);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $id = $stmt->get_result()->fetch_assoc()["id"];
 $stmt->close();
 if (!isset($id)) {
@@ -25,12 +26,14 @@ if (!isset($id)) {
 $stmt = $conn->prepare("DELETE FROM auth_users WHERE id = ?");
 $stmt->bind_param("s", $id);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 
 //sets auth value to 1 (true) in users table
 $stmt = $conn->prepare("UPDATE users SET auth = 1 WHERE id = ?");
 $stmt->bind_param("s", $id);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 
 //response

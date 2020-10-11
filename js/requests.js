@@ -110,15 +110,7 @@ $("body").on("click", "#logout", function (){
             sessionid: sessionid
           }),
     success: function(data) {
-      logoutAN();
-      document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-      document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-      console.log(data.message);
-      sessionid = "";
-      //deletes leaderboard
-      for (let i = 0; i < 10; i++) {
-        $("#tr" + i).remove();
-      }
+      logout();
     }
   });
 
@@ -161,10 +153,13 @@ $("body").on("click", "#deleteConfirm", function(e) {
           }),
     success: function(data) {
       if (data.code == 1) {
-
+        logout(data);
+        alert(data.message);
+        $("#divEdit").addClass("hideDisplay");
+        $("#divInfo").removeClass("hideDisplay");
       }
       if (data.code == -1) {
-        
+        alert(data.message);
       }
     }
   });

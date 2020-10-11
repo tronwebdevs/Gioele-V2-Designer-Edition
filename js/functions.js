@@ -83,6 +83,17 @@ $("body").on("click", "#refreshLeaderboard", function(e) {
   }, 200);
 });
 
+function logout() {
+  logoutAN();
+  document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  document.cookie = "GioeleSession=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+  sessionid = "";
+  //deletes leaderboard
+  for (let i = 0; i < 10; i++) {
+    $("#tr" + i).remove();
+  }
+}
+
 //variables for arrows that close things
 let BoxP = true;
 let BoxR = true;

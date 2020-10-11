@@ -86,6 +86,7 @@ function badwords($username) {
     "/covid/i",
     "/wuhan/i",
     //sezione personalizzata
+    "/mvja27/i",
   );
 
   //actual function

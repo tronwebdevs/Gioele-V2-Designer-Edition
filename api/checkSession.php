@@ -11,7 +11,7 @@ function checkSession($conn) {
   if (!isset($_SESSION['user_id']) || !isset($_SESSION['user_name']) || !isset($_SESSION['user_email']) || !isset($_SESSION['user_score'])){
     session_unset();
     session_destroy();
-    code_response(-2, "Errore nel Login ", 400, $conn);
+    code_response(-2, "Errore nel controllo dell'identità ", 400, $conn);
     exit();
   }
 }

@@ -34,6 +34,7 @@ if (strlen($username) > 20) {
 $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
 $stmt->bind_param("s", $username);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 if ($result->num_rows != 0) {
@@ -60,6 +61,7 @@ if (strpos($email, "@tronzanella.edu.it") != (strlen($email) - 19)) {
 $stmt = $conn->prepare("SELECT * FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 if ($result->num_rows != 0) {
@@ -92,6 +94,7 @@ $cday = date("d");
 $chour = date("H");
 $stmt = $conn->prepare("SELECT * FROM users");
 $stmt->execute();
+check_quarry($stmt, $conn);
 $result = $stmt->get_result();
 $stmt->close();
 while($row = $result->fetch_assoc()) {
@@ -102,15 +105,18 @@ while($row = $result->fetch_assoc()) {
     $stmt = $conn->prepare("SELECT * FROM users WHERE id = ? AND auth = 0");
     $stmt->bind_param("s", $row["id"]);
     $stmt->execute();
+    check_quarry($stmt, $conn);
     $result2 = $stmt->get_result()->fetch_assoc();
     $stmt->close();
     $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
     $stmt->bind_param("s", $result2["id"]);
     $stmt->execute();
+    check_quarry($stmt, $conn);
     $stmt->close();
     $stmt = $conn->prepare("DELETE FROM auth_users WHERE id = ?");
     $stmt->bind_param("s", $result2["id"]);
     $stmt->execute();
+    check_quarry($stmt, $conn);
     $stmt->close();
   }
 }
@@ -121,6 +127,7 @@ $password = password_hash($password, PASSWORD_DEFAULT);
 $stmt = $conn->prepare("INSERT INTO users (id, username, password, email) VALUES (?,?,?,?)");
 $stmt->bind_param("ssss", $userid, $username, $password, $email);
 $stmt->execute();
+check_quarry($stmt, $conn);
 $stmt->close();
 
 // send mail
