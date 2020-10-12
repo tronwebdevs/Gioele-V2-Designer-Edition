@@ -11,6 +11,7 @@
 
   <script src="leaderboard.js"> </script>
   <link rel="stylesheet" type="text/css" href="classes.css" />
+  <link rel="stylesheet" type="text/css" href="media.css" />
   <link rel="icon" href="..\img\favicontrue.png">
 </head>
 <body onLoad="getTable(), FooterAN()">
@@ -26,14 +27,14 @@
     <div id="tableWrapper" class="tableWrapper">
       <table id="leaderboardTable" class="leaderboardTable">
         <tr>
-          <th class="cell1 topCell"> Posizione </th>
+          <th class="cell1 topCell"> # </th>
           <th class="cell1 topCell"> Punteggio </th>
           <th class="cell2 topCell" style="text-align: center"> Username </th>
         </tr>
       </table>
     </div>
 
-    <div>
+    <div class="bottomDiv">
       <div id="counterDiv" class="counterDiv">
         <i id="left" class="fas fa-caret-left arrow" onclick="changePage(-1)"></i>
         <input id="counter" class="counter" type="number" placeholder="1">

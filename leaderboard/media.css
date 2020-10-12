@@ -1,0 +1,15 @@
+@media screen and (max-width: 768px){
+  .divLeaderboard {
+    width: 90vw;
+  }
+  .tableWrapper {
+    width: 80vw;
+    margin: 0 5vw 8px 5vw;
+  }
+  .title {
+    font-size: 70px;
+  }
+  .subtitle {
+    font-size: 20px;
+  }
+}
