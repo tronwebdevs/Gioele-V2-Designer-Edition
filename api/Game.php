@@ -111,7 +111,7 @@ if ($_SESSION['user_attempt'] <= 0) {
 
 //generates random number
 if ($_SESSION['user_number'] == -1) {
-  $_SESSION['user_number'] = rand(0, 100);
+  $_SESSION['user_number'] = rand(0, 99);
   $_SESSION['user_number'] += (rand(0, 9)/10);
   $_SESSION['user_number'] += (rand(0, 9)/100);
   $_SESSION['user_number'] += (rand(0, 9)/1000);

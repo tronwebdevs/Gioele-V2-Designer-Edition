@@ -131,3 +131,21 @@ $("body").on("click", "#leaderboardArrow", function(e) {
      openLB();
    }
 });
+
+//hoes mad
+let designerr = true;
+$("body").on("click", "#sadtesto", function(e) {
+  if (designerr) {
+    designerr = false;
+    document.head.childNodes.forEach(ch => ch.nodeName === 'LINK' ? document.head.removeChild(ch) : null);
+  } else {
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/classes.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/animations.css">');
+    $('head').append('<link rel="stylesheet" type="text/css" href="css/medias.css">');
+    $('head').append('<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>');
+    $('head').append('<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">');
+    $('head').append('<link rel="icon" href="img/favicontrue.png">');
+
+    designerr = true;
+  }
+});
