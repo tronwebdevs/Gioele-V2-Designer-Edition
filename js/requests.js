@@ -197,6 +197,8 @@ $("body").on("click", "#gameButton", function(e) {
         $("#gameAttemptsLeft").text("tentativi esauriti");
         $("#gameResult").text("Il numero era " + data.result + " - Hai fatto " + data.score + " punti");
         $("#gameButton").prop("value", "Ricomincia");
+        $("#gameAttempt").prop("disabled",true);
+        $("#gameAttempt").val("");
         if (data.record == true) {
           $("#scoreInfo").text("punteggio: " + data.score);
         }
@@ -212,6 +214,10 @@ $("body").on("click", "#gameButton", function(e) {
         $("#gameResult").addClass("hide");
         $("#gameResult").text(".");
         $("#gameAttempt").val("");
+      }
+      if (data.code == 5) {
+        $("#gameAttempt").prop("disabled",false);
+        $("#gameResult").addClass("hide");
       }
       if (data.code == -1) {
         $("#gameException").removeClass("hide");

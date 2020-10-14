@@ -13,6 +13,13 @@ checkSession($conn);
 
 $num = get_input_data("number");
 
+//easy fix
+if ($_SESSION['user_attempt'] <= 0){
+  $_SESSION['user_attempt'] = 3;
+  code_response(5, " ", 400, $conn);
+  exit();
+}
+
 //checks if input is a number
 if (!is_numeric($num) || !isset($num) && $num != 0) {
   code_response(-1, "Devi inserire un numero", 400, $conn);
@@ -42,10 +49,10 @@ if ($_SESSION['user_attempt'] == 3) {
 
 /* huge pogchamp ahead
 
-  score is based on the hyperbole 8xy + y = 1
+  score is based on the hyperbole 6xy + y = 1
   where x is the delta and y is the score
 
-  score = 1/(8*D+1)
+  score = 1/(6*D+1)
 
   since D is always >= than 0 then the score limit is 1,
   in order to get a more useful score, the result is multiplied by 10'000
@@ -61,7 +68,7 @@ function getScore($num) {
   if ($D >= 10) {
     return 0;
   } else {
-    return floor(10000*(1/(8*$D+1)));
+    return floor(10000*(1/(6*$D+1)));
   }
 }
 
@@ -84,11 +91,8 @@ if ($_SESSION['user_attempt'] <= 0) {
     $stmt->execute();
     check_quarry($stmt, $conn);
     $stmt->close();
-
-
     $isRecord = true;
   }
-
   echo json_encode(
     array(
       "code" => 2,
@@ -99,8 +103,6 @@ if ($_SESSION['user_attempt'] <= 0) {
       "record" => $isRecord,
     )
   );
-
-  $_SESSION['user_attempt'] = 4;
   $_SESSION['user_number'] = -1;
 
   $conn->close();
