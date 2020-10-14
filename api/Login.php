@@ -55,7 +55,7 @@ if (!password_verify($password, $result["password"])) {
 
 //checks if user is authenticated
 if ($result["auth"] == 0) {
-  error_response("Utente non autenticato", 401, $conn);
+  error_response("Utente non autenticato, controlla la tua mail", 401, $conn);
   exit();
 }
 
