@@ -46,7 +46,6 @@ if (mb_detect_encoding($password, 'ASCII') == false) {
   exit();
 }
 
-
 //checks if password matches
 if (!password_verify($password, $result["password"])) {
   error_response("Password sbagliata", 401, $conn);
