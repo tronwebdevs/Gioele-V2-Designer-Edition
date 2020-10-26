@@ -1,4 +1,11 @@
 # Gioele-V2 Designer Edition
+
+### Update
+```
+ Like the father, the son will die too.
+                         Mahatma Gandhi
+```
+
 Gioele V2 Designer Edition a fun and addictive minigame
 (fun not included)
 
